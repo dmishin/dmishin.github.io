@@ -5,6 +5,12 @@
 
   _ref = require("./revca_track"), CircularInterpolatingSimulator = _ref.CircularInterpolatingSimulator, Simulator = _ref.Simulator, makeRule = _ref.makeRule;
 
+  if (window.requestAnimationFrame == null) {
+    window.requestAnimationFrame = window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function(callback) {
+      return window.setTimeout(callback, 1000 / 30);
+    };
+  }
+
   parseRle = function(rle) {
     var c, count, curCount, i, j, pattern, x, y, _i, _j, _ref1;
     x = 0;
