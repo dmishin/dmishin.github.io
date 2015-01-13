@@ -143,11 +143,11 @@
       processPart = (function(_this) {
         return function() {
           var j, tube, tubeBp, tubeGeom, _i, _ref, _results;
-          if (i + tubesPerPart < blueprint.length - 1) {
+          if (i + tubesPerPart < blueprint.length) {
             setTimeout(processPart, processingDelay);
           }
           _results = [];
-          for (j = _i = 0, _ref = Math.min(blueprint.length - 1 - i, tubesPerPart); _i < _ref; j = _i += 1) {
+          for (j = _i = 0, _ref = Math.min(blueprint.length - i, tubesPerPart); _i < _ref; j = _i += 1) {
             tubeBp = blueprint[i];
             tubeGeom = _this.createTube(tubeBp);
             tube = new THREE.Mesh(tubeGeom, _this.materials[i]);
