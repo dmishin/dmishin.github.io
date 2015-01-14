@@ -101,6 +101,12 @@
       return console.log("Initializatoin finished");
     };
 
+    WorkerFlyingCurves.prototype.getCrossSectionSize = function() {
+      var s;
+      s = this.boardSize * this.scale;
+      return [s, s];
+    };
+
     WorkerFlyingCurves.prototype._onMsg = function(e) {
       var cmd;
       cmd = e.data.cmd;
@@ -237,6 +243,42 @@
       }
     };
 
+    WorkerFlyingCurves.prototype.createIsochronePlane = function(z, textureScale, visible) {
+      var h, h2, material, plane, planeMesh, texture, th, tw, uvs, vs, w, w2, _ref;
+      if (z == null) {
+        z = 0;
+      }
+      if (textureScale == null) {
+        textureScale = 8;
+      }
+      if (visible == null) {
+        visible = false;
+      }
+      _ref = this.getCrossSectionSize(), w = _ref[0], h = _ref[1];
+      w2 = w * 0.5;
+      h2 = h * 0.5;
+      vs = new Float32Array([-w2, h2, 0, -w2, -h2, 0, w2, h2, 0, -w2, -h2, 0, w2, -h2, 0, w2, h2, 0]);
+      tw = th = this.boardSize / textureScale;
+      uvs = new Float32Array([0, th, 0, 0, tw, th, 0, 0, tw, 0, tw, th]);
+      plane = new THREE.BufferGeometry();
+      plane.addAttribute('position', new THREE.BufferAttribute(vs, 3));
+      plane.addAttribute("uv", new THREE.BufferAttribute(uvs, 2));
+      plane.computeBoundingSphere();
+      texture = THREE.ImageUtils.loadTexture("../images/isoplane.png");
+      texture.wrapS = THREE.RepeatWrapping;
+      texture.wrapT = THREE.RepeatWrapping;
+      material = new THREE.MeshBasicMaterial({
+        map: texture,
+        side: THREE.DoubleSide,
+        opacity: 0.5,
+        transparent: true
+      });
+      planeMesh = new THREE.Mesh(plane, material);
+      planeMesh.position.setZ(z);
+      planeMesh.visible = visible;
+      return this.isochrone = planeMesh;
+    };
+
     WorkerFlyingCurves.prototype.loadUriParameters = function(keys) {
       var loadIntParam, v;
       loadIntParam = (function(_this) {
@@ -296,7 +338,7 @@
   })();
 
   init = function() {
-    var keys, lines, vd;
+    var keys, vd;
     keys = parseUri(window.location).queryKey;
     container = document.getElementById("container");
     if (keys.visibility != null) {
@@ -309,6 +351,7 @@
     camera.position.set(300, 0, -1550);
     scene = new THREE.Scene();
     scene.fog = new THREE.Fog(0x000505, visibilityDistance * 0.85, visibilityDistance);
+    scene.add(new THREE.AmbientLight(0x444444));
     controls = new THREE.TrackballControls(camera);
     controls.rotateSpeed = 1.0;
     controls.zoomSpeed = 3.2;
@@ -321,9 +364,8 @@
     curves = new WorkerFlyingCurves(visibilityDistance, -0.5 * visibilityDistance);
     curves.loadUriParameters(keys);
     loadRandomPattern(Math.min(20, Math.round(curves.boardSize * 0.4)));
-    lines = new THREE.Object3D;
-    lines.add(curves.group);
-    scene.add(lines);
+    scene.add(curves.group);
+    scene.add(curves.createIsochronePlane(1000));
     renderer = new THREE.WebGLRenderer({
       antialias: keys.antialias === "true"
     });
@@ -438,9 +480,12 @@
         return hidePatternsWindow();
       }
     });
-    return E("btn-make-random").addEventListener("click", function(e) {
+    E("btn-make-random").addEventListener("click", function(e) {
       loadRandomPattern(parseInt(E("random-pattern-size").value, 10));
       return hidePatternsWindow();
+    });
+    return E("show-isoplane").addEventListener("change", function(e) {
+      return curves.isochrone.visible = E("show-isoplane").checked;
     });
   };
 
