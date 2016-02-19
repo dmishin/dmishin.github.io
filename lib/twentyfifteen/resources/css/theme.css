@@ -1,0 +1,1062 @@
+/*
+    Reset
+*/
+
+html {
+    font-size: 62.5%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f1f1f1;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+form, fieldset, legend {
+    margin: 0;
+    padding: 0;
+}
+
+button, input, select, textarea, label {
+    margin: 0;
+    padding: 0;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+/*
+    Typography
+*/
+
+body,
+button,
+input,
+select,
+textarea {
+    color: #333;
+    font-family: "Noto Serif", serif;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0 0 1.6em;
+    padding: 0;
+    font-weight: bold;
+    line-height: 1.2;
+    clear: both;
+    font-size: 15px;
+}
+
+p {
+    margin: 0 0 1.6em;
+    padding: 0;
+}
+
+blockquote {
+    border-left: 4px solid #707070;
+    border-left: 4px solid rgba(51, 51, 51, 0.7);
+    color: #707070;
+    color: rgba(51, 51, 51, 0.7);
+    font-size: 18px;
+    font-style: italic;
+    line-height: 1.6667;
+    margin: 0 0 1.6em;
+    padding: 0 0 0 0.7778em;
+}
+
+blockquote > p:last-child {
+    margin-bottom: 0;
+}
+
+code, pre {
+    font-family: Inconsolata, monospace;
+}
+
+code {
+    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.01);
+    border: 1px solid #eaeaea;
+    border: 1px solid rgba(51, 51, 51, 0.1);
+    padding: 1px 3px;
+}
+
+pre {
+    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.01);
+    border: 1px solid #eaeaea;
+    border: 1px solid rgba(51, 51, 51, 0.1);
+    line-height: 1.4;
+    margin-bottom: 1.6em;
+    max-width: 100%;
+    overflow: auto;
+    padding: 0.8em;
+}
+
+abbr[title] {
+    border-bottom: 1px dotted #eaeaea;
+    border-bottom: 1px dotted rgba(51, 51, 51, 0.1);
+    cursor: help;
+}
+
+sup, sub {
+    font-size: 75%;
+    height: 0;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    bottom: 1ex;
+}
+
+sub {
+    top: .5ex;
+}
+
+small {
+    font-size: 75%;
+}
+
+big {
+    font-size: 125%;
+}
+
+/*
+    Elements
+*/
+
+hr {
+    background-color: #eaeaea;
+    background-color: rgba(51, 51, 51, 0.1);
+    border: 0;
+    height: 1px;
+    margin: 3em 0;
+    display: block;
+    padding: 0;
+}
+
+ul, ol {
+    margin: 0 0 1.6em 1.3333em;
+    padding: 0;
+}
+
+li > ul,
+li > ol {
+    margin-bottom: 0;
+}
+
+dl {
+    margin-bottom: 1.6em;
+}
+
+dt {
+    margin: 0;
+    font-weight: bold;
+}
+
+dd {
+    margin: 1em 1em 1.6em;
+}
+
+table, th, td {
+    border: 1px solid #eaeaea;
+    border: 1px solid rgba(51, 51, 51, 0.1);
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+    border-width: 1px 0 0 1px;
+    margin: 0 0 1.6em;
+    table-layout: fixed;
+    width: 100%;
+}
+
+caption, th, td {
+    font-weight: normal;
+    text-align: left;
+}
+
+th {
+    border-width: 0 1px 1px 0;
+    font-weight: 700;
+}
+
+td {
+    border-width: 0 1px 1px 0;
+}
+
+th, td {
+    padding: 0.4em;
+}
+
+img {
+    -ms-interpolation-mode: bicubic;
+    border: 0;
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+    margin-bottom: 1.6em;
+}
+
+p img {
+    margin-bottom: 0;
+}
+
+figure {
+    margin: 0;
+}
+
+del {
+    opacity: 0.8;
+}
+
+/*
+    Genericons
+*/
+
+.date:before,
+.tags:before,
+.toggle-button:before,
+.record-date:before,
+.record-tags:before,
+.main-footer .prev:before,
+.main-footer .next:before {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-family: "Genericons";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    line-height: 1;
+    speak: none;
+    text-align: center;
+    text-decoration: inherit;
+    text-transform: none;
+    vertical-align: top;
+    position: relative;
+}
+
+/*
+    Links
+*/
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    color: #707070;
+    color: rgba(51, 51, 51, 0.7);
+}
+
+/*
+    Clearings
+*/
+
+.clear:before,
+.clear:after {
+    content: "";
+    display: table;
+}
+
+.clear:after {
+    clear: both;
+}
+
+/*
+    Masthead
+*/
+
+
+.masthead {
+    border-bottom: 1px solid rgba(51, 51, 51, 0.1);
+    padding: 7.5%;
+    min-height: 2em;
+    position: relative;
+    background-color: #fff;
+}
+
+.site-title {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.3636;
+    margin: 0;
+}
+
+.site-description {
+    display: none;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 12px;
+    margin: 0.5em 0 0;
+    opacity: 0.7;
+}
+
+/*
+    Toggle Button
+*/
+
+.toggle-button {
+    background-color: transparent;
+    border: 1px solid #eaeaea;
+    border: 1px solid rgba(51, 51, 51, 0.1);
+    height: 42px;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    right: 7.5%;
+    text-align: center;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 42px;
+    cursor: pointer;
+}
+
+.toggle-button:before {
+    color: #333;
+    content: "\f419";
+    line-height: 40px;
+    width: 40px;
+}
+
+.toggle-button:hover,
+.toggle-button:focus {
+    background-color: transparent;
+    border: 1px solid #c1c1c1;
+    border: 1px solid rgba(51, 51, 51, 0.3);
+    outline: 0;
+}
+
+.toggle-button.toggled-on:before {
+    content: "\f405";
+    font-size: 32px;
+    position: relative;
+    top: 1px;
+    left: -1px;
+}
+
+/*
+    Includes
+*/
+
+.includes {
+    display: none;
+    padding: 0 7.5% 7.5%;
+    background-color: #fff;
+    border-bottom: 1px solid rgba(51, 51, 51, 0.1);
+
+}
+
+/*
+    Menu
+*/
+
+.menu a {
+    display: block;
+    padding: 0.8em 0;
+    text-decoration: none;
+}
+
+.menu ul {
+    list-style: none;
+    margin: 0;
+}
+
+.menu ul ul {
+    display: none;
+}
+
+.menu li {
+    border-top: 1px solid #eaeaea;
+    border-top: 1px solid rgba(51, 51, 51, 0.1);
+    position: relative;
+}
+
+.menu li:first-child {
+    border-top: none;
+}
+
+/*
+    Sidebar
+*/
+
+.sidebar h1,
+.sidebar h2,
+.sidebar h3,
+.sidebar h4,
+.sidebar h5,
+.sidebar h6 {
+    color: #333;
+    font-family: "Noto Sans", sans-serif;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-top: 3em;
+}
+
+.sidebar ul {
+    list-style: none;
+    margin-left: 0;
+}
+
+.sidebar ul ul {
+    display: none;
+}
+
+.sidebar li {
+    border-top: 1px solid #eaeaea;
+    border-top: 1px solid rgba(51, 51, 51, 0.1);
+    padding: 0.8em 0;
+}
+
+.sidebar li:first-child {
+    border-top: 0;
+    padding-top: 0;
+}
+
+.sidebar li:last-child {
+    padding-bottom: 0;
+}
+
+.sidebar > :last-child {
+    margin-bottom: 0;
+}
+
+/*
+    Main Header
+*/
+
+.main-header {
+    background-color: #fff;
+    border-bottom: 1px solid rgba(51, 51, 51, 0.1);
+    padding: 7.5%;
+}
+
+.main-title {
+    font-family: "Noto Serif", serif;
+    font-size: 18px;
+    margin: 0;
+}
+
+/*
+    Main Content
+*/
+
+.record {
+    padding-top: 7.5%;
+    position: relative;
+    background-color: #fff;
+}
+
+.record + .record {
+    border-top: 1px solid rgba(51, 51, 51, 0.1);
+}
+
+.record-header {
+    padding: 0 7.5%;
+}
+
+.record-title {
+    font-size: 26px;
+    font-size: 2.6rem;
+    margin-bottom: 1em;
+}
+
+.record-content > :last-child,
+.record-summary > :last-child {
+    margin-bottom: 0;
+}
+
+.record-content {
+    padding: 0 7.5% 7.5%;
+}
+
+.record-content h1 {
+    font-size: 26px;
+    margin-top: 1.8462em;
+    margin-bottom: 1em;
+}
+
+.record-content h2 {
+    font-size: 22px;
+    margin-top: 2.1818em;
+    margin-bottom: 1em;
+}
+
+.record-content h3 {
+    font-size: 18px;
+    margin-top: 2.6667em;
+    margin-bottom: 1.3333em;
+}
+
+.record-content h4,
+.record-content h5,
+.record-content h6 {
+    font-size: 15px;
+    margin-top: 3.2em;
+    margin-bottom: 1.6em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.record-content > h1:first-child,
+.record-content > h2:first-child,
+.record-content > h3:first-child,
+.record-content > h4:first-child,
+.record-content > h5:first-child,
+.record-content > h6:first-child {
+    margin-top: 0;
+}
+
+.record-content a {
+    border-bottom: 1px solid #333;
+}
+
+.record-content a:hover,
+.record-content a:focus {
+    border-bottom: 0;
+}
+
+.record-footer {
+    background-color: #f7f7f7;
+    color: #707070;
+    color: rgba(51, 51, 51, 0.7);
+    font-family: "Noto Sans", sans-serif;
+    font-size: 12px;
+    padding: 3.8461% 7.5%;
+}
+
+.record-footer a {
+    border-bottom: 1px solid transparent;
+    color: #707070;
+    color: rgba(51, 51, 51, 0.7);
+}
+
+.record-footer a:hover {
+    border-bottom: 1px solid #333;
+}
+
+.record-footer a:hover,
+.record-footer a:focus {
+    color: #333;
+}
+
+.record-date,
+.record-tags {
+    margin-right: 1em;
+}
+
+.record-date:before {
+    content: "\f307";
+    margin-right: 4px;
+    top: 2px;
+}
+
+.record-tags:before {
+    content: "\f302";
+    margin-right: 4px;
+    top: 1px;
+}
+
+/*
+    Alert Boxes
+*/
+
+.stx-alert {
+    margin: 3em 0;
+    border: 1px solid;
+    padding: 4%;
+}
+
+.stx-alert > :last-child {
+    margin-bottom: 0
+}
+
+.stx-info {
+    color: #224466;
+    border-color: #bac6d3;
+    background-color: #e2eef9;
+}
+
+.stx-warning {
+    color: #4c4a42;
+    border-color: #dfd8c2;
+    background-color: #fff9ea;
+}
+
+.stx-error {
+    color: #991111;
+    border-color: #d2b2b2;
+    background-color: #fcdede;
+}
+
+/*
+    Record Types
+*/
+
+.record-pages .record-footer {
+    display: none;
+}
+
+/*
+    Main Footer
+*/
+
+.main-footer {
+    background-color: #fff;
+    border-top: 1px solid rgba(51, 51, 51, 0.1);
+    font-family: "Noto Sans", sans-serif;
+    line-height: 48px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    position: relative;
+}
+
+.main-footer .current {
+    display: inline-block;
+}
+
+.main-footer .prev,
+.main-footer .next {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0.3);
+    background-color: #333;
+    color: #fff;
+    display: inline-block;
+    height: 48px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 48px;
+}
+
+.main-footer .prev:before,
+.main-footer .next:before {
+    font-size: 32px;
+    height: 48px;
+    line-height: 48px;
+    position: relative;
+    width: 48px;
+}
+
+.main-footer .prev:hover,
+.main-footer .prev:focus,
+.main-footer .next:hover,
+.main-footer .next:focus {
+    background-color: #707070;
+    background-color: rgba(51, 51, 51, 0.7);
+}
+
+.main-footer .prev {
+    left: 0;
+}
+
+.main-footer .prev:before {
+    content: "\f430";
+    left: -1px;
+}
+
+.main-footer .next {
+    right: 0;
+}
+
+.main-footer .next:before {
+    content: "\f429";
+    right: -1px;
+}
+
+/*
+    Footer
+*/
+
+.site-footer {
+    border-top: 1px solid rgba(51, 51, 51, 0.1);
+    padding: 3.5% 7.5%;
+    color: #707070;
+    color: rgba(51, 51, 51, 0.7);
+    font-size: 12px;
+    background-color: #fff;
+}
+
+.site-footer a {
+    border-bottom: 1px solid transparent;
+    color: #707070;
+    color: rgba(51, 51, 51, 0.7);
+}
+
+.site-footer a:hover {
+    border-bottom: 1px solid #333;
+}
+
+.site-footer a:hover,
+.site-footer a:focus {
+    color: #333;
+}
+
+/*
+    Media Queries
+*/
+
+/*
+    Does the same thing as <meta name="viewport" content="width=device-width">,
+    but in the future W3C standard way. -ms- prefix is required for IE10+ to
+    render responsive styling in Windows 8 "snapped" views; IE10+ does not honor
+    the meta tag. See https://core.trac.wordpress.org/ticket/25888.
+*/
+
+@-ms-viewport {
+    width: device-width;
+}
+
+@viewport {
+    width: device-width;
+}
+
+/*
+    Mobile Landscape
+*/
+
+@media screen and (min-width: 480px) {
+
+    .site-description {
+        display: block;
+    }
+
+    .includes {
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+        margin: 7.5% 7.5% 0;
+        padding: 7.5%;
+        border-bottom: none;
+    }
+
+    .menu ul {
+        border-top: 1px solid rgba(51, 51, 51, 0.1);
+        border-bottom: 1px solid rgba(51, 51, 51, 0.1);
+    }
+
+    .main {
+        padding: 7.5% 0;
+    }
+
+    .main-header {
+        margin: 0 7.5% 7.5%;
+        border-left: 7px solid #333;
+        padding: 0;
+        padding: 4% 0;
+    }
+
+    .main-title {
+        padding: 0 7.5%;
+    }
+
+    .record {
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+        margin: 0 7.5%;
+    }
+
+    .record + .record {
+        margin-top: 7.5%;
+        border-top: 0;
+    }
+
+    .main-footer {
+        margin: 7.5% 7.5% 0;
+    }
+
+    .site-footer {
+        border-top: 0;
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+        margin: 0 7.5%;
+    }
+}
+
+/*
+    Tablet
+*/
+
+@media screen and (min-width: 720px) {
+
+    body,
+    button,
+    input,
+    select,
+    textarea {
+        font-size: 17px;
+        line-height: 1.6471;
+    }
+
+    blockquote {
+        font-size: 20px;
+        line-height: 1.75;
+        margin-left: -1.05em;
+        padding-left: 0.85em;
+    }
+
+    .site-title {
+        font-size: 29px;
+    }
+
+    .site-description {
+        font-size: 14px;
+    }
+
+    .toggle-button {
+        height: 56px;
+        width: 56px;
+    }
+
+    .toggle-button:before {
+        line-height: 54px;
+        width: 54px;
+    }
+
+    .includes {
+        font-size: 15px;
+    }
+
+    .main-title {
+        font-size: 24px;
+    }
+
+    .record-title{
+        font-size: 35px;
+    }
+
+    .record-content h1 {
+        font-size: 35px;
+    }
+
+    .record-content h2 {
+        font-size: 29px;
+    }
+
+    .record-content h3 {
+        font-size: 24px;
+    }
+
+    .record-content h4
+    .record-content h5
+    .record-content h6 {
+        font-size: 20px;
+    }
+
+    .record-footer,
+    .site-footer {
+        font-size: 14px;
+    }
+
+    .record-date:before {
+        top: 5px;
+    }
+
+    .record-tags:before {
+        top: 4px;
+    }
+
+    .main-footer {
+        line-height: 56px;
+    }
+
+    .main-footer .prev,
+    .main-footer .next {
+        height: 56px;
+        width: 56px;
+    }
+
+    .main-footer .prev:before,
+    .main-footer .next:before {
+        height: 56px;
+        line-height: 56px;
+        width: 56px;
+    }
+}
+
+/*
+    Desktop
+*/
+
+@media screen and (min-width: 960px) {
+
+    body:before {
+        background-color: #fff;
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+        content: "";
+        display: block;
+        height: 100%;
+        min-height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 30%;
+        z-index: -10;
+    }
+
+    body,
+    button,
+    input,
+    select,
+    textarea {
+        font-size: 16px;
+    }
+
+    blockquote {
+        font-size: 18px;
+        line-height: 1.6667;
+        margin-left: -1.3333em;
+        padding-left: 1.1111em;
+    }
+
+    .site-header {
+        width: 30%;
+        float: left;
+        min-height: 100%;
+    }
+
+    .masthead {
+        padding: 0 20%;
+        margin: 20% 0;
+        border-bottom: none;
+        background-color: transparent;
+    }
+
+    .site-title {
+        font-size: 24px;
+    }
+
+    .site-description {
+        font-size: 14px;
+    }
+
+    .toggle-button {
+        display: none;
+    }
+
+    .includes {
+        background-color: transparent;
+        box-shadow: none;
+        margin: 0;
+        padding: 0 20% 20%;
+        font-size: 14px;
+        display: block !important;
+        visibility: visible !important;
+    }
+
+    .includes h1,
+    .includes h2,
+    .includes h3,
+    .includes h4,
+    .includes h5,
+    .includes h6 {
+        font-size: 13px;
+        margin-top: 4.5em;
+    }
+
+    .menu {
+        margin: 0 0 20%;
+    }
+
+    .menu a {
+        padding: .6em 0;
+    }
+
+    .wrapper {
+        width: 70%;
+        background: transparent;
+        padding: 0;
+        margin: 0;
+        float: left;
+    }
+
+    .main {
+        padding: 0;
+        margin: 0;
+    }
+
+    .main-header {
+        margin-top: 8%;
+    }
+
+    .main-title {
+        font-size: 18px;
+        padding: 0 10%;
+    }
+
+    .record {
+        margin: 8%;
+        padding-top: 8%;
+    }
+
+    .record-header {
+        padding: 0 10%;
+    }
+
+    .record-title {
+        font-size: 31px;
+    }
+
+    .record-content {
+        padding: 0 10% 10%;
+    }
+
+    .record-content h1 {
+        font-size: 33px;
+    }
+
+    .record-content h2 {
+        font-size: 26px;
+    }
+
+    .record-content h3 {
+        font-size: 22px;
+    }
+
+    .record-content h4,
+    .record-content h5,
+    .record-content h6 {
+        font-size: 18px;
+    }
+
+    .record-footer {
+        padding: 5% 10%;
+        font-size: 14px;
+    }
+
+    .record-date:before {
+        top: 4px;
+    }
+
+    .record-tags:before {
+        top: 4px;
+    }
+
+    .main-footer {
+        margin: 8% 8% 0;
+    }
+
+    .site-footer {
+        box-shadow: none;
+        padding: 0;
+        margin: 8% 8% 0;
+        background-color: #fff;
+    }
+
+    .footer-wrapper {
+        padding: 5% 10%;
+    }
+}

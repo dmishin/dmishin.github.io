@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Debug Theme</title>
+        <link rel="stylesheet" href="@root/theme.css">
+        <link rel="stylesheet" href="@root/pygments.css">
+    </head>
+    <body>
+        <h1>{% block title %}{% endblock %}</h1>
+
+        {% if inc.menu %}
+            {{ inc.menu }}
+            <hr>
+        {% endif %}
+
+        {% block content %}{% endblock %}
+    </body>
+</html>

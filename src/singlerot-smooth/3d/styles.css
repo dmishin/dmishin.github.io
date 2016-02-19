@@ -1,0 +1,150 @@
+
+select {
+    background-color: #232;
+    color: #eff;
+    padding: 0.2em;
+    font-size: 1em;
+    border: none;
+    margin: 0 0.2em 0 0.2em;
+}
+
+button{
+    font-size: 1em;
+    color: #eff;
+    border: none !important;
+
+    padding: 0.5em;
+    margin: 0;
+}
+button {
+    text-decoration:none;
+    
+    background-color: #606c88; background-image: -webkit-gradient(linear, left top, left bottom, from(#606c88), to(#3f4c6b));
+    background-image: -webkit-linear-gradient(top, #606c88, #3f4c6b);
+    background-image: -moz-linear-gradient(top, #606c88, #3f4c6b);
+    background-image: -ms-linear-gradient(top, #606c88, #3f4c6b);
+    background-image: -o-linear-gradient(top, #606c88, #3f4c6b);
+    background-image: linear-gradient(to bottom, #606c88, #3f4c6b);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#606c88, endColorstr=#3f4c6b);
+}
+
+button:hover{
+ background-color: #4b546a; background-image: -webkit-gradient(linear, left top, left bottom, from(#4b546a), to(#2c354b));
+ background-image: -webkit-linear-gradient(top, #4b546a, #2c354b);
+ background-image: -moz-linear-gradient(top, #4b546a, #2c354b);
+ background-image: -ms-linear-gradient(top, #4b546a, #2c354b);
+ background-image: -o-linear-gradient(top, #4b546a, #2c354b);
+ background-image: linear-gradient(to bottom, #4b546a, #2c354b);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#4b546a, endColorstr=#2c354b);
+}
+
+
+/* ******************************
+*  Main window layout 
+*/
+body, html{
+  margin:0;
+  padding:0;
+  overflow: hidden; /*Important for threejs!*/
+  color: #fff;
+  background-color: #222;
+}
+
+/****************
+* Tolbar with 3 sub-bars. Seems that tablesare the only sane solution
+*****************/
+.toolbar {
+    display: table;
+    width:100%;
+    position: absolute;
+}
+.toolbar-row{
+    display: table-row;
+}
+.toolbar-row div {
+    display:table-cell;
+}
+
+.top-left-toolbar{
+    text-align: left;
+}
+.top-toolbar{
+    text-align: center;
+}
+.top-right-toolbar{
+    text-align: right;
+}
+/** settings div (hidden by default **/
+
+.popup-window {
+    
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.3);
+}
+
+.popup-window > div{
+    width: 70%;
+    background-color: black;
+    padding: 0.5em;
+    margin: 0 auto;
+    position: relative; /*For positioning close button*/
+}
+.popup-window p{
+    margin-left: 1em;
+    margin-right: 1em;
+}
+.popup-window a{
+    color: #f7325e;
+}
+.popup-window a:visited{
+    color: #7dc410;
+}
+
+#toolbar-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+/** Buttons **/
+a.transparent-image-link{
+    background: transparent;
+    border-style: none;
+    font-size: 1em;
+    padding: 0;
+    margin: 0;
+    outline: 0;
+}
+.transparent-image-link img{
+    opacity: 0.5;
+}
+.transparent-image-link:hover img{
+    opacity: 1.0;
+}
+
+button.transparent-image-button{
+    font-size: 1em;
+    background: transparent;
+    border: none !important;
+    padding: 0;
+    margin: 0;
+}
+.transparent-image-button img{
+    opacity: 0.5;
+}
+.transparent-image-button:hover img{
+    opacity: 1.0;
+}
+
+textarea{
+    width: 100%;
+    height: 8em;
+    border: 0px solid #0264ed;
+    padding: 0.5em;
+    font-family: monospace;
+    background-color: #333;
+    color: #fff;
+}

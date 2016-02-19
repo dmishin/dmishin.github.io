@@ -1,0 +1,19 @@
+{% extends "base.ibis" %}
+
+{% block title %}Record{% endblock %}
+
+{% block content %}
+
+    {% if record.tags %}
+        <h2>Tags</h2>
+        <ul>
+            {% for tag in record.tags %}
+                <li>{{ tag  }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <h2>Page Context</h2>
+    <pre>{{ context.stack|index:2|dedup|pprint|pygmentize:'python' }}</pre>
+
+{% endblock %}

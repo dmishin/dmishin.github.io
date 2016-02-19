@@ -1,0 +1,50 @@
+{% extends "base.ibis" %}
+
+{% block title %}
+	{{ is_homepage ?? site.title :: trail|join:": "|titlecase }}
+{% endblock %}
+
+{% block content %}
+
+	{% if is_tag_index %}
+		<header class="main-header">
+			<h1 class="main-title">Tag: {{ tag }}</h1>
+		</header>
+	{% elif type.id != "posts" or trail|len > 1 %}
+		<header class="main-header">
+			<h1 class="main-title">{{ trail|join:" / "|titlecase }}</h1>
+		</header>
+	{% endif %}
+
+	{% for record in records %}
+		<article class="record record-{{record.type}}">
+			<header class="record-header">
+				<h2 class="record-title">
+					<a href="{{record.url}}">{{ record.title }}</a>
+				</h2>
+			</header>
+
+			<div class="record-content">
+				{{ record.html }}
+			</div>
+
+			<footer class="record-footer">
+				<time class="record-date" datetime="{{record.date|dtformat:'%Y-%m-%d'}}">{{ record.date|dtformat:"%B %d, %Y"}}</time>
+				{% if record.tags %}
+					<span class="record-tags">{{ record.tags|join:", " }}</span>
+				{% endif %}
+			</footer>
+		</article>
+	{% endfor %}
+
+	{% if is_paged %}
+		<footer class="main-footer">
+			<nav class="paging">
+				{% if page > 1 %}<a class="prev" href="{{prev_url}}">Previous Page</a>{% endif %}
+				<span class="current">Page {{ page }} of {{ total }}</span>
+				{% if page < total %}<a class="next" href="{{next_url}}">Next Page</a>{% endif %}
+			</nav>
+		</footer>
+	{% endif %}
+
+{% endblock %}

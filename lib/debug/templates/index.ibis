@@ -1,0 +1,41 @@
+{% extends "base.ibis" %}
+
+{% block title %}
+    {% if is_dir_index %}
+        Directory Index
+    {% elif is_tag_index %}
+        Tag Index
+    {% else %}
+        Index
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+
+    <h2>Records</h2>
+    <ul>
+        {% for record in records %}
+            <li>
+                <a href="{{ record.url }}">{{ record.title or "Untitled Record" }}</a>
+            </li>
+        {% empty %}
+            <li>No records to display.</li>
+        {% endfor %}
+    </ul>
+    <hr>
+
+    {% if is_paged %}
+        <h2>Paging: {{ page }} of {{ total }}</h2>
+        <ul>
+            <li><a href="{{ first_url }}">First</a></li>
+            {% if prev_url %}<li><a href="{{ prev_url }}">Previous</a></li>{% endif %}
+            {% if next_url %}<li><a href="{{ next_url }}">Next</a></li>{% endif %}
+            <li><a href="{{ last_url }}">Last</a></li>
+        </ul>
+        <hr>
+    {% endif %}
+
+    <h2>Page Context</h2>
+    <pre>{{ context.stack|index:2|dedup|pprint|pygmentize:'python' }}</pre>
+
+{% endblock %}
