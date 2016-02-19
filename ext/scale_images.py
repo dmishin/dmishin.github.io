@@ -76,13 +76,19 @@ def build_image_substitution( src, source_file, output_file, maxwidth ):
         return None
     
     new_height = int( h / w * maxwidth )
-    scaled = img.resize( (maxwidth, new_height), Image.ANTIALIAS )
 
     out_dir, out_name = os.path.split(output_file)
     scaled_out_name = "s" + str(maxwidth)+ "-" + out_name
-    scaled.save( os.path.join( out_dir, scaled_out_name ) )
-
+    scaled_out_path = os.path.join( out_dir, scaled_out_name )
     scaled_src = '/'.join((src.rsplit('/', 1)[0], scaled_out_name))
+    
+    if os.path.exists( scaled_out_path ):
+        if os.path.getmtime( scaled_out_path ) > os.path.getmtime( source_file ):
+            #print("File",output_file,"already exists and up to date")
+            return {"scaled": scaled_src, "original": src}
+    
+    scaled = img.resize( (maxwidth, new_height), Image.ANTIALIAS )
+    scaled.save( scaled_out_path )
     
     return {"scaled": scaled_src, "original": src}
     
