@@ -41,6 +41,7 @@ title: {title}
 tags: {tags}
 ---
 Formula: {{{formula}}}
+<span class="cut">Details ...</span>
 ## Properties
 Crystal system:
 Crystal shape:
@@ -49,6 +50,7 @@ Stability on air:
 ## Growing
 ## Safety
 ## More photos
+## References
 """.format(**locals()))
                    
         for iname in image_names:

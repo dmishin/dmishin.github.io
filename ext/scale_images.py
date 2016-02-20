@@ -9,7 +9,7 @@ DEFAULT_MAX_WIDTH = 640 #integer or None
 _visited_images = {}
 #page_soup is fired by the beautifulsoup extension.
 #allows to manipulate HTML structure
-@hooks.register('page_soup')
+@hooks.register('record_soup')
 def scale_images(soup, page):
     for img in soup.find_all('img'):
         process_img_tag( soup, img, page )

@@ -23,10 +23,17 @@
 					<a href="{{record.url}}">{{ record.title }}</a>
 				</h2>
 			</header>
-
+			{% if record.abridged_html %}
+			<div class="record-content">
+				{{ record.abridged_html }}
+			        <br/><a href="{{record.url}}">{{record.read_more_text}}</a>
+			</div>
+			{% else %}
 			<div class="record-content">
 				{{ record.html }}
+			        <br/>(full)
 			</div>
+			{% endif %}
 
 			<footer class="record-footer">
 				<time class="record-date" datetime="{{record.date|dtformat:'%Y-%m-%d'}}">{{ record.date|dtformat:"%B %d, %Y"}}</time>

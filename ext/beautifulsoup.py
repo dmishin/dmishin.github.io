@@ -17,3 +17,15 @@ def transform_tree(html, page):
     hooks.event('page_soup', soup, page)
 
     return str(soup)
+
+@hooks.register('record_html')
+def transform_record_html(html, record):
+    try:
+        soup = BeautifulSoup(html, 'html.parser')
+    except Exception as err:
+        print("Error parsing HTML:", err, "will not postprocess tree for", record['src'])
+        return html
+    
+    hooks.event('record_soup', soup, record)
+
+    return str(soup)
