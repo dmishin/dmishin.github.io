@@ -10,7 +10,7 @@ Salts of sulfuric acid {H2SO4}. Sulfates are generally a good material for growi
 
 Sulfuric acid also forms salts or adducts with some organic compounds and complex ions.
 
-* [Triglycine sulfate](@root/crystals/triglycine-sulfate//) {3NH2CH2COOH*H2SO4)
+* [Triglycine sulfate](@root/crystals/triglycine-sulfate//) {3NH2CH2COOH*H2SO4}
 * [Carbamato zinc sulfate](@root/crystals/urea-zinc-sulfate//) {[Zn(CON2H4)6]SO4*?H2O}
 ### Double sulfates: Tutton's salts
 There are many sulfates that have 2 different matals in it, in stoichiometric proportion. They form several families of similar compounds. Tutton's salts are compounds of general formula: {M^I2M^(II)(SO4)2*6H2O}, where {M^I} and {M^(II)} stand for univalent and bivalent anions. In minerelogy, they are called schoenites.
