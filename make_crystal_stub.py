@@ -43,11 +43,10 @@ tags: {tags}
 Formula: {{{formula}}}
 <span class="cut">Details ...</span>
 ## Properties
-**Crystal system**:
-
-**Crystal shape**:
-
-**Stability on air**:
+* **Crystal system**:
+* **Crystal shape**:
+* **Color**:
+* **Stability on air**:
 ## Preparation
 ## Growing
 ## Safety
