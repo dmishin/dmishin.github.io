@@ -18,7 +18,7 @@ There are many sulfates that have 2 different matals in it, in stoichiometric pr
 
 * [Ammonium zinc sulfate](@root/crystals/ammonium-zinc-sulfate//) {(NH4)2Zn(SO4)2*6H2O}
 * [Ammonium iron(II) sulfate](@root/crystals/mohr-salt//) {(NH4)2Fe(SO4)2*6H2O}, also known as Mohr's salt.
-* [Potassium magnesium sulfate](@root/crystals/potassium-magnesium-sulfate//) {KMg(SO4)2*6H2O}, mineral 
+* [Potassium magnesium sulfate](@root/crystals/potassium-magnesium-sulfate//) {KMg(SO4)2*6H2O}, mineral schoenite.
 
 ### Double sulfates: bloedite family
 Bloedites are similar to tutton's salts (schienites), but have 4 molecules of water. They also can include {Na} ions.
