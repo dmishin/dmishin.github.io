@@ -48,5 +48,3 @@ def inject_comments(soup, page):
     code.string = code_template.format(PAGE_URL = repr(page.get('url')),
                                        PAGE_IDENTIFIER = repr(url))
     disqs_div.insert_after(code)
-
-    print("COmmecnt injected to", page['path'] )
