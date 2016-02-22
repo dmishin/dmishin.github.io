@@ -41,4 +41,4 @@ A simulator of the [Single Rotation](http://dmishin.blogspot.com/2013/11/the-sin
 * Sources: [github.com/dmishin/singlerot-smooth](https://github.com/dmishin/singlerot-smooth), in the "3d" folder.
 * [Blog post](http://dmishin.blogspot.com/2015/01/3d-single-rotation.html)
 * [Demonstration video](http://youtu.be/XX4igr8ufeA)
-
+  
