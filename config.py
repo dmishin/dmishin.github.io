@@ -9,6 +9,8 @@
 # You can safely delete this file if you don't need to change any of
 # the default settings.
 
+title = "Dmishin Projects"
+description = "Getting together all the stuff I put online"
 # --------------------------------------------------------------------------
 # Theme Directory
 # --------------------------------------------------------------------------

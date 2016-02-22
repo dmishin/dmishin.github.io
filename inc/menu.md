@@ -1,11 +1,6 @@
 ---
 # side menu
 ---
-
-Hi there!
-
-* [Home](@root/)
-* [About](@root/about//)
-* [Posts](@root/posts/index//)
+* [Projects](@root/)
 * [Crystals](@root/crystals/index//)
-* [Projects](@root/projects//)
+* [About me](@root/about//)

@@ -1,21 +1,19 @@
 ---
 title: Potassium Sulfate
 tags: sulfate, potassium, inorganic
-mathjaks: yes
 ---
-![Potassium sulfate](@root/crystals/images/potassium-sulfate/k2so4-1.jpg)
-
 Potassium sulfate {K2SO4} is a salt of potassium and sulfuric acid. It is colorless, water-soluble crystalline solid, mainly used as fertilizer.
+![Potassium sulfate](@root/crystals/images/potassium-sulfate/k2so4-1.jpg)
+<span class="cut">Details ...</span>
 
 ## Crystal info
+**Crystal system**: Orthorhombic
 
-Crystal system: Orthorhombic
+**Mineral name**: [Arcanite](http://www.mindat.org/min-314.html)
 
-Mineral name: [Arcanite](http://www.mindat.org/min-314.html)
+**Crystal shape**: apparently, hexagonal bipyramid. I don't know how it is compatible with orthorhombic crystal system. Probably, twinning?
 
-Crystal shape: apparently, hexagonal bipyramid. I don't know how it is compatible with orthorhombic crystal system. Probably, twinning?
-
-Stability on air: very stable. Also, it is one of the hardest soluble materials.
+**Stability on air**: very stable. Also, it is one of the hardest soluble materials.
 
 ## Growing notes
 
@@ -31,10 +29,10 @@ Potassium sulfate is not toxic. Fertilizer-grade compound may contain significan
 * Fertilizer stores (usually requires filtering and recrystallization)
 * Chemicals shops
 * Synthesis is not practical since source reagents are more expensive than the product, but possible:
-    * {2KOH + H2SO4 -> K2SO4 + H2O}
+    * {2KOH + H2SO4 -> K2SO4 + H2O} <br/>
 	  Reaction is highly exotermic, solution starts boiling!
-    * {K2CO3 + H2SO4 -> K2SO4 + H2O + CO2}
-	  Produces lots of gas, bevare acidic foam.
+    * {K2CO3 + H2SO4 -> K2SO4 + H2O + CO2} <br/>
+	  Produces lots of gas, beware acidic foam.
 	
 ## More pictures
 ![Potassium sulfate](@root/crystals/images/potassium-sulfate/k2so4-2.jpg)
