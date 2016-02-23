@@ -1,6 +1,7 @@
 ---
 title: Crystal Growing Collection
 ---
+![Crystals](@root/crystals/images/glucose-sodium-chloride/glucose-nacl-5.jpg "GLucose NaCl cocrystal")
 
 ## Sulfates
 Salts of sulfuric acid {H2SO4}. Sulfates are generally a good material for growing crystals, because of thei stability and solubility.
