@@ -4,12 +4,12 @@ tags: ammonium, zinc, schoenite, sulfate, double sulfate
 ---
 Formula: {(NH4)2Zn(SO4)2*6H2O}
 ![Ammonium Zinc Sulfate](@root/crystals/images/zinc-ammonium-sulfate/dsc01383.jpg)
+Extremely shiny, extremely transparent: one of the best candidates for crystal growing.
 <span class="cut">Details ...</span>
 
 ## Properties
-**Crystal system**: monoclinic
-
-**Stability on air**: stable. After many months, crystals showing no signs of dehydration.
+* **Crystal system**: monoclinic
+* **Stability on air**: stable. After many months, crystals showing no signs of dehydration.
 
 
 ## Preparation
@@ -31,10 +31,16 @@ Ammonium sulfate is sometimes sold as fertilizer. It can be prepared by mixing a
 
 
 ## Growing
+There is a secret in making extremely transarent crystals.
 
+After preparing solution, add small amount of baking soda {NaHCO3} to it. I used 1g of soda per 100ml of saturated solution. Stir the solution; soon, reaction starts that produces gas ({CO2}) and some white sediment ({ZnCO3}).
+
+Let the solution stay undisturbed for a day (it is needed for completing reaction and forming sediment), filter it and use for growing.
+
+Crystals, grown from such solution, would be brilliantly clear.
 
 ## Safety
-Despite zinc is important for healt, in large amounts zinc compounds are moderately toxic.
+Despite zinc is important for health, in large amounts zinc compounds are moderately toxic.
 
 ## More photos
 ![Ammonium Zinc Sulfate](@root/crystals/images/zinc-ammonium-sulfate/dsc01386.jpg)
