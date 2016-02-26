@@ -1,7 +1,7 @@
 ---
 title: Crystal Growing Collection
 ---
-![Crystals](@root/crystals/images/glucose-sodium-chloride/glucose-nacl-5.jpg "GLucose NaCl cocrystal")
+[![Crystals](@root/crystals/images/glucose-sodium-chloride/glucose-nacl-5.jpg "GLucose NaCl cocrystal")](@root/crystals/images/glucose-sodium-chloride//)
 
 ## Sulfates
 Salts of sulfuric acid {H2SO4}. Sulfates are generally a good material for growing crystals, because of thei stability and solubility.
@@ -36,7 +36,7 @@ They form several families of similar compounds. Tutton's salts are compounds of
 Salts of acetic acid.
 
 * [Calcium copper acetate](@root/crystals/calcium-copper-acetate//) {CuCa(CH3COO)4*6H2O}
-* [Copper acetate](@root/crystals/copper-acetate) {Cu(CH3COO)2*H2O}
+* [Copper acetate](@root/crystals/copper-acetate//) {Cu(CH3COO)2*H2O}
 
 ## Nitrates
 Salts of nitric acids {HNO3}. Most of nitrates are extremely solubile in water and deliquescent, which makes them badly suited for growing.
