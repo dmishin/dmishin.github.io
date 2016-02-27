@@ -1,7 +1,7 @@
 ---
 title: Crystal Growing Collection
 ---
-[![Crystals](@root/crystals/images/glucose-sodium-chloride/glucose-nacl-5.jpg "GLucose NaCl cocrystal")](@root/crystals/images/glucose-sodium-chloride//)
+[![Crystals](@root/crystals/images/glucose-sodium-chloride/glucose-nacl-5.jpg?original=no "GLucose NaCl cocrystal")](@root/crystals/glucose-sodium-chloride//)
 
 ## Sulfates
 Salts of sulfuric acid {H2SO4}. Sulfates are generally a good material for growing crystals, because of thei stability and solubility.
@@ -27,13 +27,13 @@ Bloedites are similar to tutton's salts (schienites), but have 4 molecules of wa
 * [Sodium zinc sulfate](@root/crystals/zinc-sodium-sulfate//) {Na2Zn(SO4)2*4H2O}, mineral Changoite.
 
 ### Double sulfates: alums
-They form several families of similar compounds. Tutton's salts are compounds of general formula: {M^IM^(III)(SO4)2*12H2O}, where {M^I} and {M^(II)} stand for univalent and bivalent anions.
+Alums are the family of similar double sulfates of general formula: {M^IM^(III)(SO4)2*12H2O}, where {M^I} and {M^(III)} stand for univalent and trivalent anions. {M^I} is usually one of {K, NH4} but can be other: {Na, Rb, Tl}. Trivalent metal {M^(III)} is usually one of {Al, Fe, Cr}.
 
-* [Potassium Aluminum sulfate](@root/crystals/potassium-alum//) {KAl(SO4)2*12H2O}, usually called alum or potassium alum.
+* [Potassium Aluminum sulfate](@root/crystals/potassium-alum//) {KAl(SO4)2*12H2O}, usually called just "alum" or potassium alum. The most representative member of this family.
 * [Ammonium Iron(III) sulfate](@root/crystals/ferric-alum//) {NH4Fe(SO4)2*12H2O}, or ferric alum.
 
 ## Acetates
-Salts of acetic acid.
+Salts of acetic acid. Most acetates are soluble, but few of them are suitable for growing nice crystals.
 
 * [Calcium copper acetate](@root/crystals/calcium-copper-acetate//) {CuCa(CH3COO)4*6H2O}
 * [Copper acetate](@root/crystals/copper-acetate//) {Cu(CH3COO)2*H2O}

@@ -5,16 +5,15 @@ tags: sodium, organic, chloride, cocrystal, semiorganic
 Trigonal co-crystal of glucose and sodium chloride: {2C6H12O6*NaCl*H2O}
 ![Glucose-NaCl cocrystal](@root/crystals/images/glucose-sodium-chloride/glucose-nacl-5.jpg)
 <span class="cut"/>
-Glucose (grape sugar) and sodium chloride (table salt) do not react, but can crystallize together, forming a single compound where there are 2 molecules of glucose per one  formal molecule of {NaCl}. Such compounds, formed by crystallization without chemical interaction, are callec [cocrystals](https://en.wikipedia.org/wiki/Cocrystal). 
+Glucose (grape sugar) and sodium chloride (table salt) do not react, but can crystallize together, forming a single compound where there are 2 molecules of glucose per one  formal molecule of {NaCl}. Such compounds, formed by crystallization without chemical interaction, are called [cocrystals](https://en.wikipedia.org/wiki/Cocrystal). 
 
 It is well soluble in water (my estimate is 90..110g per 100ml at room temperature) and forms crystals that are different both from pure glucose and from [table salt](@root/crystals/sodium-chloride//). [One of the photos](@root/crystals/images/glucose-sodium-chloride/glucose-nacl-8.jpg) shows the biggest crystal along its order-3 symmetry axis.
 
 Growth time around 1 month, using slow evaporation method.
 
 ## Properties
-**Crystal system**: [trigonal](https://en.wikipedia.org/wiki/Trigonal_crystal_system). This means that their base shape is cube, stretched along main diagonal.
-
-**Air stability**: stable.
+* **Crystal system**: [trigonal](https://en.wikipedia.org/wiki/Trigonal_crystal_system). This means that their base shape is cube, stretched along main diagonal.
+* **Air stability**: stable.
 
 ## Preparation
 This compound easily crystallizes from a solution, containing glucose and {NaCl} in equimolar proportion.

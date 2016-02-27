@@ -47,8 +47,6 @@ Copper compounds are mildly toxic.
 
 ![Calcium Copper Acetate](@root/crystals/images/calcium-copper-acetate/dsc00746.jpg)
 
-![Calcium Copper Acetate](@root/crystals/images/calcium-copper-acetate/dsc00746.jpg)
-
 ![Calcium Copper Acetate](@root/crystals/images/calcium-copper-acetate/dsc00759.jpg)
 
 ![Calcium Copper Acetate](@root/crystals/images/calcium-copper-acetate/dsc00760.jpg)
@@ -57,3 +55,4 @@ Copper compounds are mildly toxic.
 ## References
 
 * [My blog](http://dmishin.blogspot.ru/2014/03/crystal-growing-acetates-of-copper-and.html)
+* [Crystal growing site in Russian](https://sites.google.com/site/crystallsgrowing/crystal_compounds/acetates/copper_calcium_acetate)
