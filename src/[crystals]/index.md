@@ -1,10 +1,10 @@
 ---
 title: Crystal Growing Collection
 ---
-[![Crystals](@root/crystals/images/glucose-sodium-chloride/glucose-nacl-5.jpg?original=no "GLucose NaCl cocrystal")](@root/crystals/glucose-sodium-chloride//)
+[![Crystals](@root/crystals/images/glucose-sodium-chloride/glucose-nacl-5.jpg?original=no "Glucose NaCl cocrystal")](@root/crystals/glucose-sodium-chloride//)
 
 ## Sulfates
-Salts of sulfuric acid {H2SO4}. Sulfates are generally a good material for growing crystals, because of thei stability and solubility.
+Salts of sulfuric acid {H2SO4}. Sulfates are generally a good material for growing crystals, because of their stability and solubility.
 
 * [Potassium sulfate](@root/crystals/potassium-sulfate//), {K2SO4}
 * [Copper(II) sulfate](@root/crystals/copper-sulfate//), {CuSO4*5H2O}
@@ -14,15 +14,16 @@ Sulfuric acid also forms salts or adducts with some organic compounds and comple
 * [Triglycine sulfate](@root/crystals/triglycine-sulfate//) {3NH2CH2COOH*H2SO4}
 * [Carbamato zinc sulfate](@root/crystals/urea-zinc-sulfate//) {[Zn(CON2H4)6]SO4*?H2O}
 ### Double sulfates: Tutton's salts
-There are many sulfates that have 2 different matals in it, in stoichiometric proportion. They form several families of similar compounds. Tutton's salts are compounds of general formula: {M^I2M^(II)(SO4)2*6H2O}, where {M^I} and {M^(II)} stand for univalent and bivalent anions. In minerelogy, they are called schoenites.
+There are many sulfates that have 2 different metals in it, in stoichiometric proportion. They form several families of similar compounds. Tutton's salts are compounds of general formula: {M^I2M^(II)(SO4)2*6H2O}, where {M^I} and {M^(II)} stand for univalent and bivalent anions. In mineralogy, they are called schoenites.
 
 
 * [Ammonium zinc sulfate](@root/crystals/ammonium-zinc-sulfate//) {(NH4)2Zn(SO4)2*6H2O}
 * [Ammonium iron(II) sulfate](@root/crystals/mohr-salt//) {(NH4)2Fe(SO4)2*6H2O}, also known as Mohr's salt.
 * [Potassium magnesium sulfate](@root/crystals/potassium-magnesium-sulfate//) {KMg(SO4)2*6H2O}, mineral schoenite.
+* [Mixed K-Mg and K-Cu schoenite](@root/crystals/magnesium-copper-potassium-sulfate//), {K2(Mg0.5Cu0.5)(SO4)2*6H2O}
 
 ### Double sulfates: bloedite family
-Bloedites are similar to tutton's salts (schienites), but have 4 molecules of water. They also can include {Na} ions.
+Bloedites are similar to Tutton's salts (schoenites), but have 4 molecules of water instead of 6. They also can include {Na} ions.
 
 * [Sodium zinc sulfate](@root/crystals/zinc-sodium-sulfate//) {Na2Zn(SO4)2*4H2O}, mineral Changoite.
 
@@ -39,13 +40,12 @@ Salts of acetic acid. Most acetates are soluble, but few of them are suitable fo
 * [Copper acetate](@root/crystals/copper-acetate//) {Cu(CH3COO)2*H2O}
 
 ## Nitrates
-Salts of nitric acids {HNO3}. Most of nitrates are extremely solubile in water and deliquescent, which makes them badly suited for growing.
+Salts of nitric acids {HNO3}. Most of nitrates are extremely soluble in water and deliquescent, which makes them badly suited for growing.
 
 * [Ammonium calcium nitrate](@root/crystals/ammonium-calcium-nitrate//) {5Ca(NO3)2*NH4NO3*10H2O}
 
 ## Chlorides
 * [Sodium Chloride](@root/crystals/sodium-chloride//) {NaCl}, table salt
-
 
 ## Organic
 * [Glucose sodium chloride](@root/crystals/glucose-sodium-chloride//) {2C6H12O6*NaCl*H2O} cocrystal of glucose and table salt
