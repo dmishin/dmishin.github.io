@@ -50,6 +50,7 @@ Salts of nitric acids {HNO3}. Most of nitrates are extremely soluble in water an
 ## Organic
 * [Glucose sodium chloride](@root/crystals/glucose-sodium-chloride//) {2C6H12O6*NaCl*H2O} cocrystal of glucose and table salt
 * [Urea citrate](@root/crystals/urea-citrate//) {CO(NH2)2*C3H4(OH)(COOH)3} cocrystal of urea and citric acid.
+* [Glutamic acid hydrochloride](@root/crystals/glutamic-acid-hydrochloride//) {C3H5(NH2)(COOH)2*HCl}
 
 ## Other
 * [Sodium tetraborate](@root/crystals/borax//) {Na2B4O7*10H2O}, known as borax
