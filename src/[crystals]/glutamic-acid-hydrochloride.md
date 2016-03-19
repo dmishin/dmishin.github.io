@@ -28,11 +28,16 @@ Dissolve prepared glutamic acid in stoichiometric amount of hydrochloric acid (e
 The solution can be immediately used for growing crystal, but better recrystallize it to get rid or {Na} and other impurities.
 
 ## Growing
-My measurements show that solubility at room temperature is around 50g/100ml. Crystals grow well with evaporation method. I added few milliliters of hydrochloric acid to the solution to compensate asic evaporation.
+My measurements show that solubility at room temperature is around 50g/100ml. Crystals grow well with evaporation method. I added few milliliters of hydrochloric acid to the solution to compensate acid evaporation.
 
 ## Safety
 The compound is not toxic, but its solution is strongly acidic, it has irritant and corrosive properties, much like hydrochloric acid itself.
 
 ## More photos
-![Glutamic Acid Hydrochloride](@root/crystals/images/glutamic-acid-hydrochloride/dsc01793.jpg)
+![Glutamic Acid Hydrochloride](@root/crystals/images/glutamic-acid-hydrochloride/glutamic-acid-hcl-big-blue.jpg)
+
+![Glutamic Acid Hydrochloride](@root/crystals/images/glutamic-acid-hydrochloride/glutamic-acid-hcl-big-white.jpg)
+
+![Glutamic Acid Hydrochloride](@root/crystals/images/glutamic-acid-hydrochloride/glutamic-acid-hcl-big-white-top.jpg)
+
 ![Glutamic Acid Hydrochloride](@root/crystals/images/glutamic-acid-hydrochloride/dsc01871.jpg)
