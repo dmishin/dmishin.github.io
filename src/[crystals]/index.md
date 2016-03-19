@@ -31,6 +31,7 @@ Bloedites are similar to Tutton's salts (schoenites), but have 4 molecules of wa
 Alums are the family of similar double sulfates of general formula: {M^IM^(III)(SO4)2*12H2O}, where {M^I} and {M^(III)} stand for univalent and trivalent anions. {M^I} is usually one of {K, NH4} but can be other: {Na, Rb, Tl}. Trivalent metal {M^(III)} is usually one of {Al, Fe, Cr}.
 
 * [Potassium Aluminum sulfate](@root/crystals/potassium-alum//) {KAl(SO4)2*12H2O}, usually called just "alum" or potassium alum. The most representative member of this family.
+* [Ammonium Aluminum sulfate](@root/crystals/ammonium-alum//) {NH4Al(SO4)2*12H2O}, less common compound that is visually indistinguishable from the potassium salt.
 * [Ammonium Iron(III) sulfate](@root/crystals/ferric-alum//) {NH4Fe(SO4)2*12H2O}, or ferric alum.
 
 ## Acetates
