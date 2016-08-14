@@ -35,6 +35,11 @@ Alums are the family of similar double sulfates of general formula: {M^IM^(III)(
 * [Ammonium Aluminum sulfate](@root/crystals/ammonium-alum//) {NH4Al(SO4)2*12H2O}, less common compound that is visually indistinguishable from the potassium salt.
 * [Ammonium Iron(III) sulfate](@root/crystals/ferric-alum//) {NH4Fe(SO4)2*12H2O}, or ferric alum.
 
+## Phosphates
+Salts of phosphoric acid {H2PO4}.
+
+* [Ammonium dihydrogen phosphate](@root/crystals/ammonium-dihydrogen-phosphate//) {NH4H2PO4}. A common fertilizer, giving nice columnar crystals.
+
 ## Acetates
 Salts of acetic acid. Most acetates are soluble, but few of them are suitable for growing nice crystals.
 
