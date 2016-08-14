@@ -29,14 +29,14 @@ Bloedites are similar to Tutton's salts (schoenites), but have 4 molecules of wa
 * [Sodium zinc sulfate](@root/crystals/zinc-sodium-sulfate//) {Na2Zn(SO4)2*4H2O}, mineral Changoite.
 
 ### Double sulfates: alums
-Alums are the family of similar double sulfates of general formula: {M^IM^(III)(SO4)2*12H2O}, where {M^I} and {M^(III)} stand for univalent and trivalent anions. {M^I} is usually one of {K, NH4} but can be other: {Na, Rb, Tl}. Trivalent metal {M^(III)} is usually one of {Al, Fe, Cr}.
+Alums are the family of similar double sulfates of general formula: {M^IM^(III)(SO4)2*12H2O}, where {M^I} and {M^(III)} stand for univalent and trivalent anions. {M^I} is usually one of {K, NH4} but can be other: {Na, Rb, Tl}. Trivalent metal {M^(III)} is usually one of {Al^(3+), Fe^(3+), Cr^(3+)}.
 
 * [Potassium Aluminum sulfate](@root/crystals/potassium-alum//) {KAl(SO4)2*12H2O}, usually called just "alum" or potassium alum. The most representative member of this family.
 * [Ammonium Aluminum sulfate](@root/crystals/ammonium-alum//) {NH4Al(SO4)2*12H2O}, less common compound that is visually indistinguishable from the potassium salt.
 * [Ammonium Iron(III) sulfate](@root/crystals/ferric-alum//) {NH4Fe(SO4)2*12H2O}, or ferric alum.
 
 ## Phosphates
-Salts of phosphoric acid {H2PO4}.
+Salts of phosphoric acid {H3PO4}.
 
 * [Ammonium dihydrogen phosphate](@root/crystals/ammonium-dihydrogen-phosphate//) {NH4H2PO4}. A common fertilizer, giving nice columnar crystals.
 
