@@ -1,6 +1,14 @@
 ---
 title: Programming and Math
 ---
+## [Hyperbolic cellular automata simulator](@root/hyperbolic-ca-simulator/index.html)
+![Random cells on a {7;3} tiling](@root/images/hyperbolic-cells.png)
+
+Simulator of [cellular automata](https://en.wikipedia.org/wiki/Cellular_automaton), acting on an [regular tiling](https://en.wikipedia.org/wiki/Uniform_tilings_in_hyperbolic_plane)of the [hyperbolic plane](https://en.wikipedia.org/wiki/Hyperbolic_geometry).
+
+
+It supports arbitrary large configurations of cells, limited only by available memory.
+
 ## [Reversible Cellular Automata Simulator](@root/js-revca/index.html)
 ![Interface](@root/images/simulator-interface.png)
 Online (no installation needed) simulator of reversible cellular automata with Margolus neighborhood.

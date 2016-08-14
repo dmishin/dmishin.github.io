@@ -18,6 +18,7 @@ There are many sulfates that have 2 different metals in it, in stoichiometric pr
 
 
 * [Ammonium zinc sulfate](@root/crystals/ammonium-zinc-sulfate//) {(NH4)2Zn(SO4)2*6H2O}
+* [Potassium zinc sulfate](@root/crystals/potassium-zinc-sulfate//) {K2Zn(SO4)2*6H2O}
 * [Ammonium iron(II) sulfate](@root/crystals/mohr-salt//) {(NH4)2Fe(SO4)2*6H2O}, also known as Mohr's salt.
 * [Potassium magnesium sulfate](@root/crystals/potassium-magnesium-sulfate//) {KMg(SO4)2*6H2O}, mineral schoenite.
 * [Mixed K-Mg and K-Cu schoenite](@root/crystals/magnesium-copper-potassium-sulfate//), {K2(Mg0.5Cu0.5)(SO4)2*6H2O}
@@ -46,9 +47,11 @@ Salts of nitric acids {HNO3}. Most of nitrates are extremely soluble in water an
 * [Ammonium calcium nitrate](@root/crystals/ammonium-calcium-nitrate//) {5Ca(NO3)2*NH4NO3*10H2O}
 
 ## Chlorides
-* [Sodium Chloride](@root/crystals/sodium-chloride//) {NaCl}, table salt
+* [Sodium Chloride](@root/crystals/sodium-chloride//) {NaCl}, table salt (very hard to grow)
+* [Potassium Chloride](@root/crystals/potassium-chloride//) {KCl}, much better growing potassium sibling of table salt.
 
 ## Organic
+* [Xylitol](@root/crystals/xylitol//) {C5H12O5} sugar alcohol, used as sugar substitute.
 * [Glucose sodium chloride](@root/crystals/glucose-sodium-chloride//) {2C6H12O6*NaCl*H2O} cocrystal of glucose and table salt
 * [Urea citrate](@root/crystals/urea-citrate//) {CO(NH2)2*C3H4(OH)(COOH)3} cocrystal of urea and citric acid.
 * [Glutamic acid hydrochloride](@root/crystals/glutamic-acid-hydrochloride//) {C3H5(NH2)(COOH)2*HCl}
