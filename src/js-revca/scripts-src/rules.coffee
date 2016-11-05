@@ -39,7 +39,6 @@ exports.Rule = class Rule
     for r1i, i in @rules
       return false if not r1i.equals(rules2[i])
     true
-    
   ###
   # Inverse ruleset, raise exception if impossible
   ###
@@ -160,7 +159,7 @@ exports.Rule = class Rule
       unless r.is_vacuum_stable()
         return false
     return true
-
+  
 
 exports.ElementaryRule = class ElementaryRule
   constructor: (table) ->
@@ -246,7 +245,7 @@ exports.ElementaryRule = class ElementaryRule
   # (vacuum cycle is [0])
   is_vacuum_stable: -> @table[0] is 0
 
-    
+  negated: -> new ElementaryRule (15 ^ ti for ti in @table)    
 
 ###
 # Create rule object from list
@@ -375,3 +374,57 @@ exports.Rule2Name = (->
   r2n
 )()
     
+
+### Parse cycle-based notation of the elementary rule
+#   Examples:
+#    Single rotation: "(1,2,8,4)"
+#    Tron:            "(0,15)"
+#    Double rotatio:  "(1,2,8,4),(14,13,7,11)"
+###
+exports.parseElementaryCycleNotation = (ruleStr) ->
+  bracedRe = /\((.+?)\)/
+  groups = []
+  for part, i in ruleStr.split bracedRe
+    if i%2 is 0
+      if part.trim() not in ["", ","]
+        throw new Error "Unexpected string: #{part}"
+    else
+      groups.push (parseInt(n,10) for n in part.split(","))
+      
+  table = [0..15]
+  for grp in groups
+    for gi, i in grp
+      table[gi] = grp[(i+1) % grp.length]
+      
+  new ElementaryRule table
+
+exports.ruleSpatialSymmetries = (rule)-> #list of matrices, except identity matrix
+  #dumb algorithm: just check every transform. Who cares - it is called once.
+  symmetries = []
+  first = true
+  for s1 in [1 .. -1] by -2
+    for s2 in [1 .. -1] by -2
+      for tfm in  [[s1,0,0,s2], [0,s1,s2,0]]
+        if first
+          first = false
+        else
+          blockTfm = transformMatrix2BitBlockMap tfm
+          if rule.is_transposable_with ((x) -> blockTfm[x])
+            symmetries.push tfm
+  return symmetries
+  
+exports.randomElemRule = (stableVacuum=true)->
+  table = []
+  values = [0..15]
+  put = (idx) ->
+    table.push values[idx]
+    values.splice idx, 1
+    return
+
+  if stableVacuum then put 0
+
+  while values.length > 0
+    put Math.floor (Math.random()*values.length)
+
+  new ElementaryRule table
+  
