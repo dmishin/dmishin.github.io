@@ -68,5 +68,6 @@ Salts of nitric acids {HNO3}. Most of nitrates are extremely soluble in water an
 ## Other
 * [Sodium tetraborate](@root/crystals/borax//) {Na2B4O7*10H2O}, known as borax
 * [Potassium tris(oxalato) aluminate](@root/crystals/potassium-trioxalato-aluminate//) {K3[Al(C2O4)3]}
+* [Sodium tris(oxalato) ferrate(III)](@root/crystals/sodium-trioxalatoferrate//) {Na3[Fe(C2O4)3]} - unstable but beautiful green crystals
 * [Sodium Potassium tartrate](@root/crystals/rochelle-salt//) {}, Rochelle salt
 * [Sodium citrate](@root/crystals/sodium-citrate//) {Na3C3H4(OH)(COO)3*?H2O}
