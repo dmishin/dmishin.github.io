@@ -3,10 +3,13 @@ from bs4 import Tag
 from PIL import Image
 import os.path
 from urllib.parse import parse_qs
+import re
 
 DEFAULT_MAX_WIDTH = 640 #integer or None
 
 _visited_images = {}
+_visited_files = set()
+
 #page_soup is fired by the beautifulsoup extension.
 #allows to manipulate HTML structure
 @hooks.register('record_soup')
@@ -17,6 +20,29 @@ def scale_images(soup, page):
 @hooks.register('exit')
 def images_report():
     print("Image scaler: found {} images".format(len(_visited_images)))
+    delete_unused_images()
+
+_IMAGE_EXTS={".jpg", ".jpeg", ".png"}
+
+#Format, used by scaler.
+_DELETE_IMAGE_REGEXP=re.compile(r"s\d{2,4}-.*\.jpg")
+
+def delete_unused_images():
+    #set of all directories, where image files were created.
+    dirs = {os.path.dirname(fname) for fname in _visited_files}
+    for directory in dirs:
+        for fname in os.listdir(directory):
+            fpath = os.path.join(directory,fname)
+            if os.path.isfile(fpath) and os.path.splitext(fname)[1].lower() in _IMAGE_EXTS:
+                if (fpath not in _visited_files) and _DELETE_IMAGE_REGEXP.match(fname):
+                    print("Deleting unused image file:", fpath)
+                    try:
+                        os.remove(fpath)
+                        pass
+                    except Exception as err:
+                        print("Error:", err)
+                        
+        
 
 def process_img_tag( soup, img, page ):
     """soup: beautifulsoup object
@@ -54,6 +80,8 @@ def process_img_tag( soup, img, page ):
         print("Source image not found:", image_source)
         return
 
+    _visited_files.add(image_output)
+    
     image_key = (image_source, maxwidth)
     try:
         substitution = _visited_images[image_key]
@@ -70,6 +98,7 @@ def process_img_tag( soup, img, page ):
 def build_image_substitution( src, source_file, output_file, maxwidth ):
     img = Image.open( source_file )
     #print( "Image dimensions:", img.size)
+    
     w, h = img.size
     if w <= maxwidth:
         #No need for substitution
@@ -81,7 +110,9 @@ def build_image_substitution( src, source_file, output_file, maxwidth ):
     scaled_out_name = "s" + str(maxwidth)+ "-" + out_name
     scaled_out_path = os.path.join( out_dir, scaled_out_name )
     scaled_src = '/'.join((src.rsplit('/', 1)[0], scaled_out_name))
+
     
+    _visited_files.add( scaled_out_path )
     if os.path.exists( scaled_out_path ):
         if os.path.getmtime( scaled_out_path ) > os.path.getmtime( source_file ):
             #print("File",output_file,"already exists and up to date")
@@ -89,6 +120,7 @@ def build_image_substitution( src, source_file, output_file, maxwidth ):
     
     scaled = img.resize( (maxwidth, new_height), Image.ANTIALIAS )
     scaled.save( scaled_out_path )
+    
     
     return {"scaled": scaled_src, "original": src}
     
