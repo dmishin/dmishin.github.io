@@ -2,9 +2,12 @@
 
 set -e
 
-echo Publishing
+echo =======================
+echo ==  Publishing site  ==
+echo =======================
 
-ark clear
+#Do not need to clear since 
+#ark clear
 ark build
 
 ODIR=../dmishin.github.io
