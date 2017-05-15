@@ -44,7 +44,7 @@ crystals = {                # id corresponding to the [type] directory
     "name": "Crystal growing gallery",     # defaults to the titlecased id
     "slug": "crystals",     # defaults to the slugified id
     "tag_slug": "tags",    # defaults to "tags"
-    "indexed": False,       # build directory indexes for this type?
+    "indexed": False,      # build directory indexes for this type?
     "order_by": "date",    # order index entries by this attribute
     "reverse": True,       # display index entries in reverse order?
     "per_index": 10,       # number of entries per index page

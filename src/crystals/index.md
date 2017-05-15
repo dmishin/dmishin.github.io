@@ -55,19 +55,21 @@ Salts of nitric acids {HNO3}. Most of nitrates are extremely soluble in water an
 * [Sodium Chloride](@root/crystals/sodium-chloride//) {NaCl}, table salt (very hard to grow)
 * [Potassium Chloride](@root/crystals/potassium-chloride//) {KCl}, much better growing potassium sibling of table salt.
 
+## Oxalate complexes
+* [Potassium tris(oxalato) aluminate](@root/crystals/potassium-trioxalato-aluminate//) {K3[Al(C2O4)3]}
+* [Sodium tris(oxalato) ferrate(III)](@root/crystals/sodium-trioxalatoferrate//) {Na3[Fe(C2O4)3]} - unstable but beautiful green crystals
+
 ## Organic
-* [Xylitol](@root/crystals/xylitol//) {C5H12O5} sugar alcohol, used as sugar substitute.
 * [Erythritol](@root/crystals/erythritol//) {C4H10O5} another sugar alcohol, lighter cousin of a xylitol.
+* [Xylitol](@root/crystals/xylitol//) {C5H12O5} sugar alcohol, used as sugar substitute.
+* [Mannitol](@root/crystals/mannitol//){C6H14O6} another sugar alcohol.
 * [Glucose sodium chloride](@root/crystals/glucose-sodium-chloride//) {2C6H12O6*NaCl*H2O} cocrystal of glucose and table salt
 * [Urea citrate](@root/crystals/urea-citrate//) {CO(NH2)2*C3H4(OH)(COOH)3} cocrystal of urea and citric acid.
 * [Glutamic acid hydrochloride](@root/crystals/glutamic-acid-hydrochloride//) {C3H5(NH2)(COOH)2*HCl}
 * [Saccharin](@root/crystals/saccharin//) Free acid of saccharin, insoluble in water.
 * [Sodium saccharin](@root/crystals/sodium-saccharin//) Sodium salt of saccharin, once popular sugar substitute.
 
-
 ## Other
 * [Sodium tetraborate](@root/crystals/borax//) {Na2B4O7*10H2O}, known as borax
-* [Potassium tris(oxalato) aluminate](@root/crystals/potassium-trioxalato-aluminate//) {K3[Al(C2O4)3]}
-* [Sodium tris(oxalato) ferrate(III)](@root/crystals/sodium-trioxalatoferrate//) {Na3[Fe(C2O4)3]} - unstable but beautiful green crystals
 * [Sodium Potassium tartrate](@root/crystals/rochelle-salt//) {}, Rochelle salt
 * [Sodium citrate](@root/crystals/sodium-citrate//) {Na3C3H4(OH)(COO)3*?H2O}

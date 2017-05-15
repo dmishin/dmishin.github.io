@@ -73,7 +73,7 @@ def process_img_tag( soup, img, page ):
     if maxwidth is None:
         return
                 
-    image_source = site.src(*src[1:])
+    image_source = site.res(*src[1:])
     image_output = site.out(*src[1:])
 
     if not os.path.exists(image_source):
