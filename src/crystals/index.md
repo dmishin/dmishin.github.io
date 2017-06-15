@@ -4,6 +4,11 @@ title: Crystal Growing Collection
 [![Crystals](@root/crystals/images/glucose-sodium-chloride/glucose-nacl-5.jpg?original=no "Glucose NaCl cocrystal")](@root/crystals/glucose-sodium-chloride//)
 
 ## Sulfates
+![Potassium sulfate](@root/crystals/images/potassium-sulfate/k2so4-2.jpg?w=64&original=no)
+![Copper Sulfate](@root/crystals/images/copper-sulfate/white.jpg?w=64&original=no)
+![Triglycine Sulfate](@root/crystals/images/triglycine-sulfate/all-green-bg-1.jpg?w=64&original=no)
+![Hexakis(carbamide) Zinc Sulfate](@root/crystals/images/urea-zinc-sulfate/dsc01599.jpg?w=64&original=no)
+
 Salts of sulfuric acid {H2SO4}. Sulfates are generally a good material for growing crystals, because of their stability and solubility.
 
 * [Potassium sulfate](@root/crystals/potassium-sulfate//), {K2SO4}
@@ -52,18 +57,26 @@ Salts of nitric acids {HNO3}. Most of nitrates are extremely soluble in water an
 * [Ammonium calcium nitrate](@root/crystals/ammonium-calcium-nitrate//) {5Ca(NO3)2*NH4NO3*10H2O}
 
 ## Chlorides
-* [Sodium Chloride](@root/crystals/sodium-chloride//) {NaCl}, table salt (very hard to grow)
-* [Potassium Chloride](@root/crystals/potassium-chloride//) {KCl}, much better growing potassium sibling of table salt.
+* [Sodium chloride](@root/crystals/sodium-chloride//) {NaCl}, table salt (very hard to grow)
+* [Potassium chloride](@root/crystals/potassium-chloride//) {KCl}, much better growing potassium sibling of table salt.
+* [Ammonium chloroferrate](@root/crystals/ammonium-chloroferrate//) {(NH4)2[FeCl5(H2O)]}, mixed chloride or ammonium and iron (III).
 
 ## Oxalate complexes
+### Alumooxalates
 * [Potassium tris(oxalato) aluminate](@root/crystals/potassium-trioxalato-aluminate//) {K3[Al(C2O4)3]}
+### Ferrioxalates
+Ferrioxalates have beautiful green color, unusual for iron (III) compounds. THey are slightly light sensitive.
+
 * [Sodium tris(oxalato) ferrate(III)](@root/crystals/sodium-trioxalatoferrate//) {Na3[Fe(C2O4)3]} - unstable but beautiful green crystals
+* [Potassium tris(oxalato) ferrate(III)](@root/crystals/potassium-trioxalato-ferrate//) {K3[Fe(C2O4)3]} - green crystals, more stable to dehydration than sodium salt.
+* [Sodium potassium tris(oxalato) ferrate(III)](@root/crystals/sodium-potassium-trioxalatoferrate//) {K5Na[Fe(C2O4)3]2} - anhydrous crystals of deep green color, lesser known relativeof the above two salts. Very recommended for growing!
 
 ## Organic
 * [Erythritol](@root/crystals/erythritol//) {C4H10O5} another sugar alcohol, lighter cousin of a xylitol.
 * [Xylitol](@root/crystals/xylitol//) {C5H12O5} sugar alcohol, used as sugar substitute.
 * [Mannitol](@root/crystals/mannitol//){C6H14O6} another sugar alcohol.
-* [Glucose sodium chloride](@root/crystals/glucose-sodium-chloride//) {2C6H12O6*NaCl*H2O} cocrystal of glucose and table salt
+* [Glucose sodium chloride](@root/crystals/glucose-sodium-chloride//) {2C6H12O6*NaCl*H2O} cocrystal of glucose and table
+* [Glucose sodium bromide](@root/crystals/glucose-sodium-bromide//) {2C6H12O6*NaBr*H2O} heavier sibling of the above compound, cocrystal of glucose and {NaBr}
 * [Urea citrate](@root/crystals/urea-citrate//) {CO(NH2)2*C3H4(OH)(COOH)3} cocrystal of urea and citric acid.
 * [Glutamic acid hydrochloride](@root/crystals/glutamic-acid-hydrochloride//) {C3H5(NH2)(COOH)2*HCl}
 * [Saccharin](@root/crystals/saccharin//) Free acid of saccharin, insoluble in water.

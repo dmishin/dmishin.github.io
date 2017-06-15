@@ -6,18 +6,18 @@ Potassium sulfate {K2SO4} is a salt of potassium and sulfuric acid. It is colorl
 ![Potassium sulfate](@root/crystals/images/potassium-sulfate/k2so4-1.jpg)
 <span class="cut">Details ...</span>
 
-## Crystal info
-**Crystal system**: Orthorhombic
+## Properties
+* **Crystal system**: Orthorhombic
 
-**Mineral name**: [Arcanite](http://www.mindat.org/min-314.html)
+* **Mineral name**: [Arcanite](http://www.mindat.org/min-314.html)
 
-**Crystal shape**: apparently, hexagonal bipyramid. I don't know how it is compatible with orthorhombic crystal system. Probably, twinning?
+* **Crystal shape**: apparently, hexagonal bipyramid. I don't know how it is compatible with orthorhombic crystal system. Probably, twinning?
 
-**Stability on air**: very stable. Also, it is one of the hardest soluble materials.
+* **Stability on air**: very stable. Also, it is one of the hardest soluble materials.
 
 ## Growing notes
 
-Solubility in water: 12g/100ml at rootm temperature.
+Solubility in water: 12g/100ml at room temperature.
 
 Grows slowly because of low solubility. Solution is prone to bacterial infestation and mold growth. To get rid of it, filtering and boiling solution (without crystal, of course) sometimes helps. Also, adding few drops of iodine tincture also prevents infestation for some time.
 
