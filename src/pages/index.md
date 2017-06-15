@@ -27,7 +27,11 @@ See [blog post](#) for details.
 [![](@root/singlerot-smooth/images/singlerot-smooth.png?w=480&original=no)](@root/singlerot-smooth/singlerot-smooth.html)
     
 A simulator of the [Single Rotation](http://dmishin.blogspot.com/2013/11/the-single-rotation-rule-remarkably.html) cellular automaton, that tracks positions of the cells and uses Lancsoz interpolation to add an intermediate frames. Its primary purpose is a nice visual effect, for experimenting with reversible cellular automata see [online simulator](http://dmishin.github.io/js-revca/index.html?rule=0,2,8,3,1,5,6,7,4,9,10,11,12,13,14,15&step=8&frame_delay=100&size=64x64&cell_size=6,1&phase=0).
-	
+
+## [Reversible CA Collider](@root/reversible-ca-collider//)
+A tool to automatically catalogize collisions of simple patterns in reversible cellular automata.
+
+
 ## [3D version of the Single Rotation simulator with smoothing](@root/singlerot-smooth/3d/singlerot-3d.html)
 [![3D version of the Single Rotation simulator](@root/singlerot-smooth/images/singlerot-3d.png)](@root/singlerot-smooth/3d/singlerot-3d.html)
 

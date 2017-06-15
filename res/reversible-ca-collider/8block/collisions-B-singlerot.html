@@ -1,0 +1,1192 @@
+<!doctype html>
+<html>
+<head> 
+  <title>Collider report</title>
+  <style>
+
+    .rle{
+      font-family: monospace;
+      background-color: #EEE;
+    }
+    
+    table{
+    border-collapse:collapse;
+    //margin-left: auto;
+    //margin-right: auto;
+    }
+    
+    table,
+    td,
+    th{
+    border: 1px solid rgb(170, 170, 170);
+    }
+    
+    th{
+    background-color: rgb(249, 249, 249);
+    }
+    
+    td, th{
+    padding: 0.1em 0.5em;
+    }
+    
+    td{
+    text-align: left;
+    }
+    ol, ul
+    {
+    margin: 0 0;
+    }
+    
+    table.inner-table{
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    }
+    table.inner-table, .inner-table td, .inner-table tr{
+    border-width: 0;
+    }
+    
+  </style>
+</head>
+<body>
+  Collider report for rule <span class="rule">[0,2,8,3,1,5,6,7,4,9,10,11,12,13,14,15]</span>.
+  <table>
+    <tr>
+      <th>Pattern 1: <span class="rle">b4o$b4o</span></th>
+      <th>Pattern 2: <span class="rle">obo$2bo$2bo</span></th>
+    </tr>
+    <tr>
+      <td><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="73px" height="25px" viewBox="0 0 73 25">
+  <defs>
+    <rect id="cell_image" x="1.7999999999999998" y="1.7999999999999998" width="8.399999999999999" height="8.399999999999999" style="fill:black;stroke:black"/>
+  </defs>
+  <rect x="0" y="0" width="100%" height="100%" style="stroke:none;fill:rgb(240,255,255)"/>
+  <g transform="translate(.5,.5)">
+    <g id="grids">
+      <g style="stroke:black;stroke-width:1;stroke-dasharray:1,2">
+        <line x1="0" y1="0" x2="72" y2="0"/>
+        <line x1="0" y1="24" x2="72" y2="24"/>
+        <line x1="0" y1="0" x2="0" y2="24"/>
+        <line x1="24" y1="0" x2="24" y2="24"/>
+        <line x1="48" y1="0" x2="48" y2="24"/>
+        <line x1="72" y1="0" x2="72" y2="24"/>
+      </g>
+      <g style="stroke:none;stroke-width:0">
+        <line x1="0" y1="12" x2="72" y2="12"/>
+        <line x1="12" y1="0" x2="12" y2="24"/>
+        <line x1="36" y1="0" x2="36" y2="24"/>
+        <line x1="60" y1="0" x2="60" y2="24"/>
+      </g>
+    </g>
+    <g>
+      <use xlink:href="#cell_image" transform="translate(12 0)"/>
+      <use xlink:href="#cell_image" transform="translate(24 0)"/>
+      <use xlink:href="#cell_image" transform="translate(36 0)"/>
+      <use xlink:href="#cell_image" transform="translate(48 0)"/>
+      <use xlink:href="#cell_image" transform="translate(12 12)"/>
+      <use xlink:href="#cell_image" transform="translate(24 12)"/>
+      <use xlink:href="#cell_image" transform="translate(36 12)"/>
+      <use xlink:href="#cell_image" transform="translate(48 12)"/>
+    </g>
+  </g>
+</svg>
+</td>
+      <td><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="49px" height="49px" viewBox="0 0 49 49">
+  <defs>
+    <rect id="cell_image" x="1.7999999999999998" y="1.7999999999999998" width="8.399999999999999" height="8.399999999999999" style="fill:black;stroke:black"/>
+  </defs>
+  <rect x="0" y="0" width="100%" height="100%" style="stroke:none;fill:rgb(240,255,255)"/>
+  <g transform="translate(.5,.5)">
+    <g id="grids">
+      <g style="stroke:black;stroke-width:1;stroke-dasharray:1,2">
+        <line x1="0" y1="0" x2="48" y2="0"/>
+        <line x1="0" y1="24" x2="48" y2="24"/>
+        <line x1="0" y1="48" x2="48" y2="48"/>
+        <line x1="0" y1="0" x2="0" y2="48"/>
+        <line x1="24" y1="0" x2="24" y2="48"/>
+        <line x1="48" y1="0" x2="48" y2="48"/>
+      </g>
+      <g style="stroke:none;stroke-width:0">
+        <line x1="0" y1="12" x2="48" y2="12"/>
+        <line x1="0" y1="36" x2="48" y2="36"/>
+        <line x1="12" y1="0" x2="12" y2="48"/>
+        <line x1="36" y1="0" x2="36" y2="48"/>
+      </g>
+    </g>
+    <g>
+      <use xlink:href="#cell_image" transform="translate(0 0)"/>
+      <use xlink:href="#cell_image" transform="translate(24 0)"/>
+      <use xlink:href="#cell_image" transform="translate(24 12)"/>
+      <use xlink:href="#cell_image" transform="translate(24 24)"/>
+    </g>
+  </g>
+</svg>
+</td>
+    </tr>
+  </table>
+  Collisions:
+  <table>
+    <tr>
+      <th>#</th>
+      <th>Offset b4o$b4o</th>
+      <th>Offset obo$2bo$2bo</th>
+      <th>Interaction time</th>
+      <th>Products</th>
+    </tr>
+    <tr>
+      <td><a href="http:&#x2F;&#x2F;dmishin.github.io&#x2F;js-revca&#x2F;index.html?rule=0,2,8,3,1,5,6,7,4,9,10,11,12,13,14,15&amp;rle_x0=28&amp;rle_y0=30&amp;rle=5b4o$b2ob5o2$4bo&amp;step=1&amp;frame_delay=50&amp;size=64x64&amp;cell_size=6,1&amp;phase=0" title="See in simulator">1</a></td>
+      <td>[0,0,0]</td>
+      <td>[-4,0,-6]</td>
+      <td>1 ... 1316</td>
+      <td>
+	<table class="inner-table">
+	  <tr>
+	    <td>B</td>
+	    <td><span class="rle">obo$2bo$2bo</span></td>
+	    <td> at [0,-2,1318],</td>
+	    <td>270&deg;</td>
+	    <td><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="49px" height="49px" viewBox="0 0 49 49">
+  <defs>
+    <rect id="cell_image" x="1.7999999999999998" y="1.7999999999999998" width="8.399999999999999" height="8.399999999999999" style="fill:black;stroke:black"/>
+  </defs>
+  <rect x="0" y="0" width="100%" height="100%" style="stroke:none;fill:rgb(240,255,255)"/>
+  <g transform="translate(.5,.5)">
+    <g id="grids">
+      <g style="stroke:black;stroke-width:1;stroke-dasharray:1,2">
+        <line x1="0" y1="0" x2="48" y2="0"/>
+        <line x1="0" y1="24" x2="48" y2="24"/>
+        <line x1="0" y1="48" x2="48" y2="48"/>
+        <line x1="0" y1="0" x2="0" y2="48"/>
+        <line x1="24" y1="0" x2="24" y2="48"/>
+        <line x1="48" y1="0" x2="48" y2="48"/>
+      </g>
+      <g style="stroke:none;stroke-width:0">
+        <line x1="0" y1="12" x2="48" y2="12"/>
+        <line x1="0" y1="36" x2="48" y2="36"/>
+        <line x1="12" y1="0" x2="12" y2="48"/>
+        <line x1="36" y1="0" x2="36" y2="48"/>
+      </g>
+    </g>
+    <g>
+      <use xlink:href="#cell_image" transform="translate(0 0)"/>
+      <use xlink:href="#cell_image" transform="translate(24 0)"/>
+      <use xlink:href="#cell_image" transform="translate(24 12)"/>
+      <use xlink:href="#cell_image" transform="translate(24 24)"/>
+    </g>
+  </g>
+</svg>
+</td>
+	  </tr>
+	  <tr>
+	    <td>8-block</td>
+	    <td><span class="rle">b4o$b4o</span></td>
+	    <td> at [0,0,1318],</td>
+	    <td>0&deg;</td>
+	    <td><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="73px" height="25px" viewBox="0 0 73 25">
+  <defs>
+    <rect id="cell_image" x="1.7999999999999998" y="1.7999999999999998" width="8.399999999999999" height="8.399999999999999" style="fill:black;stroke:black"/>
+  </defs>
+  <rect x="0" y="0" width="100%" height="100%" style="stroke:none;fill:rgb(240,255,255)"/>
+  <g transform="translate(.5,.5)">
+    <g id="grids">
+      <g style="stroke:black;stroke-width:1;stroke-dasharray:1,2">
+        <line x1="0" y1="0" x2="72" y2="0"/>
+        <line x1="0" y1="24" x2="72" y2="24"/>
+        <line x1="0" y1="0" x2="0" y2="24"/>
+        <line x1="24" y1="0" x2="24" y2="24"/>
+        <line x1="48" y1="0" x2="48" y2="24"/>
+        <line x1="72" y1="0" x2="72" y2="24"/>
+      </g>
+      <g style="stroke:none;stroke-width:0">
+        <line x1="0" y1="12" x2="72" y2="12"/>
+        <line x1="12" y1="0" x2="12" y2="24"/>
+        <line x1="36" y1="0" x2="36" y2="24"/>
+        <line x1="60" y1="0" x2="60" y2="24"/>
+      </g>
+    </g>
+    <g>
+      <use xlink:href="#cell_image" transform="translate(12 0)"/>
+      <use xlink:href="#cell_image" transform="translate(24 0)"/>
+      <use xlink:href="#cell_image" transform="translate(36 0)"/>
+      <use xlink:href="#cell_image" transform="translate(48 0)"/>
+      <use xlink:href="#cell_image" transform="translate(12 12)"/>
+      <use xlink:href="#cell_image" transform="translate(24 12)"/>
+      <use xlink:href="#cell_image" transform="translate(36 12)"/>
+      <use xlink:href="#cell_image" transform="translate(48 12)"/>
+    </g>
+  </g>
+</svg>
+</td>
+	  </tr>
+	</table>
+      </td>
+    </tr>
+    <tr>
+      <td><a href="http:&#x2F;&#x2F;dmishin.github.io&#x2F;js-revca&#x2F;index.html?rule=0,2,8,3,1,5,6,7,4,9,10,11,12,13,14,15&amp;rle_x0=28&amp;rle_y0=30&amp;rle=$b2obo$5b4o$4b5o&amp;step=1&amp;frame_delay=50&amp;size=64x64&amp;cell_size=6,1&amp;phase=0" title="See in simulator">2</a></td>
+      <td>[0,0,0]</td>
+      <td>[-4,-2,-6]</td>
+      <td>1 ... 533</td>
+      <td>
+	<table class="inner-table">
+	  <tr>
+	    <td>C</td>
+	    <td><span class="rle">2bo2$b2o$bo</span></td>
+	    <td> at [-1,1,561],</td>
+	    <td>180&deg;</td>
+	    <td><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="49px" height="49px" viewBox="0 0 49 49">
+  <defs>
+    <rect id="cell_image" x="1.7999999999999998" y="1.7999999999999998" width="8.399999999999999" height="8.399999999999999" style="fill:black;stroke:black"/>
+  </defs>
+  <rect x="0" y="0" width="100%" height="100%" style="stroke:none;fill:rgb(240,255,255)"/>
+  <g transform="translate(.5,.5)">
+    <g id="grids">
+      <g style="stroke:black;stroke-width:1;stroke-dasharray:1,2">
+        <line x1="0" y1="0" x2="48" y2="0"/>
+        <line x1="0" y1="24" x2="48" y2="24"/>
+        <line x1="0" y1="48" x2="48" y2="48"/>
+        <line x1="0" y1="0" x2="0" y2="48"/>
+        <line x1="24" y1="0" x2="24" y2="48"/>
+        <line x1="48" y1="0" x2="48" y2="48"/>
+      </g>
+      <g style="stroke:none;stroke-width:0">
+        <line x1="0" y1="12" x2="48" y2="12"/>
+        <line x1="0" y1="36" x2="48" y2="36"/>
+        <line x1="12" y1="0" x2="12" y2="48"/>
+        <line x1="36" y1="0" x2="36" y2="48"/>
+      </g>
+    </g>
+    <g>
+      <use xlink:href="#cell_image" transform="translate(24 0)"/>
+      <use xlink:href="#cell_image" transform="translate(12 24)"/>
+      <use xlink:href="#cell_image" transform="translate(24 24)"/>
+      <use xlink:href="#cell_image" transform="translate(12 36)"/>
+    </g>
+  </g>
+</svg>
+</td>
+	  </tr>
+	  <tr>
+	    <td>8-block</td>
+	    <td><span class="rle">b4o$b4o</span></td>
+	    <td> at [0,0,534],</td>
+	    <td>0&deg;</td>
+	    <td><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="73px" height="25px" viewBox="0 0 73 25">
+  <defs>
+    <rect id="cell_image" x="1.7999999999999998" y="1.7999999999999998" width="8.399999999999999" height="8.399999999999999" style="fill:black;stroke:black"/>
+  </defs>
+  <rect x="0" y="0" width="100%" height="100%" style="stroke:none;fill:rgb(240,255,255)"/>
+  <g transform="translate(.5,.5)">
+    <g id="grids">
+      <g style="stroke:black;stroke-width:1;stroke-dasharray:1,2">
+        <line x1="0" y1="0" x2="72" y2="0"/>
+        <line x1="0" y1="24" x2="72" y2="24"/>
+        <line x1="0" y1="0" x2="0" y2="24"/>
+        <line x1="24" y1="0" x2="24" y2="24"/>
+        <line x1="48" y1="0" x2="48" y2="24"/>
+        <line x1="72" y1="0" x2="72" y2="24"/>
+      </g>
+      <g style="stroke:none;stroke-width:0">
+        <line x1="0" y1="12" x2="72" y2="12"/>
+        <line x1="12" y1="0" x2="12" y2="24"/>
+        <line x1="36" y1="0" x2="36" y2="24"/>
+        <line x1="60" y1="0" x2="60" y2="24"/>
+      </g>
+    </g>
+    <g>
+      <use xlink:href="#cell_image" transform="translate(12 0)"/>
+      <use xlink:href="#cell_image" transform="translate(24 0)"/>
+      <use xlink:href="#cell_image" transform="translate(36 0)"/>
+      <use xlink:href="#cell_image" transform="translate(48 0)"/>
+      <use xlink:href="#cell_image" transform="translate(12 12)"/>
+      <use xlink:href="#cell_image" transform="translate(24 12)"/>
+      <use xlink:href="#cell_image" transform="translate(36 12)"/>
+      <use xlink:href="#cell_image" transform="translate(48 12)"/>
+    </g>
+  </g>
+</svg>
+</td>
+	  </tr>
+	</table>
+      </td>
+    </tr>
+    <tr>
+      <td><a href="http:&#x2F;&#x2F;dmishin.github.io&#x2F;js-revca&#x2F;index.html?rule=0,2,8,3,1,5,6,7,4,9,10,11,12,13,14,15&amp;rle_x0=28&amp;rle_y0=30&amp;rle=b2o$4bo$5b4o$4b5o&amp;step=1&amp;frame_delay=50&amp;size=64x64&amp;cell_size=6,1&amp;phase=0" title="See in simulator">3</a></td>
+      <td>[0,0,0]</td>
+      <td>[-4,-4,-18]</td>
+      <td>1 ... 99</td>
+      <td>
+	<table class="inner-table">
+	  <tr>
+	    <td>B</td>
+	    <td><span class="rle">obo$2bo$2bo</span></td>
+	    <td> at [0,0,112],</td>
+	    <td>180&deg;</td>
+	    <td><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="49px" height="49px" viewBox="0 0 49 49">
+  <defs>
+    <rect id="cell_image" x="1.7999999999999998" y="1.7999999999999998" width="8.399999999999999" height="8.399999999999999" style="fill:black;stroke:black"/>
+  </defs>
+  <rect x="0" y="0" width="100%" height="100%" style="stroke:none;fill:rgb(240,255,255)"/>
+  <g transform="translate(.5,.5)">
+    <g id="grids">
+      <g style="stroke:black;stroke-width:1;stroke-dasharray:1,2">
+        <line x1="0" y1="0" x2="48" y2="0"/>
+        <line x1="0" y1="24" x2="48" y2="24"/>
+        <line x1="0" y1="48" x2="48" y2="48"/>
+        <line x1="0" y1="0" x2="0" y2="48"/>
+        <line x1="24" y1="0" x2="24" y2="48"/>
+        <line x1="48" y1="0" x2="48" y2="48"/>
+      </g>
+      <g style="stroke:none;stroke-width:0">
+        <line x1="0" y1="12" x2="48" y2="12"/>
+        <line x1="0" y1="36" x2="48" y2="36"/>
+        <line x1="12" y1="0" x2="12" y2="48"/>
+        <line x1="36" y1="0" x2="36" y2="48"/>
+      </g>
+    </g>
+    <g>
+      <use xlink:href="#cell_image" transform="translate(0 0)"/>
+      <use xlink:href="#cell_image" transform="translate(24 0)"/>
+      <use xlink:href="#cell_image" transform="translate(24 12)"/>
+      <use xlink:href="#cell_image" transform="translate(24 24)"/>
+    </g>
+  </g>
+</svg>
+</td>
+	  </tr>
+	  <tr>
+	    <td>8-block</td>
+	    <td><span class="rle">b4o$b4o</span></td>
+	    <td> at [0,0,100],</td>
+	    <td>0&deg;</td>
+	    <td><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="73px" height="25px" viewBox="0 0 73 25">
+  <defs>
+    <rect id="cell_image" x="1.7999999999999998" y="1.7999999999999998" width="8.399999999999999" height="8.399999999999999" style="fill:black;stroke:black"/>
+  </defs>
+  <rect x="0" y="0" width="100%" height="100%" style="stroke:none;fill:rgb(240,255,255)"/>
+  <g transform="translate(.5,.5)">
+    <g id="grids">
+      <g style="stroke:black;stroke-width:1;stroke-dasharray:1,2">
+        <line x1="0" y1="0" x2="72" y2="0"/>
+        <line x1="0" y1="24" x2="72" y2="24"/>
+        <line x1="0" y1="0" x2="0" y2="24"/>
+        <line x1="24" y1="0" x2="24" y2="24"/>
+        <line x1="48" y1="0" x2="48" y2="24"/>
+        <line x1="72" y1="0" x2="72" y2="24"/>
+      </g>
+      <g style="stroke:none;stroke-width:0">
+        <line x1="0" y1="12" x2="72" y2="12"/>
+        <line x1="12" y1="0" x2="12" y2="24"/>
+        <line x1="36" y1="0" x2="36" y2="24"/>
+        <line x1="60" y1="0" x2="60" y2="24"/>
+      </g>
+    </g>
+    <g>
+      <use xlink:href="#cell_image" transform="translate(12 0)"/>
+      <use xlink:href="#cell_image" transform="translate(24 0)"/>
+      <use xlink:href="#cell_image" transform="translate(36 0)"/>
+      <use xlink:href="#cell_image" transform="translate(48 0)"/>
+      <use xlink:href="#cell_image" transform="translate(12 12)"/>
+      <use xlink:href="#cell_image" transform="translate(24 12)"/>
+      <use xlink:href="#cell_image" transform="translate(36 12)"/>
+      <use xlink:href="#cell_image" transform="translate(48 12)"/>
+    </g>
+  </g>
+</svg>
+</td>
+	  </tr>
+	</table>
+      </td>
+    </tr>
+    <tr>
+      <td><a href="http:&#x2F;&#x2F;dmishin.github.io&#x2F;js-revca&#x2F;index.html?rule=0,2,8,3,1,5,6,7,4,9,10,11,12,13,14,15&amp;rle_x0=28&amp;rle_y0=28&amp;rle=bo$2b2o$3bo2$3b4o$3b4o&amp;step=1&amp;frame_delay=50&amp;size=64x64&amp;cell_size=6,1&amp;phase=0" title="See in simulator">4</a></td>
+      <td>[0,0,0]</td>
+      <td>[-2,-4,-4]</td>
+      <td>2 ... 7455</td>
+      <td>
+	<table class="inner-table">
+	  <tr>
+	    <td>B</td>
+	    <td><span class="rle">obo$2bo$2bo</span></td>
+	    <td> at [4,0,7456],</td>
+	    <td>90&deg;</td>
+	    <td><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="49px" height="49px" viewBox="0 0 49 49">
+  <defs>
+    <rect id="cell_image" x="1.7999999999999998" y="1.7999999999999998" width="8.399999999999999" height="8.399999999999999" style="fill:black;stroke:black"/>
+  </defs>
+  <rect x="0" y="0" width="100%" height="100%" style="stroke:none;fill:rgb(240,255,255)"/>
+  <g transform="translate(.5,.5)">
+    <g id="grids">
+      <g style="stroke:black;stroke-width:1;stroke-dasharray:1,2">
+        <line x1="0" y1="0" x2="48" y2="0"/>
+        <line x1="0" y1="24" x2="48" y2="24"/>
+        <line x1="0" y1="48" x2="48" y2="48"/>
+        <line x1="0" y1="0" x2="0" y2="48"/>
+        <line x1="24" y1="0" x2="24" y2="48"/>
+        <line x1="48" y1="0" x2="48" y2="48"/>
+      </g>
+      <g style="stroke:none;stroke-width:0">
+        <line x1="0" y1="12" x2="48" y2="12"/>
+        <line x1="0" y1="36" x2="48" y2="36"/>
+        <line x1="12" y1="0" x2="12" y2="48"/>
+        <line x1="36" y1="0" x2="36" y2="48"/>
+      </g>
+    </g>
+    <g>
+      <use xlink:href="#cell_image" transform="translate(0 0)"/>
+      <use xlink:href="#cell_image" transform="translate(24 0)"/>
+      <use xlink:href="#cell_image" transform="translate(24 12)"/>
+      <use xlink:href="#cell_image" transform="translate(24 24)"/>
+    </g>
+  </g>
+</svg>
+</td>
+	  </tr>
+	  <tr>
+	    <td>8-block</td>
+	    <td><span class="rle">b4o$b4o</span></td>
+	    <td> at [0,0,7456],</td>
+	    <td>0&deg;</td>
+	    <td><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="73px" height="25px" viewBox="0 0 73 25">
+  <defs>
+    <rect id="cell_image" x="1.7999999999999998" y="1.7999999999999998" width="8.399999999999999" height="8.399999999999999" style="fill:black;stroke:black"/>
+  </defs>
+  <rect x="0" y="0" width="100%" height="100%" style="stroke:none;fill:rgb(240,255,255)"/>
+  <g transform="translate(.5,.5)">
+    <g id="grids">
+      <g style="stroke:black;stroke-width:1;stroke-dasharray:1,2">
+        <line x1="0" y1="0" x2="72" y2="0"/>
+        <line x1="0" y1="24" x2="72" y2="24"/>
+        <line x1="0" y1="0" x2="0" y2="24"/>
+        <line x1="24" y1="0" x2="24" y2="24"/>
+        <line x1="48" y1="0" x2="48" y2="24"/>
+        <line x1="72" y1="0" x2="72" y2="24"/>
+      </g>
+      <g style="stroke:none;stroke-width:0">
+        <line x1="0" y1="12" x2="72" y2="12"/>
+        <line x1="12" y1="0" x2="12" y2="24"/>
+        <line x1="36" y1="0" x2="36" y2="24"/>
+        <line x1="60" y1="0" x2="60" y2="24"/>
+      </g>
+    </g>
+    <g>
+      <use xlink:href="#cell_image" transform="translate(12 0)"/>
+      <use xlink:href="#cell_image" transform="translate(24 0)"/>
+      <use xlink:href="#cell_image" transform="translate(36 0)"/>
+      <use xlink:href="#cell_image" transform="translate(48 0)"/>
+      <use xlink:href="#cell_image" transform="translate(12 12)"/>
+      <use xlink:href="#cell_image" transform="translate(24 12)"/>
+      <use xlink:href="#cell_image" transform="translate(36 12)"/>
+      <use xlink:href="#cell_image" transform="translate(48 12)"/>
+    </g>
+  </g>
+</svg>
+</td>
+	  </tr>
+	</table>
+      </td>
+    </tr>
+    <tr>
+      <td><a href="http:&#x2F;&#x2F;dmishin.github.io&#x2F;js-revca&#x2F;index.html?rule=0,2,8,3,1,5,6,7,4,9,10,11,12,13,14,15&amp;rle_x0=28&amp;rle_y0=28&amp;rle=obo$3bo$3bo2$3b4o$3b4o&amp;step=1&amp;frame_delay=50&amp;size=64x64&amp;cell_size=6,1&amp;phase=0" title="See in simulator">5</a></td>
+      <td>[0,0,0]</td>
+      <td>[-2,-6,-16]</td>
+      <td>2 ... 2619</td>
+      <td>
+	<table class="inner-table">
+	  <tr>
+	    <td>B</td>
+	    <td><span class="rle">obo$2bo$2bo</span></td>
+	    <td> at [4,-2,2632],</td>
+	    <td>90&deg;</td>
+	    <td><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="49px" height="49px" viewBox="0 0 49 49">
+  <defs>
+    <rect id="cell_image" x="1.7999999999999998" y="1.7999999999999998" width="8.399999999999999" height="8.399999999999999" style="fill:black;stroke:black"/>
+  </defs>
+  <rect x="0" y="0" width="100%" height="100%" style="stroke:none;fill:rgb(240,255,255)"/>
+  <g transform="translate(.5,.5)">
+    <g id="grids">
+      <g style="stroke:black;stroke-width:1;stroke-dasharray:1,2">
+        <line x1="0" y1="0" x2="48" y2="0"/>
+        <line x1="0" y1="24" x2="48" y2="24"/>
+        <line x1="0" y1="48" x2="48" y2="48"/>
+        <line x1="0" y1="0" x2="0" y2="48"/>
+        <line x1="24" y1="0" x2="24" y2="48"/>
+        <line x1="48" y1="0" x2="48" y2="48"/>
+      </g>
+      <g style="stroke:none;stroke-width:0">
+        <line x1="0" y1="12" x2="48" y2="12"/>
+        <line x1="0" y1="36" x2="48" y2="36"/>
+        <line x1="12" y1="0" x2="12" y2="48"/>
+        <line x1="36" y1="0" x2="36" y2="48"/>
+      </g>
+    </g>
+    <g>
+      <use xlink:href="#cell_image" transform="translate(0 0)"/>
+      <use xlink:href="#cell_image" transform="translate(24 0)"/>
+      <use xlink:href="#cell_image" transform="translate(24 12)"/>
+      <use xlink:href="#cell_image" transform="translate(24 24)"/>
+    </g>
+  </g>
+</svg>
+</td>
+	  </tr>
+	  <tr>
+	    <td>8-block</td>
+	    <td><span class="rle">b4o$b4o</span></td>
+	    <td> at [0,0,2620],</td>
+	    <td>0&deg;</td>
+	    <td><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="73px" height="25px" viewBox="0 0 73 25">
+  <defs>
+    <rect id="cell_image" x="1.7999999999999998" y="1.7999999999999998" width="8.399999999999999" height="8.399999999999999" style="fill:black;stroke:black"/>
+  </defs>
+  <rect x="0" y="0" width="100%" height="100%" style="stroke:none;fill:rgb(240,255,255)"/>
+  <g transform="translate(.5,.5)">
+    <g id="grids">
+      <g style="stroke:black;stroke-width:1;stroke-dasharray:1,2">
+        <line x1="0" y1="0" x2="72" y2="0"/>
+        <line x1="0" y1="24" x2="72" y2="24"/>
+        <line x1="0" y1="0" x2="0" y2="24"/>
+        <line x1="24" y1="0" x2="24" y2="24"/>
+        <line x1="48" y1="0" x2="48" y2="24"/>
+        <line x1="72" y1="0" x2="72" y2="24"/>
+      </g>
+      <g style="stroke:none;stroke-width:0">
+        <line x1="0" y1="12" x2="72" y2="12"/>
+        <line x1="12" y1="0" x2="12" y2="24"/>
+        <line x1="36" y1="0" x2="36" y2="24"/>
+        <line x1="60" y1="0" x2="60" y2="24"/>
+      </g>
+    </g>
+    <g>
+      <use xlink:href="#cell_image" transform="translate(12 0)"/>
+      <use xlink:href="#cell_image" transform="translate(24 0)"/>
+      <use xlink:href="#cell_image" transform="translate(36 0)"/>
+      <use xlink:href="#cell_image" transform="translate(48 0)"/>
+      <use xlink:href="#cell_image" transform="translate(12 12)"/>
+      <use xlink:href="#cell_image" transform="translate(24 12)"/>
+      <use xlink:href="#cell_image" transform="translate(36 12)"/>
+      <use xlink:href="#cell_image" transform="translate(48 12)"/>
+    </g>
+  </g>
+</svg>
+</td>
+	  </tr>
+	</table>
+      </td>
+    </tr>
+    <tr>
+      <td><a href="http:&#x2F;&#x2F;dmishin.github.io&#x2F;js-revca&#x2F;index.html?rule=0,2,8,3,1,5,6,7,4,9,10,11,12,13,14,15&amp;rle_x0=30&amp;rle_y0=28&amp;rle=obo$3bo$3bo2$b4o$b4o&amp;step=1&amp;frame_delay=50&amp;size=64x64&amp;cell_size=6,1&amp;phase=0" title="See in simulator">6</a></td>
+      <td>[0,0,0]</td>
+      <td>[0,-6,-16]</td>
+      <td>2 ... 3</td>
+      <td>
+	<table class="inner-table">
+	  <tr>
+	    <td>B</td>
+	    <td><span class="rle">obo$2bo$2bo</span></td>
+	    <td> at [2,-2,16],</td>
+	    <td>90&deg;</td>
+	    <td><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="49px" height="49px" viewBox="0 0 49 49">
+  <defs>
+    <rect id="cell_image" x="1.7999999999999998" y="1.7999999999999998" width="8.399999999999999" height="8.399999999999999" style="fill:black;stroke:black"/>
+  </defs>
+  <rect x="0" y="0" width="100%" height="100%" style="stroke:none;fill:rgb(240,255,255)"/>
+  <g transform="translate(.5,.5)">
+    <g id="grids">
+      <g style="stroke:black;stroke-width:1;stroke-dasharray:1,2">
+        <line x1="0" y1="0" x2="48" y2="0"/>
+        <line x1="0" y1="24" x2="48" y2="24"/>
+        <line x1="0" y1="48" x2="48" y2="48"/>
+        <line x1="0" y1="0" x2="0" y2="48"/>
+        <line x1="24" y1="0" x2="24" y2="48"/>
+        <line x1="48" y1="0" x2="48" y2="48"/>
+      </g>
+      <g style="stroke:none;stroke-width:0">
+        <line x1="0" y1="12" x2="48" y2="12"/>
+        <line x1="0" y1="36" x2="48" y2="36"/>
+        <line x1="12" y1="0" x2="12" y2="48"/>
+        <line x1="36" y1="0" x2="36" y2="48"/>
+      </g>
+    </g>
+    <g>
+      <use xlink:href="#cell_image" transform="translate(0 0)"/>
+      <use xlink:href="#cell_image" transform="translate(24 0)"/>
+      <use xlink:href="#cell_image" transform="translate(24 12)"/>
+      <use xlink:href="#cell_image" transform="translate(24 24)"/>
+    </g>
+  </g>
+</svg>
+</td>
+	  </tr>
+	  <tr>
+	    <td>8-block</td>
+	    <td><span class="rle">b4o$b4o</span></td>
+	    <td> at [0,0,4],</td>
+	    <td>0&deg;</td>
+	    <td><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="73px" height="25px" viewBox="0 0 73 25">
+  <defs>
+    <rect id="cell_image" x="1.7999999999999998" y="1.7999999999999998" width="8.399999999999999" height="8.399999999999999" style="fill:black;stroke:black"/>
+  </defs>
+  <rect x="0" y="0" width="100%" height="100%" style="stroke:none;fill:rgb(240,255,255)"/>
+  <g transform="translate(.5,.5)">
+    <g id="grids">
+      <g style="stroke:black;stroke-width:1;stroke-dasharray:1,2">
+        <line x1="0" y1="0" x2="72" y2="0"/>
+        <line x1="0" y1="24" x2="72" y2="24"/>
+        <line x1="0" y1="0" x2="0" y2="24"/>
+        <line x1="24" y1="0" x2="24" y2="24"/>
+        <line x1="48" y1="0" x2="48" y2="24"/>
+        <line x1="72" y1="0" x2="72" y2="24"/>
+      </g>
+      <g style="stroke:none;stroke-width:0">
+        <line x1="0" y1="12" x2="72" y2="12"/>
+        <line x1="12" y1="0" x2="12" y2="24"/>
+        <line x1="36" y1="0" x2="36" y2="24"/>
+        <line x1="60" y1="0" x2="60" y2="24"/>
+      </g>
+    </g>
+    <g>
+      <use xlink:href="#cell_image" transform="translate(12 0)"/>
+      <use xlink:href="#cell_image" transform="translate(24 0)"/>
+      <use xlink:href="#cell_image" transform="translate(36 0)"/>
+      <use xlink:href="#cell_image" transform="translate(48 0)"/>
+      <use xlink:href="#cell_image" transform="translate(12 12)"/>
+      <use xlink:href="#cell_image" transform="translate(24 12)"/>
+      <use xlink:href="#cell_image" transform="translate(36 12)"/>
+      <use xlink:href="#cell_image" transform="translate(48 12)"/>
+    </g>
+  </g>
+</svg>
+</td>
+	  </tr>
+	</table>
+      </td>
+    </tr>
+    <tr>
+      <td><a href="http:&#x2F;&#x2F;dmishin.github.io&#x2F;js-revca&#x2F;index.html?rule=0,2,8,3,1,5,6,7,4,9,10,11,12,13,14,15&amp;rle_x0=28&amp;rle_y0=30&amp;rle=5b4o$2bob5o$bo2$2bo&amp;step=1&amp;frame_delay=50&amp;size=64x64&amp;cell_size=6,1&amp;phase=0" title="See in simulator">7</a></td>
+      <td>[0,0,0]</td>
+      <td>[-5,-1,-21]</td>
+      <td>1 ... 4462</td>
+      <td>
+	<table class="inner-table">
+	  <tr>
+	    <td>B</td>
+	    <td><span class="rle">obo$2bo$2bo</span></td>
+	    <td> at [7,3,4479],</td>
+	    <td>90&deg;</td>
+	    <td><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="49px" height="49px" viewBox="0 0 49 49">
+  <defs>
+    <rect id="cell_image" x="1.7999999999999998" y="1.7999999999999998" width="8.399999999999999" height="8.399999999999999" style="fill:black;stroke:black"/>
+  </defs>
+  <rect x="0" y="0" width="100%" height="100%" style="stroke:none;fill:rgb(240,255,255)"/>
+  <g transform="translate(.5,.5)">
+    <g id="grids">
+      <g style="stroke:black;stroke-width:1;stroke-dasharray:1,2">
+        <line x1="0" y1="0" x2="48" y2="0"/>
+        <line x1="0" y1="24" x2="48" y2="24"/>
+        <line x1="0" y1="48" x2="48" y2="48"/>
+        <line x1="0" y1="0" x2="0" y2="48"/>
+        <line x1="24" y1="0" x2="24" y2="48"/>
+        <line x1="48" y1="0" x2="48" y2="48"/>
+      </g>
+      <g style="stroke:none;stroke-width:0">
+        <line x1="0" y1="12" x2="48" y2="12"/>
+        <line x1="0" y1="36" x2="48" y2="36"/>
+        <line x1="12" y1="0" x2="12" y2="48"/>
+        <line x1="36" y1="0" x2="36" y2="48"/>
+      </g>
+    </g>
+    <g>
+      <use xlink:href="#cell_image" transform="translate(0 0)"/>
+      <use xlink:href="#cell_image" transform="translate(24 0)"/>
+      <use xlink:href="#cell_image" transform="translate(24 12)"/>
+      <use xlink:href="#cell_image" transform="translate(24 24)"/>
+    </g>
+  </g>
+</svg>
+</td>
+	  </tr>
+	  <tr>
+	    <td>8-block</td>
+	    <td><span class="rle">b4o$b4o</span></td>
+	    <td> at [0,0,4464],</td>
+	    <td>0&deg;</td>
+	    <td><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="73px" height="25px" viewBox="0 0 73 25">
+  <defs>
+    <rect id="cell_image" x="1.7999999999999998" y="1.7999999999999998" width="8.399999999999999" height="8.399999999999999" style="fill:black;stroke:black"/>
+  </defs>
+  <rect x="0" y="0" width="100%" height="100%" style="stroke:none;fill:rgb(240,255,255)"/>
+  <g transform="translate(.5,.5)">
+    <g id="grids">
+      <g style="stroke:black;stroke-width:1;stroke-dasharray:1,2">
+        <line x1="0" y1="0" x2="72" y2="0"/>
+        <line x1="0" y1="24" x2="72" y2="24"/>
+        <line x1="0" y1="0" x2="0" y2="24"/>
+        <line x1="24" y1="0" x2="24" y2="24"/>
+        <line x1="48" y1="0" x2="48" y2="24"/>
+        <line x1="72" y1="0" x2="72" y2="24"/>
+      </g>
+      <g style="stroke:none;stroke-width:0">
+        <line x1="0" y1="12" x2="72" y2="12"/>
+        <line x1="12" y1="0" x2="12" y2="24"/>
+        <line x1="36" y1="0" x2="36" y2="24"/>
+        <line x1="60" y1="0" x2="60" y2="24"/>
+      </g>
+    </g>
+    <g>
+      <use xlink:href="#cell_image" transform="translate(12 0)"/>
+      <use xlink:href="#cell_image" transform="translate(24 0)"/>
+      <use xlink:href="#cell_image" transform="translate(36 0)"/>
+      <use xlink:href="#cell_image" transform="translate(48 0)"/>
+      <use xlink:href="#cell_image" transform="translate(12 12)"/>
+      <use xlink:href="#cell_image" transform="translate(24 12)"/>
+      <use xlink:href="#cell_image" transform="translate(36 12)"/>
+      <use xlink:href="#cell_image" transform="translate(48 12)"/>
+    </g>
+  </g>
+</svg>
+</td>
+	  </tr>
+	</table>
+      </td>
+    </tr>
+    <tr>
+      <td><a href="http:&#x2F;&#x2F;dmishin.github.io&#x2F;js-revca&#x2F;index.html?rule=0,2,8,3,1,5,6,7,4,9,10,11,12,13,14,15&amp;rle_x0=28&amp;rle_y0=30&amp;rle=$obo$3b4o$2b5o$o&amp;step=1&amp;frame_delay=50&amp;size=64x64&amp;cell_size=6,1&amp;phase=0" title="See in simulator">8</a></td>
+      <td>[0,0,0]</td>
+      <td>[-5,-3,-25]</td>
+      <td>1 ... 360</td>
+      <td>
+	<table class="inner-table">
+	  <tr>
+	    <td>B</td>
+	    <td><span class="rle">obo$2bo$2bo</span></td>
+	    <td> at [-1,1,381],</td>
+	    <td>270&deg;</td>
+	    <td><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="49px" height="49px" viewBox="0 0 49 49">
+  <defs>
+    <rect id="cell_image" x="1.7999999999999998" y="1.7999999999999998" width="8.399999999999999" height="8.399999999999999" style="fill:black;stroke:black"/>
+  </defs>
+  <rect x="0" y="0" width="100%" height="100%" style="stroke:none;fill:rgb(240,255,255)"/>
+  <g transform="translate(.5,.5)">
+    <g id="grids">
+      <g style="stroke:black;stroke-width:1;stroke-dasharray:1,2">
+        <line x1="0" y1="0" x2="48" y2="0"/>
+        <line x1="0" y1="24" x2="48" y2="24"/>
+        <line x1="0" y1="48" x2="48" y2="48"/>
+        <line x1="0" y1="0" x2="0" y2="48"/>
+        <line x1="24" y1="0" x2="24" y2="48"/>
+        <line x1="48" y1="0" x2="48" y2="48"/>
+      </g>
+      <g style="stroke:none;stroke-width:0">
+        <line x1="0" y1="12" x2="48" y2="12"/>
+        <line x1="0" y1="36" x2="48" y2="36"/>
+        <line x1="12" y1="0" x2="12" y2="48"/>
+        <line x1="36" y1="0" x2="36" y2="48"/>
+      </g>
+    </g>
+    <g>
+      <use xlink:href="#cell_image" transform="translate(0 0)"/>
+      <use xlink:href="#cell_image" transform="translate(24 0)"/>
+      <use xlink:href="#cell_image" transform="translate(24 12)"/>
+      <use xlink:href="#cell_image" transform="translate(24 24)"/>
+    </g>
+  </g>
+</svg>
+</td>
+	  </tr>
+	  <tr>
+	    <td>8-block</td>
+	    <td><span class="rle">b4o$b4o</span></td>
+	    <td> at [0,0,362],</td>
+	    <td>0&deg;</td>
+	    <td><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="73px" height="25px" viewBox="0 0 73 25">
+  <defs>
+    <rect id="cell_image" x="1.7999999999999998" y="1.7999999999999998" width="8.399999999999999" height="8.399999999999999" style="fill:black;stroke:black"/>
+  </defs>
+  <rect x="0" y="0" width="100%" height="100%" style="stroke:none;fill:rgb(240,255,255)"/>
+  <g transform="translate(.5,.5)">
+    <g id="grids">
+      <g style="stroke:black;stroke-width:1;stroke-dasharray:1,2">
+        <line x1="0" y1="0" x2="72" y2="0"/>
+        <line x1="0" y1="24" x2="72" y2="24"/>
+        <line x1="0" y1="0" x2="0" y2="24"/>
+        <line x1="24" y1="0" x2="24" y2="24"/>
+        <line x1="48" y1="0" x2="48" y2="24"/>
+        <line x1="72" y1="0" x2="72" y2="24"/>
+      </g>
+      <g style="stroke:none;stroke-width:0">
+        <line x1="0" y1="12" x2="72" y2="12"/>
+        <line x1="12" y1="0" x2="12" y2="24"/>
+        <line x1="36" y1="0" x2="36" y2="24"/>
+        <line x1="60" y1="0" x2="60" y2="24"/>
+      </g>
+    </g>
+    <g>
+      <use xlink:href="#cell_image" transform="translate(12 0)"/>
+      <use xlink:href="#cell_image" transform="translate(24 0)"/>
+      <use xlink:href="#cell_image" transform="translate(36 0)"/>
+      <use xlink:href="#cell_image" transform="translate(48 0)"/>
+      <use xlink:href="#cell_image" transform="translate(12 12)"/>
+      <use xlink:href="#cell_image" transform="translate(24 12)"/>
+      <use xlink:href="#cell_image" transform="translate(36 12)"/>
+      <use xlink:href="#cell_image" transform="translate(48 12)"/>
+    </g>
+  </g>
+</svg>
+</td>
+	  </tr>
+	</table>
+      </td>
+    </tr>
+    <tr>
+      <td><a href="http:&#x2F;&#x2F;dmishin.github.io&#x2F;js-revca&#x2F;index.html?rule=0,2,8,3,1,5,6,7,4,9,10,11,12,13,14,15&amp;rle_x0=28&amp;rle_y0=30&amp;rle=3o2$2b5o$3b4o&amp;step=1&amp;frame_delay=50&amp;size=64x64&amp;cell_size=6,1&amp;phase=0" title="See in simulator">9</a></td>
+      <td>[0,0,0]</td>
+      <td>[-3,-3,-5]</td>
+      <td>1 ... 7108</td>
+      <td>
+	<table class="inner-table">
+	  <tr>
+	    <td>B</td>
+	    <td><span class="rle">obo$2bo$2bo</span></td>
+	    <td> at [5,1,7109],</td>
+	    <td>90&deg;</td>
+	    <td><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="49px" height="49px" viewBox="0 0 49 49">
+  <defs>
+    <rect id="cell_image" x="1.7999999999999998" y="1.7999999999999998" width="8.399999999999999" height="8.399999999999999" style="fill:black;stroke:black"/>
+  </defs>
+  <rect x="0" y="0" width="100%" height="100%" style="stroke:none;fill:rgb(240,255,255)"/>
+  <g transform="translate(.5,.5)">
+    <g id="grids">
+      <g style="stroke:black;stroke-width:1;stroke-dasharray:1,2">
+        <line x1="0" y1="0" x2="48" y2="0"/>
+        <line x1="0" y1="24" x2="48" y2="24"/>
+        <line x1="0" y1="48" x2="48" y2="48"/>
+        <line x1="0" y1="0" x2="0" y2="48"/>
+        <line x1="24" y1="0" x2="24" y2="48"/>
+        <line x1="48" y1="0" x2="48" y2="48"/>
+      </g>
+      <g style="stroke:none;stroke-width:0">
+        <line x1="0" y1="12" x2="48" y2="12"/>
+        <line x1="0" y1="36" x2="48" y2="36"/>
+        <line x1="12" y1="0" x2="12" y2="48"/>
+        <line x1="36" y1="0" x2="36" y2="48"/>
+      </g>
+    </g>
+    <g>
+      <use xlink:href="#cell_image" transform="translate(0 0)"/>
+      <use xlink:href="#cell_image" transform="translate(24 0)"/>
+      <use xlink:href="#cell_image" transform="translate(24 12)"/>
+      <use xlink:href="#cell_image" transform="translate(24 24)"/>
+    </g>
+  </g>
+</svg>
+</td>
+	  </tr>
+	  <tr>
+	    <td>8-block</td>
+	    <td><span class="rle">b4o$b4o</span></td>
+	    <td> at [0,0,7110],</td>
+	    <td>0&deg;</td>
+	    <td><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="73px" height="25px" viewBox="0 0 73 25">
+  <defs>
+    <rect id="cell_image" x="1.7999999999999998" y="1.7999999999999998" width="8.399999999999999" height="8.399999999999999" style="fill:black;stroke:black"/>
+  </defs>
+  <rect x="0" y="0" width="100%" height="100%" style="stroke:none;fill:rgb(240,255,255)"/>
+  <g transform="translate(.5,.5)">
+    <g id="grids">
+      <g style="stroke:black;stroke-width:1;stroke-dasharray:1,2">
+        <line x1="0" y1="0" x2="72" y2="0"/>
+        <line x1="0" y1="24" x2="72" y2="24"/>
+        <line x1="0" y1="0" x2="0" y2="24"/>
+        <line x1="24" y1="0" x2="24" y2="24"/>
+        <line x1="48" y1="0" x2="48" y2="24"/>
+        <line x1="72" y1="0" x2="72" y2="24"/>
+      </g>
+      <g style="stroke:none;stroke-width:0">
+        <line x1="0" y1="12" x2="72" y2="12"/>
+        <line x1="12" y1="0" x2="12" y2="24"/>
+        <line x1="36" y1="0" x2="36" y2="24"/>
+        <line x1="60" y1="0" x2="60" y2="24"/>
+      </g>
+    </g>
+    <g>
+      <use xlink:href="#cell_image" transform="translate(12 0)"/>
+      <use xlink:href="#cell_image" transform="translate(24 0)"/>
+      <use xlink:href="#cell_image" transform="translate(36 0)"/>
+      <use xlink:href="#cell_image" transform="translate(48 0)"/>
+      <use xlink:href="#cell_image" transform="translate(12 12)"/>
+      <use xlink:href="#cell_image" transform="translate(24 12)"/>
+      <use xlink:href="#cell_image" transform="translate(36 12)"/>
+      <use xlink:href="#cell_image" transform="translate(48 12)"/>
+    </g>
+  </g>
+</svg>
+</td>
+	  </tr>
+	</table>
+      </td>
+    </tr>
+    <tr>
+      <td><a href="http:&#x2F;&#x2F;dmishin.github.io&#x2F;js-revca&#x2F;index.html?rule=0,2,8,3,1,5,6,7,4,9,10,11,12,13,14,15&amp;rle_x0=28&amp;rle_y0=30&amp;rle=$2o$2bo2$2b5o$3b4o&amp;step=1&amp;frame_delay=50&amp;size=64x64&amp;cell_size=6,1&amp;phase=0" title="See in simulator">10</a></td>
+      <td>[0,0,0]</td>
+      <td>[-3,-5,-17]</td>
+      <td>1 ... 99</td>
+      <td>
+	<table class="inner-table">
+	  <tr>
+	    <td>B</td>
+	    <td><span class="rle">obo$2bo$2bo</span></td>
+	    <td> at [1,-1,113],</td>
+	    <td>180&deg;</td>
+	    <td><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="49px" height="49px" viewBox="0 0 49 49">
+  <defs>
+    <rect id="cell_image" x="1.7999999999999998" y="1.7999999999999998" width="8.399999999999999" height="8.399999999999999" style="fill:black;stroke:black"/>
+  </defs>
+  <rect x="0" y="0" width="100%" height="100%" style="stroke:none;fill:rgb(240,255,255)"/>
+  <g transform="translate(.5,.5)">
+    <g id="grids">
+      <g style="stroke:black;stroke-width:1;stroke-dasharray:1,2">
+        <line x1="0" y1="0" x2="48" y2="0"/>
+        <line x1="0" y1="24" x2="48" y2="24"/>
+        <line x1="0" y1="48" x2="48" y2="48"/>
+        <line x1="0" y1="0" x2="0" y2="48"/>
+        <line x1="24" y1="0" x2="24" y2="48"/>
+        <line x1="48" y1="0" x2="48" y2="48"/>
+      </g>
+      <g style="stroke:none;stroke-width:0">
+        <line x1="0" y1="12" x2="48" y2="12"/>
+        <line x1="0" y1="36" x2="48" y2="36"/>
+        <line x1="12" y1="0" x2="12" y2="48"/>
+        <line x1="36" y1="0" x2="36" y2="48"/>
+      </g>
+    </g>
+    <g>
+      <use xlink:href="#cell_image" transform="translate(0 0)"/>
+      <use xlink:href="#cell_image" transform="translate(24 0)"/>
+      <use xlink:href="#cell_image" transform="translate(24 12)"/>
+      <use xlink:href="#cell_image" transform="translate(24 24)"/>
+    </g>
+  </g>
+</svg>
+</td>
+	  </tr>
+	  <tr>
+	    <td>8-block</td>
+	    <td><span class="rle">b4o$b4o</span></td>
+	    <td> at [0,0,100],</td>
+	    <td>0&deg;</td>
+	    <td><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="73px" height="25px" viewBox="0 0 73 25">
+  <defs>
+    <rect id="cell_image" x="1.7999999999999998" y="1.7999999999999998" width="8.399999999999999" height="8.399999999999999" style="fill:black;stroke:black"/>
+  </defs>
+  <rect x="0" y="0" width="100%" height="100%" style="stroke:none;fill:rgb(240,255,255)"/>
+  <g transform="translate(.5,.5)">
+    <g id="grids">
+      <g style="stroke:black;stroke-width:1;stroke-dasharray:1,2">
+        <line x1="0" y1="0" x2="72" y2="0"/>
+        <line x1="0" y1="24" x2="72" y2="24"/>
+        <line x1="0" y1="0" x2="0" y2="24"/>
+        <line x1="24" y1="0" x2="24" y2="24"/>
+        <line x1="48" y1="0" x2="48" y2="24"/>
+        <line x1="72" y1="0" x2="72" y2="24"/>
+      </g>
+      <g style="stroke:none;stroke-width:0">
+        <line x1="0" y1="12" x2="72" y2="12"/>
+        <line x1="12" y1="0" x2="12" y2="24"/>
+        <line x1="36" y1="0" x2="36" y2="24"/>
+        <line x1="60" y1="0" x2="60" y2="24"/>
+      </g>
+    </g>
+    <g>
+      <use xlink:href="#cell_image" transform="translate(12 0)"/>
+      <use xlink:href="#cell_image" transform="translate(24 0)"/>
+      <use xlink:href="#cell_image" transform="translate(36 0)"/>
+      <use xlink:href="#cell_image" transform="translate(48 0)"/>
+      <use xlink:href="#cell_image" transform="translate(12 12)"/>
+      <use xlink:href="#cell_image" transform="translate(24 12)"/>
+      <use xlink:href="#cell_image" transform="translate(36 12)"/>
+      <use xlink:href="#cell_image" transform="translate(48 12)"/>
+    </g>
+  </g>
+</svg>
+</td>
+	  </tr>
+	</table>
+      </td>
+    </tr>
+    <tr>
+      <td><a href="http:&#x2F;&#x2F;dmishin.github.io&#x2F;js-revca&#x2F;index.html?rule=0,2,8,3,1,5,6,7,4,9,10,11,12,13,14,15&amp;rle_x0=30&amp;rle_y0=28&amp;rle=2bo$obo$bo2$b4o$b4o&amp;step=1&amp;frame_delay=50&amp;size=64x64&amp;cell_size=6,1&amp;phase=0" title="See in simulator">11</a></td>
+      <td>[0,0,0]</td>
+      <td>[-1,-5,-13]</td>
+      <td>2 ... 859</td>
+      <td>
+	<table class="inner-table">
+	  <tr>
+	    <td>A</td>
+	    <td><span class="rle">$2o2$2o</span></td>
+	    <td> at [5,3,861],</td>
+	    <td>270&deg;</td>
+	    <td><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25px" height="49px" viewBox="0 0 25 49">
+  <defs>
+    <rect id="cell_image" x="1.7999999999999998" y="1.7999999999999998" width="8.399999999999999" height="8.399999999999999" style="fill:black;stroke:black"/>
+  </defs>
+  <rect x="0" y="0" width="100%" height="100%" style="stroke:none;fill:rgb(240,255,255)"/>
+  <g transform="translate(.5,.5)">
+    <g id="grids">
+      <g style="stroke:black;stroke-width:1;stroke-dasharray:1,2">
+        <line x1="0" y1="0" x2="24" y2="0"/>
+        <line x1="0" y1="24" x2="24" y2="24"/>
+        <line x1="0" y1="48" x2="24" y2="48"/>
+        <line x1="0" y1="0" x2="0" y2="48"/>
+        <line x1="24" y1="0" x2="24" y2="48"/>
+      </g>
+      <g style="stroke:none;stroke-width:0">
+        <line x1="0" y1="12" x2="24" y2="12"/>
+        <line x1="0" y1="36" x2="24" y2="36"/>
+        <line x1="12" y1="0" x2="12" y2="48"/>
+      </g>
+    </g>
+    <g>
+      <use xlink:href="#cell_image" transform="translate(0 12)"/>
+      <use xlink:href="#cell_image" transform="translate(12 12)"/>
+      <use xlink:href="#cell_image" transform="translate(0 36)"/>
+      <use xlink:href="#cell_image" transform="translate(12 36)"/>
+    </g>
+  </g>
+</svg>
+</td>
+	  </tr>
+	  <tr>
+	    <td>8-block</td>
+	    <td><span class="rle">b4o$b4o</span></td>
+	    <td> at [0,0,860],</td>
+	    <td>0&deg;</td>
+	    <td><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="73px" height="25px" viewBox="0 0 73 25">
+  <defs>
+    <rect id="cell_image" x="1.7999999999999998" y="1.7999999999999998" width="8.399999999999999" height="8.399999999999999" style="fill:black;stroke:black"/>
+  </defs>
+  <rect x="0" y="0" width="100%" height="100%" style="stroke:none;fill:rgb(240,255,255)"/>
+  <g transform="translate(.5,.5)">
+    <g id="grids">
+      <g style="stroke:black;stroke-width:1;stroke-dasharray:1,2">
+        <line x1="0" y1="0" x2="72" y2="0"/>
+        <line x1="0" y1="24" x2="72" y2="24"/>
+        <line x1="0" y1="0" x2="0" y2="24"/>
+        <line x1="24" y1="0" x2="24" y2="24"/>
+        <line x1="48" y1="0" x2="48" y2="24"/>
+        <line x1="72" y1="0" x2="72" y2="24"/>
+      </g>
+      <g style="stroke:none;stroke-width:0">
+        <line x1="0" y1="12" x2="72" y2="12"/>
+        <line x1="12" y1="0" x2="12" y2="24"/>
+        <line x1="36" y1="0" x2="36" y2="24"/>
+        <line x1="60" y1="0" x2="60" y2="24"/>
+      </g>
+    </g>
+    <g>
+      <use xlink:href="#cell_image" transform="translate(12 0)"/>
+      <use xlink:href="#cell_image" transform="translate(24 0)"/>
+      <use xlink:href="#cell_image" transform="translate(36 0)"/>
+      <use xlink:href="#cell_image" transform="translate(48 0)"/>
+      <use xlink:href="#cell_image" transform="translate(12 12)"/>
+      <use xlink:href="#cell_image" transform="translate(24 12)"/>
+      <use xlink:href="#cell_image" transform="translate(36 12)"/>
+      <use xlink:href="#cell_image" transform="translate(48 12)"/>
+    </g>
+  </g>
+</svg>
+</td>
+	  </tr>
+	</table>
+      </td>
+    </tr>
+    <tr>
+      <td><a href="http:&#x2F;&#x2F;dmishin.github.io&#x2F;js-revca&#x2F;index.html?rule=0,2,8,3,1,5,6,7,4,9,10,11,12,13,14,15&amp;rle_x0=30&amp;rle_y0=28&amp;rle=4bo$2bobo$3bo2$b4o$b4o&amp;step=1&amp;frame_delay=50&amp;size=64x64&amp;cell_size=6,1&amp;phase=0" title="See in simulator">12</a></td>
+      <td>[0,0,0]</td>
+      <td>[1,-5,-13]</td>
+      <td>2 ... 6245</td>
+      <td>
+	<table class="inner-table">
+	  <tr>
+	    <td>B</td>
+	    <td><span class="rle">obo$2bo$2bo</span></td>
+	    <td> at [1,-1,6255],</td>
+	    <td>90&deg;</td>
+	    <td><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="49px" height="49px" viewBox="0 0 49 49">
+  <defs>
+    <rect id="cell_image" x="1.7999999999999998" y="1.7999999999999998" width="8.399999999999999" height="8.399999999999999" style="fill:black;stroke:black"/>
+  </defs>
+  <rect x="0" y="0" width="100%" height="100%" style="stroke:none;fill:rgb(240,255,255)"/>
+  <g transform="translate(.5,.5)">
+    <g id="grids">
+      <g style="stroke:black;stroke-width:1;stroke-dasharray:1,2">
+        <line x1="0" y1="0" x2="48" y2="0"/>
+        <line x1="0" y1="24" x2="48" y2="24"/>
+        <line x1="0" y1="48" x2="48" y2="48"/>
+        <line x1="0" y1="0" x2="0" y2="48"/>
+        <line x1="24" y1="0" x2="24" y2="48"/>
+        <line x1="48" y1="0" x2="48" y2="48"/>
+      </g>
+      <g style="stroke:none;stroke-width:0">
+        <line x1="0" y1="12" x2="48" y2="12"/>
+        <line x1="0" y1="36" x2="48" y2="36"/>
+        <line x1="12" y1="0" x2="12" y2="48"/>
+        <line x1="36" y1="0" x2="36" y2="48"/>
+      </g>
+    </g>
+    <g>
+      <use xlink:href="#cell_image" transform="translate(0 0)"/>
+      <use xlink:href="#cell_image" transform="translate(24 0)"/>
+      <use xlink:href="#cell_image" transform="translate(24 12)"/>
+      <use xlink:href="#cell_image" transform="translate(24 24)"/>
+    </g>
+  </g>
+</svg>
+</td>
+	  </tr>
+	  <tr>
+	    <td>8-block</td>
+	    <td><span class="rle">b4o$b4o</span></td>
+	    <td> at [0,0,6246],</td>
+	    <td>0&deg;</td>
+	    <td><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="73px" height="25px" viewBox="0 0 73 25">
+  <defs>
+    <rect id="cell_image" x="1.7999999999999998" y="1.7999999999999998" width="8.399999999999999" height="8.399999999999999" style="fill:black;stroke:black"/>
+  </defs>
+  <rect x="0" y="0" width="100%" height="100%" style="stroke:none;fill:rgb(240,255,255)"/>
+  <g transform="translate(.5,.5)">
+    <g id="grids">
+      <g style="stroke:black;stroke-width:1;stroke-dasharray:1,2">
+        <line x1="0" y1="0" x2="72" y2="0"/>
+        <line x1="0" y1="24" x2="72" y2="24"/>
+        <line x1="0" y1="0" x2="0" y2="24"/>
+        <line x1="24" y1="0" x2="24" y2="24"/>
+        <line x1="48" y1="0" x2="48" y2="24"/>
+        <line x1="72" y1="0" x2="72" y2="24"/>
+      </g>
+      <g style="stroke:none;stroke-width:0">
+        <line x1="0" y1="12" x2="72" y2="12"/>
+        <line x1="12" y1="0" x2="12" y2="24"/>
+        <line x1="36" y1="0" x2="36" y2="24"/>
+        <line x1="60" y1="0" x2="60" y2="24"/>
+      </g>
+    </g>
+    <g>
+      <use xlink:href="#cell_image" transform="translate(12 0)"/>
+      <use xlink:href="#cell_image" transform="translate(24 0)"/>
+      <use xlink:href="#cell_image" transform="translate(36 0)"/>
+      <use xlink:href="#cell_image" transform="translate(48 0)"/>
+      <use xlink:href="#cell_image" transform="translate(12 12)"/>
+      <use xlink:href="#cell_image" transform="translate(24 12)"/>
+      <use xlink:href="#cell_image" transform="translate(36 12)"/>
+      <use xlink:href="#cell_image" transform="translate(48 12)"/>
+    </g>
+  </g>
+</svg>
+</td>
+	  </tr>
+	</table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
