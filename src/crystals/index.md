@@ -84,5 +84,6 @@ Ferrioxalates have beautiful green color, unusual for iron (III) compounds. THey
 
 ## Other
 * [Sodium tetraborate](@root/crystals/borax//) {Na2B4O7*10H2O}, known as borax
-* [Sodium Potassium tartrate](@root/crystals/rochelle-salt//) {}, Rochelle salt
+* [Sodium Potassium tartrate](@root/crystals/rochelle-salt//) {KNaC4H4O6*4H2O}, Rochelle salt
 * [Sodium citrate](@root/crystals/sodium-citrate//) {Na3C3H4(OH)(COO)3*?H2O}
+* [Sulfamic acid](@root/crystals/sulfamic-acid//), {H3NSO3}, used as descaler reagent
