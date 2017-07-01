@@ -6,7 +6,7 @@
 {mod2} = require "./math_util"
 
 exports.Cells = Cells =
-  #Collection of methodw for working with cell lists
+  #Collection of methods for working with cell lists
   areEqual: (l1, l2) ->
     return false  if l1.length isnt l2.length
     for i in [0...l1.length] by 1
