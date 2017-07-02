@@ -27,6 +27,8 @@ However, I prefer to use slow evaporation method, as it produces clearer crystal
 ## Safety
 The compound is safe.
 ## More photos
+![Ammonium Alum](@root/crystals/images/ammonium-alum/ammonium-alum-shiny.jpg)
+
 ![Ammonium Alum](@root/crystals/images/ammonium-alum/dsc01944.jpg)
 
 ![Ammonium Alum](@root/crystals/images/ammonium-alum/dsc01930.jpg)
