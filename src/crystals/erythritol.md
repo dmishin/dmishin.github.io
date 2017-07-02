@@ -28,6 +28,8 @@ The compounds is safe to consume in reasonable amounts
 ![Erythritol](@root/crystals/images/erythritol/hand-dsc02725.jpg)
 
 ## More photos
+![Erythritol](@root/crystals/images/erythritol/erythritol-shiny.jpg)
+
 ![Erythritol](@root/crystals/images/erythritol/dsc02745.jpg)
 
 ![Erythritol](@root/crystals/images/erythritol/dsc02760.jpg)
