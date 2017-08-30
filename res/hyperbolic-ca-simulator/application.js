@@ -4460,6 +4460,33 @@ exports.makeAppendRewriteVerified = function(rewriteRule) {
 }());
 
 },{}],17:[function(require,module,exports){
+//source: https://gist.github.com/paulirish/1579671
+(function() {
+    var lastTime = 0;
+    var vendors = ['ms', 'moz', 'webkit', 'o'];
+    for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+        window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
+        window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame'] 
+                                   || window[vendors[x]+'CancelRequestAnimationFrame'];
+    }
+ 
+    if (!window.requestAnimationFrame)
+        window.requestAnimationFrame = function(callback, element) {
+            var currTime = new Date().getTime();
+            var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+            var id = window.setTimeout(function() { callback(currTime + timeToCall); }, 
+              timeToCall);
+            lastTime = currTime + timeToCall;
+            return id;
+        };
+ 
+    if (!window.cancelAnimationFrame)
+        window.cancelAnimationFrame = function(id) {
+            clearTimeout(id);
+        };
+}());
+
+},{}],18:[function(require,module,exports){
 "use strict";
 var Animator, E, M, decomposeToTranslations, flipSetTimeout, formatString, interpolateHyperbolic, pad, parseIntChecked, ref, ref1;
 
@@ -4700,9 +4727,9 @@ exports.Animator = Animator = (function() {
 })();
 
 
-},{"../core/decompose_to_translations.coffee":3,"../core/matrix3.coffee":7,"../core/utils.coffee":12,"./htmlutil.coffee":21}],18:[function(require,module,exports){
+},{"../core/decompose_to_translations.coffee":3,"../core/matrix3.coffee":7,"../core/utils.coffee":12,"./htmlutil.coffee":22}],19:[function(require,module,exports){
 "use strict";
-var Animator, Application, BinaryTransitionFunc, ButtonGroup, C2S, ChainMap, DayNightTransitionFunc, DefaultConfig, DomBuilder, E, FieldObserver, GenerateFileList, GenericTransitionFunc, M, MIN_WIDTH, MouseToolCombo, Navigator, OpenDialog, PaintStateSelector, RegularTiling, SaveDialog, SvgDialog, UriConfig, ValidatingInput, addClass, application, autoplayCriticalPopulation, canvas, canvasSizeUpdateBlocked, context, dirty, doCanvasMouseDown, doCanvasMouseMove, doCanvasMouseUp, doClearMemory, doCloseEditor, doDisableGeneric, doEditAsGeneric, doExport, doExportClose, doExportVisible, doImport, doImportCancel, doMemorize, doNavigateHome, doOpenEditor, doRemember, doSetFixedSize, doSetGrid, doSetPanMode, doSetRuleGeneric, doShowImport, doStartPlayer, doStopPlayer, doTogglePlayer, documentWidth, dragHandler, drawEverything, dtMax, encodeVisible, evaluateTotalisticAutomaton, exportField, fpsDefault, fpsLimiting, getAjax, getCanvasCursorPosition, importField, isPanMode, lastTime, memo, minVisibleSize, mouseMoveReceiver, parseFieldData, parseFloatChecked, parseIntChecked, parseTransitionFunction, parseUri, player, playerTimeout, randomFillFixedNum, randomFillNum, randomFillPercent, randomStateGenerator, redraw, redrawLoop, ref, ref1, ref2, ref3, ref4, removeClass, serverSupportsUpload, shortcuts, showExportDialog, stringifyFieldData, unity, updateCanvasSize, updateGeneration, updateGenericRuleStatus, updateMemoryButtons, updatePlayButtons, updatePopulation, uploadToServer, windowHeight, windowWidth;
+var Animator, Application, BinaryTransitionFunc, ButtonGroup, C2S, ChainMap, DayNightTransitionFunc, DefaultConfig, DomBuilder, E, FieldObserver, GenerateFileList, GenericTransitionFunc, M, MIN_WIDTH, MouseToolCombo, Navigator, OpenDialog, PaintStateSelector, RegularTiling, SaveDialog, SvgDialog, UriConfig, ValidatingInput, addClass, application, autoplayCriticalPopulation, canvas, canvasSizeUpdateBlocked, context, dirty, doCanvasMouseDown, doCanvasMouseMove, doCanvasMouseUp, doCanvastouchEnd, doCanvastouchLeave, doCanvastouchMove, doCanvastouchStart, doClearMemory, doCloseEditor, doDisableGeneric, doEditAsGeneric, doExport, doExportClose, doExportVisible, doImport, doImportCancel, doMemorize, doNavigateHome, doOpenEditor, doRemember, doSetFixedSize, doSetGrid, doSetPanMode, doSetRuleGeneric, doShowImport, doStartPlayer, doStopPlayer, doTogglePlayer, documentWidth, dragHandler, drawEverything, dtMax, encodeVisible, evaluateTotalisticAutomaton, exportField, fpsDefault, fpsLimiting, getAjax, getCanvasCursorPosition, importField, isPanMode, lastTime, memo, minVisibleSize, mouseMoveReceiver, parseFieldData, parseFloatChecked, parseIntChecked, parseTransitionFunction, parseUri, player, playerTimeout, randomFillFixedNum, randomFillNum, randomFillPercent, randomStateGenerator, redraw, redrawLoop, ref, ref1, ref2, ref3, ref4, removeClass, serverSupportsUpload, shortcuts, showExportDialog, stringifyFieldData, unity, updateCanvasSize, updateGeneration, updateGenericRuleStatus, updateMemoryButtons, updatePlayButtons, updatePopulation, uploadToServer, windowHeight, windowWidth;
 
 unity = require("../core/vondyck_chain.coffee").unity;
 
@@ -4739,6 +4766,8 @@ parseUri = require("./parseuri.coffee").parseUri;
 getCanvasCursorPosition = require("./canvas_util.coffee").getCanvasCursorPosition;
 
 C2S = require("../ext/canvas2svg.js");
+
+require("../ext/polyfills.js");
 
 MIN_WIDTH = 100;
 
@@ -5486,6 +5515,36 @@ doCanvasMouseDown = function(e) {
   }
 };
 
+doCanvasMouseUp = function(e) {
+  if (dragHandler !== null) {
+    e.preventDefault();
+    if (dragHandler != null) {
+      dragHandler.mouseUp(e);
+    }
+    return dragHandler = null;
+  }
+};
+
+doCanvastouchStart = function(e) {
+  if (e.touches.length === 1) {
+    doCanvasMouseDown(e);
+    return e.preventDefault();
+  }
+};
+
+doCanvastouchLeave = function(e) {
+  return doCanvasMouseOut(e);
+};
+
+doCanvastouchEnd = function(e) {
+  e.preventDefault();
+  return doCanvasMouseUp(e);
+};
+
+doCanvastouchMove = function(e) {
+  return doCanvasMouseMove(e);
+};
+
 doSetPanMode = function(mode) {
   var bedit, bpan;
   isPanMode = mode;
@@ -5503,16 +5562,6 @@ doCanvasMouseMove = function(e) {
   if (dragHandler !== null) {
     e.preventDefault();
     return dragHandler.mouseMoved(e);
-  }
-};
-
-doCanvasMouseUp = function(e) {
-  if (dragHandler !== null) {
-    e.preventDefault();
-    if (dragHandler != null) {
-      dragHandler.mouseUp(e);
-    }
-    return dragHandler = null;
   }
 };
 
@@ -5725,6 +5774,14 @@ mouseMoveReceiver.addEventListener("mouseup", doCanvasMouseUp);
 mouseMoveReceiver.addEventListener("mousemove", doCanvasMouseMove);
 
 mouseMoveReceiver.addEventListener("mousedrag", doCanvasMouseMove);
+
+mouseMoveReceiver.addEventListener("touchstart", doCanvasTouchStart);
+
+mouseMoveReceiver.addEventListener("touchend", doCanvasTouchEnd);
+
+mouseMoveReceiver.addEventListener("touchmove", doCanvasTouchMove);
+
+mouseMoveReceiver.addEventListener("touchleave", doCanvasTouchLeave);
 
 E("btn-set-rule").addEventListener("click", function(e) {
   return application.doSetRule();
@@ -5954,7 +6011,7 @@ updatePlayButtons();
 redrawLoop();
 
 
-},{"../core/cellular_automata.coffee":1,"../core/chain_map.coffee":2,"../core/field.coffee":4,"../core/matrix3.coffee":7,"../core/regular_tiling.coffee":9,"../core/rule.coffee":10,"../core/utils.coffee":12,"../core/vondyck_chain.coffee":14,"../ext/canvas2svg.js":16,"./animator.coffee":17,"./canvas_util.coffee":19,"./dom_builder.coffee":20,"./htmlutil.coffee":21,"./indexeddb.coffee":22,"./mousetool.coffee":23,"./navigator.coffee":24,"./observer.coffee":25,"./parseuri.coffee":26}],19:[function(require,module,exports){
+},{"../core/cellular_automata.coffee":1,"../core/chain_map.coffee":2,"../core/field.coffee":4,"../core/matrix3.coffee":7,"../core/regular_tiling.coffee":9,"../core/rule.coffee":10,"../core/utils.coffee":12,"../core/vondyck_chain.coffee":14,"../ext/canvas2svg.js":16,"../ext/polyfills.js":17,"./animator.coffee":18,"./canvas_util.coffee":20,"./dom_builder.coffee":21,"./htmlutil.coffee":22,"./indexeddb.coffee":23,"./mousetool.coffee":24,"./navigator.coffee":25,"./observer.coffee":26,"./parseuri.coffee":27}],20:[function(require,module,exports){
 exports.getCanvasCursorPosition = function(e, canvas) {
   var rect;
   if (e.type === "touchmove" || e.type === "touchstart" || e.type === "touchend") {
@@ -5967,7 +6024,7 @@ exports.getCanvasCursorPosition = function(e, canvas) {
 };
 
 
-},{}],20:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 var DomBuilder;
 
 exports.DomBuilder = DomBuilder = (function() {
@@ -6054,7 +6111,7 @@ exports.DomBuilder = DomBuilder = (function() {
 })();
 
 
-},{}],21:[function(require,module,exports){
+},{}],22:[function(require,module,exports){
 var ButtonGroup, Debouncer, E, ValidatingInput, addClass, idOrNull, removeClass;
 
 exports.flipSetTimeout = function(t, cb) {
@@ -6354,7 +6411,7 @@ exports.ValidatingInput = ValidatingInput = (function() {
 })();
 
 
-},{}],22:[function(require,module,exports){
+},{}],23:[function(require,module,exports){
 var DomBuilder, E, GenerateFileList, OpenDialog, SaveDialog, VERSION, addClass, ref, ref1, ref2, ref3, ref4, ref5, ref6, ref7, ref8, removeClass, upgradeNeeded;
 
 ref = require("./htmlutil.coffee"), E = ref.E, removeClass = ref.removeClass, addClass = ref.addClass;
@@ -6868,7 +6925,7 @@ GenerateFileList = (function() {
 })();
 
 
-},{"./dom_builder.coffee":20,"./htmlutil.coffee":21}],23:[function(require,module,exports){
+},{"./dom_builder.coffee":21,"./htmlutil.coffee":22}],24:[function(require,module,exports){
 var Debouncer, M, MouseTool, MouseToolCombo, getCanvasCursorPosition,
   extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
   hasProp = {}.hasOwnProperty;
@@ -6896,6 +6953,26 @@ exports.MouseTool = MouseTool = (function() {
 
   MouseTool.prototype.rotateView = function(angle) {
     return this.application.getObserver().modifyView(M.rotationMatrix(angle));
+  };
+
+  MouseTool.prototype.touchStart = function(e) {
+    if (e.touches.length === 1) {
+      this.mouseDown(e);
+      return e.preventDefault();
+    }
+  };
+
+  MouseTool.prototype.touchLeave = function(e) {
+    return this.mouseOut(e);
+  };
+
+  MouseTool.prototype.touchEnd = function(e) {
+    e.preventDefault();
+    return this.mouseUp(e);
+  };
+
+  MouseTool.prototype.touchMove = function(e) {
+    return this.mouseMove(e);
   };
 
   return MouseTool;
@@ -6985,7 +7062,7 @@ exports.MouseToolRotate = class MouseToolRotate extends MouseTool
  */
 
 
-},{"../core/matrix3.coffee":7,"./canvas_util.coffee":19,"./htmlutil.coffee":21}],24:[function(require,module,exports){
+},{"../core/matrix3.coffee":7,"./canvas_util.coffee":20,"./htmlutil.coffee":22}],25:[function(require,module,exports){
 var DomBuilder, E, Navigator, allClusters;
 
 allClusters = require("../core/field.coffee").allClusters;
@@ -7107,7 +7184,7 @@ exports.Navigator = Navigator = (function() {
 })();
 
 
-},{"../core/field.coffee":4,"./dom_builder.coffee":20,"./htmlutil.coffee":21}],25:[function(require,module,exports){
+},{"../core/field.coffee":4,"./dom_builder.coffee":21,"./htmlutil.coffee":22}],26:[function(require,module,exports){
 "use strict";
 var FieldObserver, M, hyperbolic2poincare, makeCellShapePoincare, makeXYT2path, poincare2hyperblic, ref, unity, visibleNeighborhood;
 
@@ -7407,7 +7484,7 @@ exports.FieldObserver = FieldObserver = (function() {
 })();
 
 
-},{"../core/matrix3.coffee":7,"../core/poincare_view.coffee":8,"../core/vondyck_chain.coffee":14}],26:[function(require,module,exports){
+},{"../core/matrix3.coffee":7,"../core/poincare_view.coffee":8,"../core/vondyck_chain.coffee":14}],27:[function(require,module,exports){
 var parseUri;
 
 exports.parseUri = parseUri = function(str) {
@@ -7447,4 +7524,4 @@ parseUri.options = {
 };
 
 
-},{}]},{},[18]);
+},{}]},{},[19]);
