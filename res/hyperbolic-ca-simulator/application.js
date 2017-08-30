@@ -4727,9 +4727,9 @@ exports.Animator = Animator = (function() {
 })();
 
 
-},{"../core/decompose_to_translations.coffee":3,"../core/matrix3.coffee":7,"../core/utils.coffee":12,"./htmlutil.coffee":22}],19:[function(require,module,exports){
+},{"../core/decompose_to_translations.coffee":3,"../core/matrix3.coffee":7,"../core/utils.coffee":12,"./htmlutil.coffee":23}],19:[function(require,module,exports){
 "use strict";
-var Animator, Application, BinaryTransitionFunc, ButtonGroup, C2S, ChainMap, DayNightTransitionFunc, DefaultConfig, DomBuilder, E, FieldObserver, GenerateFileList, GenericTransitionFunc, M, MIN_WIDTH, MouseToolCombo, Navigator, OpenDialog, PaintStateSelector, RegularTiling, SaveDialog, SvgDialog, UriConfig, ValidatingInput, addClass, application, autoplayCriticalPopulation, canvas, canvasSizeUpdateBlocked, context, dirty, doCanvasMouseDown, doCanvasMouseMove, doCanvasMouseUp, doCanvasTouchEnd, doCanvasTouchLeave, doCanvasTouchMove, doCanvasTouchStart, doClearMemory, doCloseEditor, doDisableGeneric, doEditAsGeneric, doExport, doExportClose, doExportVisible, doImport, doImportCancel, doMemorize, doNavigateHome, doOpenEditor, doRemember, doSetFixedSize, doSetGrid, doSetPanMode, doSetRuleGeneric, doShowImport, doStartPlayer, doStopPlayer, doTogglePlayer, documentWidth, dragHandler, drawEverything, dtMax, encodeVisible, evaluateTotalisticAutomaton, exportField, fpsDefault, fpsLimiting, getAjax, getCanvasCursorPosition, importField, isPanMode, lastTime, memo, minVisibleSize, mouseMoveReceiver, parseFieldData, parseFloatChecked, parseIntChecked, parseTransitionFunction, parseUri, player, playerTimeout, randomFillFixedNum, randomFillNum, randomFillPercent, randomStateGenerator, redraw, redrawLoop, ref, ref1, ref2, ref3, ref4, removeClass, serverSupportsUpload, shortcuts, showExportDialog, stringifyFieldData, unity, updateCanvasSize, updateGeneration, updateGenericRuleStatus, updateMemoryButtons, updatePlayButtons, updatePopulation, uploadToServer, windowHeight, windowWidth;
+var Animator, Application, BinaryTransitionFunc, ButtonGroup, C2S, ChainMap, DayNightTransitionFunc, DefaultConfig, DomBuilder, E, FieldObserver, GenerateFileList, GenericTransitionFunc, GhostClickDetector, M, MIN_WIDTH, MouseToolCombo, Navigator, OpenDialog, PaintStateSelector, RegularTiling, SaveDialog, SvgDialog, UriConfig, ValidatingInput, addClass, application, autoplayCriticalPopulation, canvas, canvasSizeUpdateBlocked, context, dirty, doCanvasMouseDown, doCanvasMouseMove, doCanvasMouseUp, doCanvasTouchEnd, doCanvasTouchLeave, doCanvasTouchMove, doCanvasTouchStart, doClearMemory, doCloseEditor, doDisableGeneric, doEditAsGeneric, doExport, doExportClose, doExportVisible, doImport, doImportCancel, doMemorize, doNavigateHome, doOpenEditor, doRemember, doSetFixedSize, doSetGrid, doSetPanMode, doSetRuleGeneric, doShowImport, doStartPlayer, doStopPlayer, doTogglePlayer, documentWidth, dragHandler, drawEverything, dtMax, encodeVisible, evaluateTotalisticAutomaton, exportField, fpsDefault, fpsLimiting, getAjax, getCanvasCursorPosition, ghostClickDetector, importField, isPanMode, lastTime, memo, minVisibleSize, mouseMoveReceiver, parseFieldData, parseFloatChecked, parseIntChecked, parseTransitionFunction, parseUri, player, playerTimeout, randomFillFixedNum, randomFillNum, randomFillPercent, randomStateGenerator, redraw, redrawLoop, ref, ref1, ref2, ref3, ref4, removeClass, serverSupportsUpload, shortcuts, showExportDialog, stringifyFieldData, unity, updateCanvasSize, updateGeneration, updateGenericRuleStatus, updateMemoryButtons, updatePlayButtons, updatePopulation, uploadToServer, windowHeight, windowWidth;
 
 unity = require("../core/vondyck_chain.coffee").unity;
 
@@ -4768,6 +4768,8 @@ getCanvasCursorPosition = require("./canvas_util.coffee").getCanvasCursorPositio
 C2S = require("../ext/canvas2svg.js");
 
 require("../ext/polyfills.js");
+
+GhostClickDetector = require("./ghost_click_detector.coffee").GhostClickDetector;
 
 MIN_WIDTH = 100;
 
@@ -5391,6 +5393,10 @@ context = canvas.getContext("2d");
 
 dragHandler = null;
 
+ghostClickDetector = new GhostClickDetector;
+
+ghostClickDetector.addListeners(canvas);
+
 player = null;
 
 playerTimeout = 500;
@@ -5501,6 +5507,9 @@ doCanvasMouseDown = function(e) {
   if (e.button === 2) {
     return;
   }
+  if (ghostClickDetector.isGhost) {
+    return;
+  }
   if (typeof canvas.setCapture === "function") {
     canvas.setCapture(true);
   }
@@ -5516,8 +5525,8 @@ doCanvasMouseDown = function(e) {
 };
 
 doCanvasMouseUp = function(e) {
-  if (dragHandler !== null) {
-    e.preventDefault();
+  e.preventDefault();
+  if ((dragHandler !== null) && !ghostClickDetector.isGhost) {
     if (dragHandler != null) {
       dragHandler.mouseUp(e);
     }
@@ -6011,7 +6020,7 @@ updatePlayButtons();
 redrawLoop();
 
 
-},{"../core/cellular_automata.coffee":1,"../core/chain_map.coffee":2,"../core/field.coffee":4,"../core/matrix3.coffee":7,"../core/regular_tiling.coffee":9,"../core/rule.coffee":10,"../core/utils.coffee":12,"../core/vondyck_chain.coffee":14,"../ext/canvas2svg.js":16,"../ext/polyfills.js":17,"./animator.coffee":18,"./canvas_util.coffee":20,"./dom_builder.coffee":21,"./htmlutil.coffee":22,"./indexeddb.coffee":23,"./mousetool.coffee":24,"./navigator.coffee":25,"./observer.coffee":26,"./parseuri.coffee":27}],20:[function(require,module,exports){
+},{"../core/cellular_automata.coffee":1,"../core/chain_map.coffee":2,"../core/field.coffee":4,"../core/matrix3.coffee":7,"../core/regular_tiling.coffee":9,"../core/rule.coffee":10,"../core/utils.coffee":12,"../core/vondyck_chain.coffee":14,"../ext/canvas2svg.js":16,"../ext/polyfills.js":17,"./animator.coffee":18,"./canvas_util.coffee":20,"./dom_builder.coffee":21,"./ghost_click_detector.coffee":22,"./htmlutil.coffee":23,"./indexeddb.coffee":24,"./mousetool.coffee":25,"./navigator.coffee":26,"./observer.coffee":27,"./parseuri.coffee":28}],20:[function(require,module,exports){
 exports.getCanvasCursorPosition = function(e, canvas) {
   var rect;
   if (e.type === "touchmove" || e.type === "touchstart" || e.type === "touchend") {
@@ -6112,6 +6121,62 @@ exports.DomBuilder = DomBuilder = (function() {
 
 
 },{}],22:[function(require,module,exports){
+
+/*
+ * In some mobile browsers, ghost clicks can not be prevented. So here easy solution: every mouse event,
+ * coming after some interval after a touch event is ghost
+ */
+var GhostClickDetector;
+
+exports.GhostClickDetector = GhostClickDetector = (function() {
+  function GhostClickDetector() {
+    this.isGhost = false;
+    this.timerHandle = null;
+    this.ghostInterval = 1000;
+    this._onTimer = (function(_this) {
+      return function() {
+        _this.isGhost = false;
+        return _this.timerHandle = null;
+      };
+    })(this);
+    this._onTouch = (function(_this) {
+      return function() {
+        return _this.onTouch();
+      };
+    })(this);
+  }
+
+  GhostClickDetector.prototype.onTouch = function() {
+    this.stopTimer();
+    this.isGhost = true;
+    return this.timerHandle = window.setTimeout(this._onTimer, this.ghostInterval);
+  };
+
+  GhostClickDetector.prototype.stopTimer = function() {
+    var handle;
+    if ((handle = this.timerHandle)) {
+      window.clearTimeout(handle);
+      return this.timerHandle = null;
+    }
+  };
+
+  GhostClickDetector.prototype.addListeners = function(element) {
+    var evtName, i, len, ref, results;
+    ref = ["touchstart", "touchend"];
+    results = [];
+    for (i = 0, len = ref.length; i < len; i++) {
+      evtName = ref[i];
+      results.push(element.addEventListener(evtName, this._onTouch, false));
+    }
+    return results;
+  };
+
+  return GhostClickDetector;
+
+})();
+
+
+},{}],23:[function(require,module,exports){
 var ButtonGroup, Debouncer, E, ValidatingInput, addClass, idOrNull, removeClass;
 
 exports.flipSetTimeout = function(t, cb) {
@@ -6411,7 +6476,7 @@ exports.ValidatingInput = ValidatingInput = (function() {
 })();
 
 
-},{}],23:[function(require,module,exports){
+},{}],24:[function(require,module,exports){
 var DomBuilder, E, GenerateFileList, OpenDialog, SaveDialog, VERSION, addClass, ref, ref1, ref2, ref3, ref4, ref5, ref6, ref7, ref8, removeClass, upgradeNeeded;
 
 ref = require("./htmlutil.coffee"), E = ref.E, removeClass = ref.removeClass, addClass = ref.addClass;
@@ -6925,7 +6990,7 @@ GenerateFileList = (function() {
 })();
 
 
-},{"./dom_builder.coffee":21,"./htmlutil.coffee":22}],24:[function(require,module,exports){
+},{"./dom_builder.coffee":21,"./htmlutil.coffee":23}],25:[function(require,module,exports){
 var Debouncer, M, MouseTool, MouseToolCombo, getCanvasCursorPosition,
   extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
   hasProp = {}.hasOwnProperty;
@@ -7042,7 +7107,7 @@ exports.MouseToolRotate = class MouseToolRotate extends MouseTool
  */
 
 
-},{"../core/matrix3.coffee":7,"./canvas_util.coffee":20,"./htmlutil.coffee":22}],25:[function(require,module,exports){
+},{"../core/matrix3.coffee":7,"./canvas_util.coffee":20,"./htmlutil.coffee":23}],26:[function(require,module,exports){
 var DomBuilder, E, Navigator, allClusters;
 
 allClusters = require("../core/field.coffee").allClusters;
@@ -7164,7 +7229,7 @@ exports.Navigator = Navigator = (function() {
 })();
 
 
-},{"../core/field.coffee":4,"./dom_builder.coffee":21,"./htmlutil.coffee":22}],26:[function(require,module,exports){
+},{"../core/field.coffee":4,"./dom_builder.coffee":21,"./htmlutil.coffee":23}],27:[function(require,module,exports){
 "use strict";
 var FieldObserver, M, hyperbolic2poincare, makeCellShapePoincare, makeXYT2path, poincare2hyperblic, ref, unity, visibleNeighborhood;
 
@@ -7464,7 +7529,7 @@ exports.FieldObserver = FieldObserver = (function() {
 })();
 
 
-},{"../core/matrix3.coffee":7,"../core/poincare_view.coffee":8,"../core/vondyck_chain.coffee":14}],27:[function(require,module,exports){
+},{"../core/matrix3.coffee":7,"../core/poincare_view.coffee":8,"../core/vondyck_chain.coffee":14}],28:[function(require,module,exports){
 var parseUri;
 
 exports.parseUri = parseUri = function(str) {
