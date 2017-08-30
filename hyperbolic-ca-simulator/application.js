@@ -1,4 +1,4 @@
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 var ChainMap, evaluateTotalisticAutomaton, neighborsSum;
 
 ChainMap = require("./chain_map.coffee").ChainMap;
@@ -42,6 +42,7 @@ exports.evaluateTotalisticAutomaton = evaluateTotalisticAutomaton = function(cel
   });
   return newCells;
 };
+
 
 
 },{"./chain_map.coffee":2}],2:[function(require,module,exports){
@@ -182,6 +183,7 @@ exports.ChainMap = ChainMap = (function() {
 })();
 
 
+
 },{}],3:[function(require,module,exports){
 var M, decomposeToTranslations, decomposeToTranslations2, decomposeToTranslationsFmin, fminsearch;
 
@@ -276,6 +278,7 @@ exports.decomposeToTranslationsAggresively = function(m, eps, attempts) {
   console.log("All attempts failed");
   return [null, null];
 };
+
 
 
 },{"./fminsearch.coffee":5,"./matrix3.coffee":7}],4:[function(require,module,exports){
@@ -686,6 +689,7 @@ exports.parseFieldData1 = (data) ->
  */
 
 
+
 },{"./chain_map.coffee":2,"./vondyck_chain.coffee":14}],5:[function(require,module,exports){
 var addInplace, amplitude, combine2, scaleInplace;
 
@@ -870,6 +874,7 @@ exports.fminsearch = function(func, x0, step, tol, maxiter) {
     evaluations: evaluations
   };
 };
+
 
 
 },{}],6:[function(require,module,exports){
@@ -1188,6 +1193,7 @@ exports.knuthBendix = function(S0, lessOrEqual, maxIters, maxRulesetSize, onIter
 };
 
 
+
 },{}],7:[function(require,module,exports){
 var add, addScaledInplace, amplitude, approxEq, approxEqv, cleanupHyperbolicMoveMatrix, copy, eye, hrot, hyperbolicInv, inv, mul, mulv, rot, rotationMatrix, set, smul, translationMatrix, transpose, zero;
 
@@ -1288,6 +1294,10 @@ exports.inv = inv = function(m) {
   return [(m[4] * m[8] - m[5] * m[7]) * iD, (m[2] * m[7] - m[1] * m[8]) * iD, (m[1] * m[5] - m[2] * m[4]) * iD, (m[5] * m[6] - m[3] * m[8]) * iD, (m[0] * m[8] - m[2] * m[6]) * iD, (m[2] * m[3] - m[0] * m[5]) * iD, (m[3] * m[7] - m[4] * m[6]) * iD, (m[1] * m[6] - m[0] * m[7]) * iD, (m[0] * m[4] - m[1] * m[3]) * iD];
 };
 
+exports.transposedAdjunct = function(m) {
+  return [m[4] * m[8] - m[5] * m[7], m[2] * m[7] - m[1] * m[8], m[1] * m[5] - m[2] * m[4], m[5] * m[6] - m[3] * m[8], m[0] * m[8] - m[2] * m[6], m[2] * m[3] - m[0] * m[5], m[3] * m[7] - m[4] * m[6], m[1] * m[6] - m[0] * m[7], m[0] * m[4] - m[1] * m[3]];
+};
+
 exports.smul = smul = function(k, m) {
   var l, len, mi, results;
   results = [];
@@ -1382,6 +1392,7 @@ exports.powers = function(matrix, n) {
   }
   return pows;
 };
+
 
 
 },{}],8:[function(require,module,exports){
@@ -1593,6 +1604,7 @@ exports.visiblePolygonSize = visiblePolygonSize = function(tiling, cellTransform
 };
 
 
+
 },{"./chain_map.coffee":2,"./matrix3.coffee":7,"./vondyck_chain.coffee":14}],9:[function(require,module,exports){
 "use strict";
 var ChainMap, M, RegularTiling, VonDyck, eliminateFinalA, ref, reverseShortlexLess, takeLastA, unity,
@@ -1753,6 +1765,7 @@ eliminateFinalA = function(chain, appendRewrite, orderA) {
   }
   return bestChain;
 };
+
 
 
 },{"./chain_map.coffee":2,"./matrix3.coffee":7,"./vondyck.coffee":13,"./vondyck_chain.coffee":14}],10:[function(require,module,exports){
@@ -2075,6 +2088,7 @@ exports.dayNightBinaryTransitionFunc2GenericCode = dayNightBinaryTransitionFunc2
 };
 
 
+
 },{"./utils.coffee":12}],11:[function(require,module,exports){
 var CenteredVonDyck, M, mod;
 
@@ -2147,6 +2161,7 @@ exports.CenteredVonDyck = CenteredVonDyck = (function() {
 })();
 
 
+
 },{"./matrix3.coffee":7,"./utils.coffee":12}],12:[function(require,module,exports){
 "use strict";
 exports.formatString = function(s, args) {
@@ -2186,6 +2201,7 @@ exports.parseFloatChecked = function(s) {
 exports.mod = function(i, n) {
   return ((i % n) + n) % n;
 };
+
 
 
 },{}],13:[function(require,module,exports){
@@ -2287,6 +2303,7 @@ exports.VonDyck = VonDyck = (function() {
   return VonDyck;
 
 })();
+
 
 
 },{"../core/knuth_bendix.coffee":6,"./triangle_group_representation.coffee":11,"./vondyck_chain.coffee":14,"./vondyck_rewriter.coffee":15}],14:[function(require,module,exports){
@@ -2555,6 +2572,7 @@ exports.reverseShortlexLess = reverseShortlexLess = function(c1, c2) {
     }
   }
 };
+
 
 
 },{"./matrix3.coffee":7}],15:[function(require,module,exports){
@@ -3263,6 +3281,7 @@ exports.makeAppendRewriteVerified = function(rewriteRule) {
     return value;
   };
 };
+
 
 
 },{"./knuth_bendix.coffee":6,"./vondyck_chain.coffee":14}],16:[function(require,module,exports){
@@ -4460,6 +4479,33 @@ exports.makeAppendRewriteVerified = function(rewriteRule) {
 }());
 
 },{}],17:[function(require,module,exports){
+//source: https://gist.github.com/paulirish/1579671
+(function() {
+    var lastTime = 0;
+    var vendors = ['ms', 'moz', 'webkit', 'o'];
+    for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+        window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
+        window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame'] 
+                                   || window[vendors[x]+'CancelRequestAnimationFrame'];
+    }
+ 
+    if (!window.requestAnimationFrame)
+        window.requestAnimationFrame = function(callback, element) {
+            var currTime = new Date().getTime();
+            var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+            var id = window.setTimeout(function() { callback(currTime + timeToCall); }, 
+              timeToCall);
+            lastTime = currTime + timeToCall;
+            return id;
+        };
+ 
+    if (!window.cancelAnimationFrame)
+        window.cancelAnimationFrame = function(id) {
+            clearTimeout(id);
+        };
+}());
+
+},{}],18:[function(require,module,exports){
 "use strict";
 var Animator, E, M, decomposeToTranslations, flipSetTimeout, formatString, interpolateHyperbolic, pad, parseIntChecked, ref, ref1;
 
@@ -4700,7 +4746,8 @@ exports.Animator = Animator = (function() {
 })();
 
 
-},{"../core/decompose_to_translations.coffee":3,"../core/matrix3.coffee":7,"../core/utils.coffee":12,"./htmlutil.coffee":21}],18:[function(require,module,exports){
+
+},{"../core/decompose_to_translations.coffee":3,"../core/matrix3.coffee":7,"../core/utils.coffee":12,"./htmlutil.coffee":22}],19:[function(require,module,exports){
 "use strict";
 var Animator, Application, BinaryTransitionFunc, ButtonGroup, C2S, ChainMap, DayNightTransitionFunc, DefaultConfig, DomBuilder, E, FieldObserver, GenerateFileList, GenericTransitionFunc, M, MIN_WIDTH, MouseToolCombo, Navigator, OpenDialog, PaintStateSelector, RegularTiling, SaveDialog, SvgDialog, UriConfig, ValidatingInput, addClass, application, autoplayCriticalPopulation, canvas, canvasSizeUpdateBlocked, context, dirty, doCanvasMouseDown, doCanvasMouseMove, doCanvasMouseUp, doClearMemory, doCloseEditor, doDisableGeneric, doEditAsGeneric, doExport, doExportClose, doExportVisible, doImport, doImportCancel, doMemorize, doNavigateHome, doOpenEditor, doRemember, doSetFixedSize, doSetGrid, doSetPanMode, doSetRuleGeneric, doShowImport, doStartPlayer, doStopPlayer, doTogglePlayer, documentWidth, dragHandler, drawEverything, dtMax, encodeVisible, evaluateTotalisticAutomaton, exportField, fpsDefault, fpsLimiting, getAjax, getCanvasCursorPosition, importField, isPanMode, lastTime, memo, minVisibleSize, mouseMoveReceiver, parseFieldData, parseFloatChecked, parseIntChecked, parseTransitionFunction, parseUri, player, playerTimeout, randomFillFixedNum, randomFillNum, randomFillPercent, randomStateGenerator, redraw, redrawLoop, ref, ref1, ref2, ref3, ref4, removeClass, serverSupportsUpload, shortcuts, showExportDialog, stringifyFieldData, unity, updateCanvasSize, updateGeneration, updateGenericRuleStatus, updateMemoryButtons, updatePlayButtons, updatePopulation, uploadToServer, windowHeight, windowWidth;
 
@@ -4739,6 +4786,8 @@ parseUri = require("./parseuri.coffee").parseUri;
 getCanvasCursorPosition = require("./canvas_util.coffee").getCanvasCursorPosition;
 
 C2S = require("../ext/canvas2svg.js");
+
+require("../ext/polyfills.js");
 
 MIN_WIDTH = 100;
 
@@ -4787,7 +4836,7 @@ UriConfig = (function() {
   }
 
   UriConfig.prototype.getGrid = function() {
-    var e, error, m, match, n;
+    var e, m, match, n;
     if (this.keys.grid != null) {
       try {
         match = this.keys.grid.match(/(\d+)[,;](\d+)/);
@@ -4797,8 +4846,8 @@ UriConfig = (function() {
         n = parseIntChecked(match[1]);
         m = parseIntChecked(match[2]);
         return [n, m];
-      } catch (error) {
-        e = error;
+      } catch (_error) {
+        e = _error;
         alert("Bad grid paramters: " + this.keys.grid);
       }
     }
@@ -4810,12 +4859,12 @@ UriConfig = (function() {
   };
 
   UriConfig.prototype.getGeneration = function() {
-    var e, error;
+    var e;
     if (this.keys.generation != null) {
       try {
         return parseIntChecked(this.keys.generation);
-      } catch (error) {
-        e = error;
+      } catch (_error) {
+        e = _error;
         alert("Bad generationn umber: " + this.keys.generation);
       }
     }
@@ -5076,7 +5125,7 @@ Application = (function() {
   };
 
   Application.prototype.importData = function(data) {
-    var e, error, m, match, n, normalizeChain;
+    var e, m, match, n, normalizeChain;
     try {
       console.log("importing " + data);
       match = data.match(/^(\d+)\$(\d+)\$(.*)$/);
@@ -5096,8 +5145,8 @@ Application = (function() {
       })(this);
       this.cells = importField(parseFieldData(match[3]), null, normalizeChain);
       return console.log("Imported " + this.cells.count + " cells");
-    } catch (error) {
-      e = error;
+    } catch (_error) {
+      e = _error;
       alert("Faield to import data: " + e);
       return this.cells = new ChainMap;
     }
@@ -5157,12 +5206,12 @@ Application = (function() {
   };
 
   Application.prototype.toggleCellAt = function(x, y) {
-    var cell, e, error, ref5, xp, yp;
+    var cell, e, ref5, xp, yp;
     ref5 = this.canvas2relative(x, y), xp = ref5[0], yp = ref5[1];
     try {
       cell = this.observer.cellFromPoint(xp, yp);
-    } catch (error) {
-      e = error;
+    } catch (_error) {
+      e = _error;
       return;
     }
     if (this.cells.get(cell) === this.paintStateSelector.state) {
@@ -5526,7 +5575,7 @@ doCloseEditor = function() {
 };
 
 doSetRuleGeneric = function() {
-  var e, error;
+  var e;
   try {
     console.log("Set generic rule");
     application.transitionFunc = new GenericTransitionFunc(E('generic-tf-code').value);
@@ -5536,8 +5585,8 @@ doSetRuleGeneric = function() {
     E('controls-rule-simple').style.display = "none";
     E('controls-rule-generic').style.display = "";
     return true;
-  } catch (error) {
-    e = error;
+  } catch (_error) {
+    e = _error;
     alert("Failed to parse function: " + e);
     updateGenericRuleStatus('Error');
     return false;
@@ -5545,7 +5594,7 @@ doSetRuleGeneric = function() {
 };
 
 doSetGrid = function() {
-  var e, error, m, n;
+  var e, m, n;
   try {
     n = parseInt(E('entry-n').value, 10);
     m = parseInt(E('entry-m').value, 10);
@@ -5558,8 +5607,8 @@ doSetGrid = function() {
     if (2 * (n + m) >= n * m) {
       throw new Error("Tessellation {" + n + "; " + m + "} is not hyperbolic and not supported.");
     }
-  } catch (error) {
-    e = error;
+  } catch (_error) {
+    e = _error;
     alert("" + e);
     return;
   }
@@ -5679,15 +5728,15 @@ doImportCancel = function() {
 };
 
 doImport = function() {
-  var e, error;
+  var e;
   try {
     application.importData(E('import').value);
     updatePopulation();
     redraw();
     E('import-dialog').style.display = 'none';
     return E('import').value = '';
-  } catch (error) {
-    e = error;
+  } catch (_error) {
+    e = _error;
     return alert("Error parsing: " + e);
   }
 };
@@ -5954,7 +6003,8 @@ updatePlayButtons();
 redrawLoop();
 
 
-},{"../core/cellular_automata.coffee":1,"../core/chain_map.coffee":2,"../core/field.coffee":4,"../core/matrix3.coffee":7,"../core/regular_tiling.coffee":9,"../core/rule.coffee":10,"../core/utils.coffee":12,"../core/vondyck_chain.coffee":14,"../ext/canvas2svg.js":16,"./animator.coffee":17,"./canvas_util.coffee":19,"./dom_builder.coffee":20,"./htmlutil.coffee":21,"./indexeddb.coffee":22,"./mousetool.coffee":23,"./navigator.coffee":24,"./observer.coffee":25,"./parseuri.coffee":26}],19:[function(require,module,exports){
+
+},{"../core/cellular_automata.coffee":1,"../core/chain_map.coffee":2,"../core/field.coffee":4,"../core/matrix3.coffee":7,"../core/regular_tiling.coffee":9,"../core/rule.coffee":10,"../core/utils.coffee":12,"../core/vondyck_chain.coffee":14,"../ext/canvas2svg.js":16,"../ext/polyfills.js":17,"./animator.coffee":18,"./canvas_util.coffee":20,"./dom_builder.coffee":21,"./htmlutil.coffee":22,"./indexeddb.coffee":23,"./mousetool.coffee":24,"./navigator.coffee":25,"./observer.coffee":26,"./parseuri.coffee":27}],20:[function(require,module,exports){
 exports.getCanvasCursorPosition = function(e, canvas) {
   var rect;
   if (e.type === "touchmove" || e.type === "touchstart" || e.type === "touchend") {
@@ -5967,7 +6017,8 @@ exports.getCanvasCursorPosition = function(e, canvas) {
 };
 
 
-},{}],20:[function(require,module,exports){
+
+},{}],21:[function(require,module,exports){
 var DomBuilder;
 
 exports.DomBuilder = DomBuilder = (function() {
@@ -6054,7 +6105,8 @@ exports.DomBuilder = DomBuilder = (function() {
 })();
 
 
-},{}],21:[function(require,module,exports){
+
+},{}],22:[function(require,module,exports){
 var ButtonGroup, Debouncer, E, ValidatingInput, addClass, idOrNull, removeClass;
 
 exports.flipSetTimeout = function(t, cb) {
@@ -6324,7 +6376,7 @@ exports.ValidatingInput = ValidatingInput = (function() {
   };
 
   ValidatingInput.prototype._parse = function() {
-    var e, error, newVal;
+    var e, newVal;
     try {
       newVal = this.parseValue(this.element.value);
       if (newVal != null) {
@@ -6335,8 +6387,8 @@ exports.ValidatingInput = ValidatingInput = (function() {
       this._setMessage(null);
       this._setClass(this.stateStyleClasses.ok);
       return true;
-    } catch (error) {
-      e = error;
+    } catch (_error) {
+      e = _error;
       this._setMessage("Failed to parse value: " + e);
       this._setClass(this.stateStyleClasses.error);
       return false;
@@ -6354,7 +6406,8 @@ exports.ValidatingInput = ValidatingInput = (function() {
 })();
 
 
-},{}],22:[function(require,module,exports){
+
+},{}],23:[function(require,module,exports){
 var DomBuilder, E, GenerateFileList, OpenDialog, SaveDialog, VERSION, addClass, ref, ref1, ref2, ref3, ref4, ref5, ref6, ref7, ref8, removeClass, upgradeNeeded;
 
 ref = require("./htmlutil.coffee"), E = ref.E, removeClass = ref.removeClass, addClass = ref.addClass;
@@ -6868,7 +6921,8 @@ GenerateFileList = (function() {
 })();
 
 
-},{"./dom_builder.coffee":20,"./htmlutil.coffee":21}],23:[function(require,module,exports){
+
+},{"./dom_builder.coffee":21,"./htmlutil.coffee":22}],24:[function(require,module,exports){
 var Debouncer, M, MouseTool, MouseToolCombo, getCanvasCursorPosition,
   extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
   hasProp = {}.hasOwnProperty;
@@ -6985,7 +7039,8 @@ exports.MouseToolRotate = class MouseToolRotate extends MouseTool
  */
 
 
-},{"../core/matrix3.coffee":7,"./canvas_util.coffee":19,"./htmlutil.coffee":21}],24:[function(require,module,exports){
+
+},{"../core/matrix3.coffee":7,"./canvas_util.coffee":20,"./htmlutil.coffee":22}],25:[function(require,module,exports){
 var DomBuilder, E, Navigator, allClusters;
 
 allClusters = require("../core/field.coffee").allClusters;
@@ -7107,7 +7162,8 @@ exports.Navigator = Navigator = (function() {
 })();
 
 
-},{"../core/field.coffee":4,"./dom_builder.coffee":20,"./htmlutil.coffee":21}],25:[function(require,module,exports){
+
+},{"../core/field.coffee":4,"./dom_builder.coffee":21,"./htmlutil.coffee":22}],26:[function(require,module,exports){
 "use strict";
 var FieldObserver, M, hyperbolic2poincare, makeCellShapePoincare, makeXYT2path, poincare2hyperblic, ref, unity, visibleNeighborhood;
 
@@ -7407,7 +7463,8 @@ exports.FieldObserver = FieldObserver = (function() {
 })();
 
 
-},{"../core/matrix3.coffee":7,"../core/poincare_view.coffee":8,"../core/vondyck_chain.coffee":14}],26:[function(require,module,exports){
+
+},{"../core/matrix3.coffee":7,"../core/poincare_view.coffee":8,"../core/vondyck_chain.coffee":14}],27:[function(require,module,exports){
 var parseUri;
 
 exports.parseUri = parseUri = function(str) {
@@ -7447,4 +7504,5 @@ parseUri.options = {
 };
 
 
-},{}]},{},[18]);
+
+},{}]},{},[19])
