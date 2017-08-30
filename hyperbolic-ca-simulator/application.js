@@ -5395,8 +5395,6 @@ dragHandler = null;
 
 ghostClickDetector = new GhostClickDetector;
 
-ghostClickDetector.addListeners(canvas);
-
 player = null;
 
 playerTimeout = 500;
@@ -5526,7 +5524,7 @@ doCanvasMouseDown = function(e) {
 
 doCanvasMouseUp = function(e) {
   e.preventDefault();
-  if ((dragHandler !== null) && !ghostClickDetector.isGhost) {
+  if (dragHandler !== null) {
     if (dragHandler != null) {
       dragHandler.mouseUp(e);
     }
@@ -5535,7 +5533,7 @@ doCanvasMouseUp = function(e) {
 };
 
 doCanvasTouchStart = function(e) {
-  if (e.touches.length === 1) {
+  if ((e.touches.length === 1) && !ghostClickDetector.isGhost) {
     doCanvasMouseDown(e);
     return e.preventDefault();
   }
@@ -5791,6 +5789,8 @@ mouseMoveReceiver.addEventListener("touchend", doCanvasTouchEnd);
 mouseMoveReceiver.addEventListener("touchmove", doCanvasTouchMove);
 
 mouseMoveReceiver.addEventListener("touchleave", doCanvasTouchLeave);
+
+ghostClickDetector.addListeners(canvas);
 
 E("btn-set-rule").addEventListener("click", function(e) {
   return application.doSetRule();
