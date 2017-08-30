@@ -5505,9 +5505,6 @@ doCanvasMouseDown = function(e) {
   if (e.button === 2) {
     return;
   }
-  if (ghostClickDetector.isGhost) {
-    return;
-  }
   if (typeof canvas.setCapture === "function") {
     canvas.setCapture(true);
   }
@@ -5533,7 +5530,7 @@ doCanvasMouseUp = function(e) {
 };
 
 doCanvasTouchStart = function(e) {
-  if ((e.touches.length === 1) && !ghostClickDetector.isGhost) {
+  if (e.touches.length === 1) {
     doCanvasMouseDown(e);
     return e.preventDefault();
   }
@@ -5774,9 +5771,17 @@ E("btn-step").addEventListener("click", function() {
 
 mouseMoveReceiver = E("canvas-container");
 
-mouseMoveReceiver.addEventListener("mousedown", doCanvasMouseDown);
+mouseMoveReceiver.addEventListener("mousedown", function(e) {
+  if (!ghostclickdetector.isGhost) {
+    return doCanvasMouseDown(e);
+  }
+});
 
-mouseMoveReceiver.addEventListener("mouseup", doCanvasMouseUp);
+mouseMoveReceiver.addEventListener("mouseup", function(e) {
+  if (!ghostclickdetector.isGhost) {
+    return doCanvasMouseUp;
+  }
+});
 
 mouseMoveReceiver.addEventListener("mousemove", doCanvasMouseMove);
 
