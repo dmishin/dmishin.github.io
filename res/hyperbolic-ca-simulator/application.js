@@ -5780,14 +5780,14 @@ E("btn-step").addEventListener("click", function() {
 mouseMoveReceiver = E("canvas-container");
 
 mouseMoveReceiver.addEventListener("mousedown", function(e) {
-  if (!ghostclickdetector.isGhost) {
+  if (!ghostClickDetector.isGhost) {
     return doCanvasMouseDown(e);
   }
 });
 
 mouseMoveReceiver.addEventListener("mouseup", function(e) {
-  if (!ghostclickdetector.isGhost) {
-    return doCanvasMouseUp;
+  if (!ghostClickDetector.isGhost) {
+    return doCanvasMouseUp(e);
   }
 });
 
