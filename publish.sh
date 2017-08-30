@@ -10,9 +10,9 @@ echo =======================
 #ark clear
 ark build
 
-ODIR=../dmishin.github.io
+ODIR=./out
 
-cp -r out/* $ODIR
+#cp -r out/* $ODIR
 
 cd $ODIR
 
