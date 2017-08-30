@@ -4729,7 +4729,7 @@ exports.Animator = Animator = (function() {
 
 },{"../core/decompose_to_translations.coffee":3,"../core/matrix3.coffee":7,"../core/utils.coffee":12,"./htmlutil.coffee":22}],19:[function(require,module,exports){
 "use strict";
-var Animator, Application, BinaryTransitionFunc, ButtonGroup, C2S, ChainMap, DayNightTransitionFunc, DefaultConfig, DomBuilder, E, FieldObserver, GenerateFileList, GenericTransitionFunc, M, MIN_WIDTH, MouseToolCombo, Navigator, OpenDialog, PaintStateSelector, RegularTiling, SaveDialog, SvgDialog, UriConfig, ValidatingInput, addClass, application, autoplayCriticalPopulation, canvas, canvasSizeUpdateBlocked, context, dirty, doCanvasMouseDown, doCanvasMouseMove, doCanvasMouseUp, doCanvastouchEnd, doCanvastouchLeave, doCanvastouchMove, doCanvastouchStart, doClearMemory, doCloseEditor, doDisableGeneric, doEditAsGeneric, doExport, doExportClose, doExportVisible, doImport, doImportCancel, doMemorize, doNavigateHome, doOpenEditor, doRemember, doSetFixedSize, doSetGrid, doSetPanMode, doSetRuleGeneric, doShowImport, doStartPlayer, doStopPlayer, doTogglePlayer, documentWidth, dragHandler, drawEverything, dtMax, encodeVisible, evaluateTotalisticAutomaton, exportField, fpsDefault, fpsLimiting, getAjax, getCanvasCursorPosition, importField, isPanMode, lastTime, memo, minVisibleSize, mouseMoveReceiver, parseFieldData, parseFloatChecked, parseIntChecked, parseTransitionFunction, parseUri, player, playerTimeout, randomFillFixedNum, randomFillNum, randomFillPercent, randomStateGenerator, redraw, redrawLoop, ref, ref1, ref2, ref3, ref4, removeClass, serverSupportsUpload, shortcuts, showExportDialog, stringifyFieldData, unity, updateCanvasSize, updateGeneration, updateGenericRuleStatus, updateMemoryButtons, updatePlayButtons, updatePopulation, uploadToServer, windowHeight, windowWidth;
+var Animator, Application, BinaryTransitionFunc, ButtonGroup, C2S, ChainMap, DayNightTransitionFunc, DefaultConfig, DomBuilder, E, FieldObserver, GenerateFileList, GenericTransitionFunc, M, MIN_WIDTH, MouseToolCombo, Navigator, OpenDialog, PaintStateSelector, RegularTiling, SaveDialog, SvgDialog, UriConfig, ValidatingInput, addClass, application, autoplayCriticalPopulation, canvas, canvasSizeUpdateBlocked, context, dirty, doCanvasMouseDown, doCanvasMouseMove, doCanvasMouseUp, doCanvasTouchEnd, doCanvasTouchLeave, doCanvasTouchMove, doCanvasTouchStart, doClearMemory, doCloseEditor, doDisableGeneric, doEditAsGeneric, doExport, doExportClose, doExportVisible, doImport, doImportCancel, doMemorize, doNavigateHome, doOpenEditor, doRemember, doSetFixedSize, doSetGrid, doSetPanMode, doSetRuleGeneric, doShowImport, doStartPlayer, doStopPlayer, doTogglePlayer, documentWidth, dragHandler, drawEverything, dtMax, encodeVisible, evaluateTotalisticAutomaton, exportField, fpsDefault, fpsLimiting, getAjax, getCanvasCursorPosition, importField, isPanMode, lastTime, memo, minVisibleSize, mouseMoveReceiver, parseFieldData, parseFloatChecked, parseIntChecked, parseTransitionFunction, parseUri, player, playerTimeout, randomFillFixedNum, randomFillNum, randomFillPercent, randomStateGenerator, redraw, redrawLoop, ref, ref1, ref2, ref3, ref4, removeClass, serverSupportsUpload, shortcuts, showExportDialog, stringifyFieldData, unity, updateCanvasSize, updateGeneration, updateGenericRuleStatus, updateMemoryButtons, updatePlayButtons, updatePopulation, uploadToServer, windowHeight, windowWidth;
 
 unity = require("../core/vondyck_chain.coffee").unity;
 
@@ -5525,23 +5525,23 @@ doCanvasMouseUp = function(e) {
   }
 };
 
-doCanvastouchStart = function(e) {
+doCanvasTouchStart = function(e) {
   if (e.touches.length === 1) {
     doCanvasMouseDown(e);
     return e.preventDefault();
   }
 };
 
-doCanvastouchLeave = function(e) {
+doCanvasTouchLeave = function(e) {
   return doCanvasMouseOut(e);
 };
 
-doCanvastouchEnd = function(e) {
+doCanvasTouchEnd = function(e) {
   e.preventDefault();
   return doCanvasMouseUp(e);
 };
 
-doCanvastouchMove = function(e) {
+doCanvasTouchMove = function(e) {
   return doCanvasMouseMove(e);
 };
 
@@ -6953,26 +6953,6 @@ exports.MouseTool = MouseTool = (function() {
 
   MouseTool.prototype.rotateView = function(angle) {
     return this.application.getObserver().modifyView(M.rotationMatrix(angle));
-  };
-
-  MouseTool.prototype.touchStart = function(e) {
-    if (e.touches.length === 1) {
-      this.mouseDown(e);
-      return e.preventDefault();
-    }
-  };
-
-  MouseTool.prototype.touchLeave = function(e) {
-    return this.mouseOut(e);
-  };
-
-  MouseTool.prototype.touchEnd = function(e) {
-    e.preventDefault();
-    return this.mouseUp(e);
-  };
-
-  MouseTool.prototype.touchMove = function(e) {
-    return this.mouseMove(e);
   };
 
   return MouseTool;
