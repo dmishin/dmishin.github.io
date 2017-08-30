@@ -1,4 +1,10 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+Math.acosh = Math.acosh || function(x) {
+  return Math.log(x + Math.sqrt(x * x - 1));
+};
+
+
+},{}],2:[function(require,module,exports){
 var ChainMap, evaluateTotalisticAutomaton, neighborsSum;
 
 ChainMap = require("./chain_map.coffee").ChainMap;
@@ -44,7 +50,7 @@ exports.evaluateTotalisticAutomaton = evaluateTotalisticAutomaton = function(cel
 };
 
 
-},{"./chain_map.coffee":2}],2:[function(require,module,exports){
+},{"./chain_map.coffee":3}],3:[function(require,module,exports){
 var ChainMap;
 
 exports.ChainMap = ChainMap = (function() {
@@ -182,7 +188,7 @@ exports.ChainMap = ChainMap = (function() {
 })();
 
 
-},{}],3:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 var M, decomposeToTranslations, decomposeToTranslations2, decomposeToTranslationsFmin, fminsearch;
 
 M = require("./matrix3.coffee");
@@ -278,7 +284,7 @@ exports.decomposeToTranslationsAggresively = function(m, eps, attempts) {
 };
 
 
-},{"./fminsearch.coffee":5,"./matrix3.coffee":7}],4:[function(require,module,exports){
+},{"./fminsearch.coffee":6,"./matrix3.coffee":8}],5:[function(require,module,exports){
 var ChainMap, extractClusterAt, importFieldTo, newNode, ref, unity;
 
 ref = require("./vondyck_chain.coffee"), unity = ref.unity, newNode = ref.newNode;
@@ -686,7 +692,7 @@ exports.parseFieldData1 = (data) ->
  */
 
 
-},{"./chain_map.coffee":2,"./vondyck_chain.coffee":14}],5:[function(require,module,exports){
+},{"./chain_map.coffee":3,"./vondyck_chain.coffee":15}],6:[function(require,module,exports){
 var addInplace, amplitude, combine2, scaleInplace;
 
 combine2 = function(v1, k1, v2, k2) {
@@ -872,7 +878,7 @@ exports.fminsearch = function(func, x0, step, tol, maxiter) {
 };
 
 
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 var RewriteRuleset, findOverlap, knuthBendixCompletion, le2cmp, overlap, print, shortLex, simplifyRules, sortPairReverse, splitBy,
   slice = [].slice;
 
@@ -1188,7 +1194,7 @@ exports.knuthBendix = function(S0, lessOrEqual, maxIters, maxRulesetSize, onIter
 };
 
 
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 var add, addScaledInplace, amplitude, approxEq, approxEqv, cleanupHyperbolicMoveMatrix, copy, eye, hrot, hyperbolicInv, inv, mul, mulv, rot, rotationMatrix, set, smul, translationMatrix, transpose, zero;
 
 exports.eye = eye = function() {
@@ -1384,7 +1390,7 @@ exports.powers = function(matrix, n) {
 };
 
 
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 var ChainMap, M, drawBezierApproxArcTo, drawPoincareCircleTo, len2, unity, visiblePolygonSize;
 
 M = require("./matrix3.coffee");
@@ -1593,7 +1599,7 @@ exports.visiblePolygonSize = visiblePolygonSize = function(tiling, cellTransform
 };
 
 
-},{"./chain_map.coffee":2,"./matrix3.coffee":7,"./vondyck_chain.coffee":14}],9:[function(require,module,exports){
+},{"./chain_map.coffee":3,"./matrix3.coffee":8,"./vondyck_chain.coffee":15}],10:[function(require,module,exports){
 "use strict";
 var ChainMap, M, RegularTiling, VonDyck, eliminateFinalA, ref, reverseShortlexLess, takeLastA, unity,
   extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
@@ -1755,7 +1761,7 @@ eliminateFinalA = function(chain, appendRewrite, orderA) {
 };
 
 
-},{"./chain_map.coffee":2,"./matrix3.coffee":7,"./vondyck.coffee":13,"./vondyck_chain.coffee":14}],10:[function(require,module,exports){
+},{"./chain_map.coffee":3,"./matrix3.coffee":8,"./vondyck.coffee":14,"./vondyck_chain.coffee":15}],11:[function(require,module,exports){
 var BaseFunc, BinaryTransitionFunc, DayNightTransitionFunc, GenericTransitionFunc, binaryTransitionFunc2GenericCode, dayNightBinaryTransitionFunc2GenericCode, isDayNightRule, parseIntChecked, parseTransitionFunction,
   extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
   hasProp = {}.hasOwnProperty,
@@ -2075,7 +2081,7 @@ exports.dayNightBinaryTransitionFunc2GenericCode = dayNightBinaryTransitionFunc2
 };
 
 
-},{"./utils.coffee":12}],11:[function(require,module,exports){
+},{"./utils.coffee":13}],12:[function(require,module,exports){
 var CenteredVonDyck, M, mod;
 
 M = require("./matrix3.coffee");
@@ -2147,7 +2153,7 @@ exports.CenteredVonDyck = CenteredVonDyck = (function() {
 })();
 
 
-},{"./matrix3.coffee":7,"./utils.coffee":12}],12:[function(require,module,exports){
+},{"./matrix3.coffee":8,"./utils.coffee":13}],13:[function(require,module,exports){
 "use strict";
 exports.formatString = function(s, args) {
   return s.replace(/{(\d+)}/g, function(match, number) {
@@ -2188,7 +2194,7 @@ exports.mod = function(i, n) {
 };
 
 
-},{}],13:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 var CenteredVonDyck, RewriteRuleset, VonDyck, knuthBendix, makeAppendRewrite, parseChain, ref, ref1, ref2, unity, vdRule;
 
 ref = require("./vondyck_rewriter.coffee"), makeAppendRewrite = ref.makeAppendRewrite, vdRule = ref.vdRule;
@@ -2289,7 +2295,7 @@ exports.VonDyck = VonDyck = (function() {
 })();
 
 
-},{"../core/knuth_bendix.coffee":6,"./triangle_group_representation.coffee":11,"./vondyck_chain.coffee":14,"./vondyck_rewriter.coffee":15}],14:[function(require,module,exports){
+},{"../core/knuth_bendix.coffee":7,"./triangle_group_representation.coffee":12,"./vondyck_chain.coffee":15,"./vondyck_rewriter.coffee":16}],15:[function(require,module,exports){
 
 /* Implementation of values of von Dyck groups.
  *  Each value is a chain of powers of 2 generators: A and B
@@ -2557,7 +2563,7 @@ exports.reverseShortlexLess = reverseShortlexLess = function(c1, c2) {
 };
 
 
-},{"./matrix3.coffee":7}],15:[function(require,module,exports){
+},{"./matrix3.coffee":8}],16:[function(require,module,exports){
 var CodeGenerator, JsCodeGenerator, NodeA, NodeB, RewriteRuleset, chain2string, collectPowers, elementOrder, elementPowerRange, extendLastPowerRewriteTable, groupByPower, groupPowersVd, makeAppendRewrite, makeAppendRewriteRef, mod, newNode, nodeConstructors, otherElem, powerRewriteRules, ref, repeat, repeatRewrite, reverseSuffixTable, string2chain, tailInRewriteTable, ungroupPowersVd, unity, vdRule,
   extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
   hasProp = {}.hasOwnProperty;
@@ -3265,7 +3271,7 @@ exports.makeAppendRewriteVerified = function(rewriteRule) {
 };
 
 
-},{"./knuth_bendix.coffee":6,"./vondyck_chain.coffee":14}],16:[function(require,module,exports){
+},{"./knuth_bendix.coffee":7,"./vondyck_chain.coffee":15}],17:[function(require,module,exports){
 /*!!
  *  Canvas 2 Svg v1.0.19
  *  A low level canvas to SVG converter. Uses a mock canvas context to build an SVG document.
@@ -4459,7 +4465,7 @@ exports.makeAppendRewriteVerified = function(rewriteRule) {
 
 }());
 
-},{}],17:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 //source: https://gist.github.com/paulirish/1579671
 (function() {
     var lastTime = 0;
@@ -4486,7 +4492,7 @@ exports.makeAppendRewriteVerified = function(rewriteRule) {
         };
 }());
 
-},{}],18:[function(require,module,exports){
+},{}],19:[function(require,module,exports){
 "use strict";
 var Animator, E, M, decomposeToTranslations, flipSetTimeout, formatString, interpolateHyperbolic, pad, parseIntChecked, ref, ref1;
 
@@ -4727,7 +4733,7 @@ exports.Animator = Animator = (function() {
 })();
 
 
-},{"../core/decompose_to_translations.coffee":3,"../core/matrix3.coffee":7,"../core/utils.coffee":12,"./htmlutil.coffee":23}],19:[function(require,module,exports){
+},{"../core/decompose_to_translations.coffee":4,"../core/matrix3.coffee":8,"../core/utils.coffee":13,"./htmlutil.coffee":24}],20:[function(require,module,exports){
 "use strict";
 var Animator, Application, BinaryTransitionFunc, ButtonGroup, C2S, ChainMap, DayNightTransitionFunc, DefaultConfig, DomBuilder, E, FieldObserver, GenerateFileList, GenericTransitionFunc, GhostClickDetector, M, MIN_WIDTH, MouseToolCombo, Navigator, OpenDialog, PaintStateSelector, RegularTiling, SaveDialog, SvgDialog, UriConfig, ValidatingInput, addClass, application, autoplayCriticalPopulation, canvas, canvasSizeUpdateBlocked, context, dirty, doCanvasMouseDown, doCanvasMouseMove, doCanvasMouseUp, doCanvasTouchEnd, doCanvasTouchLeave, doCanvasTouchMove, doCanvasTouchStart, doClearMemory, doCloseEditor, doDisableGeneric, doEditAsGeneric, doExport, doExportClose, doExportVisible, doImport, doImportCancel, doMemorize, doNavigateHome, doOpenEditor, doRemember, doSetFixedSize, doSetGrid, doSetPanMode, doSetRuleGeneric, doShowImport, doStartPlayer, doStopPlayer, doTogglePlayer, documentWidth, dragHandler, drawEverything, dtMax, encodeVisible, evaluateTotalisticAutomaton, exportField, fpsDefault, fpsLimiting, getAjax, getCanvasCursorPosition, ghostClickDetector, importField, isPanMode, lastTime, memo, minVisibleSize, mouseMoveReceiver, parseFieldData, parseFloatChecked, parseIntChecked, parseTransitionFunction, parseUri, player, playerTimeout, randomFillFixedNum, randomFillNum, randomFillPercent, randomStateGenerator, redraw, redrawLoop, ref, ref1, ref2, ref3, ref4, removeClass, serverSupportsUpload, shortcuts, showExportDialog, stringifyFieldData, unity, updateCanvasSize, updateGeneration, updateGenericRuleStatus, updateMemoryButtons, updatePlayButtons, updatePopulation, uploadToServer, windowHeight, windowWidth;
 
@@ -4768,6 +4774,8 @@ getCanvasCursorPosition = require("./canvas_util.coffee").getCanvasCursorPositio
 C2S = require("../ext/canvas2svg.js");
 
 require("../ext/polyfills.js");
+
+require("../core/acosh_polyfill.coffee");
 
 GhostClickDetector = require("./ghost_click_detector.coffee").GhostClickDetector;
 
@@ -6025,7 +6033,7 @@ updatePlayButtons();
 redrawLoop();
 
 
-},{"../core/cellular_automata.coffee":1,"../core/chain_map.coffee":2,"../core/field.coffee":4,"../core/matrix3.coffee":7,"../core/regular_tiling.coffee":9,"../core/rule.coffee":10,"../core/utils.coffee":12,"../core/vondyck_chain.coffee":14,"../ext/canvas2svg.js":16,"../ext/polyfills.js":17,"./animator.coffee":18,"./canvas_util.coffee":20,"./dom_builder.coffee":21,"./ghost_click_detector.coffee":22,"./htmlutil.coffee":23,"./indexeddb.coffee":24,"./mousetool.coffee":25,"./navigator.coffee":26,"./observer.coffee":27,"./parseuri.coffee":28}],20:[function(require,module,exports){
+},{"../core/acosh_polyfill.coffee":1,"../core/cellular_automata.coffee":2,"../core/chain_map.coffee":3,"../core/field.coffee":5,"../core/matrix3.coffee":8,"../core/regular_tiling.coffee":10,"../core/rule.coffee":11,"../core/utils.coffee":13,"../core/vondyck_chain.coffee":15,"../ext/canvas2svg.js":17,"../ext/polyfills.js":18,"./animator.coffee":19,"./canvas_util.coffee":21,"./dom_builder.coffee":22,"./ghost_click_detector.coffee":23,"./htmlutil.coffee":24,"./indexeddb.coffee":25,"./mousetool.coffee":26,"./navigator.coffee":27,"./observer.coffee":28,"./parseuri.coffee":29}],21:[function(require,module,exports){
 exports.getCanvasCursorPosition = function(e, canvas) {
   var rect;
   if (e.type === "touchmove" || e.type === "touchstart" || e.type === "touchend") {
@@ -6038,7 +6046,7 @@ exports.getCanvasCursorPosition = function(e, canvas) {
 };
 
 
-},{}],21:[function(require,module,exports){
+},{}],22:[function(require,module,exports){
 var DomBuilder;
 
 exports.DomBuilder = DomBuilder = (function() {
@@ -6125,7 +6133,7 @@ exports.DomBuilder = DomBuilder = (function() {
 })();
 
 
-},{}],22:[function(require,module,exports){
+},{}],23:[function(require,module,exports){
 
 /*
  * In some mobile browsers, ghost clicks can not be prevented. So here easy solution: every mouse event,
@@ -6181,7 +6189,7 @@ exports.GhostClickDetector = GhostClickDetector = (function() {
 })();
 
 
-},{}],23:[function(require,module,exports){
+},{}],24:[function(require,module,exports){
 var ButtonGroup, Debouncer, E, ValidatingInput, addClass, idOrNull, removeClass;
 
 exports.flipSetTimeout = function(t, cb) {
@@ -6481,7 +6489,7 @@ exports.ValidatingInput = ValidatingInput = (function() {
 })();
 
 
-},{}],24:[function(require,module,exports){
+},{}],25:[function(require,module,exports){
 var DomBuilder, E, GenerateFileList, OpenDialog, SaveDialog, VERSION, addClass, ref, ref1, ref2, ref3, ref4, ref5, ref6, ref7, ref8, removeClass, upgradeNeeded;
 
 ref = require("./htmlutil.coffee"), E = ref.E, removeClass = ref.removeClass, addClass = ref.addClass;
@@ -6995,7 +7003,7 @@ GenerateFileList = (function() {
 })();
 
 
-},{"./dom_builder.coffee":21,"./htmlutil.coffee":23}],25:[function(require,module,exports){
+},{"./dom_builder.coffee":22,"./htmlutil.coffee":24}],26:[function(require,module,exports){
 var Debouncer, M, MouseTool, MouseToolCombo, getCanvasCursorPosition,
   extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
   hasProp = {}.hasOwnProperty;
@@ -7112,7 +7120,7 @@ exports.MouseToolRotate = class MouseToolRotate extends MouseTool
  */
 
 
-},{"../core/matrix3.coffee":7,"./canvas_util.coffee":20,"./htmlutil.coffee":23}],26:[function(require,module,exports){
+},{"../core/matrix3.coffee":8,"./canvas_util.coffee":21,"./htmlutil.coffee":24}],27:[function(require,module,exports){
 var DomBuilder, E, Navigator, allClusters;
 
 allClusters = require("../core/field.coffee").allClusters;
@@ -7234,7 +7242,7 @@ exports.Navigator = Navigator = (function() {
 })();
 
 
-},{"../core/field.coffee":4,"./dom_builder.coffee":21,"./htmlutil.coffee":23}],27:[function(require,module,exports){
+},{"../core/field.coffee":5,"./dom_builder.coffee":22,"./htmlutil.coffee":24}],28:[function(require,module,exports){
 "use strict";
 var FieldObserver, M, hyperbolic2poincare, makeCellShapePoincare, makeXYT2path, poincare2hyperblic, ref, unity, visibleNeighborhood;
 
@@ -7534,7 +7542,7 @@ exports.FieldObserver = FieldObserver = (function() {
 })();
 
 
-},{"../core/matrix3.coffee":7,"../core/poincare_view.coffee":8,"../core/vondyck_chain.coffee":14}],28:[function(require,module,exports){
+},{"../core/matrix3.coffee":8,"../core/poincare_view.coffee":9,"../core/vondyck_chain.coffee":15}],29:[function(require,module,exports){
 var parseUri;
 
 exports.parseUri = parseUri = function(str) {
@@ -7574,4 +7582,4 @@ parseUri.options = {
 };
 
 
-},{}]},{},[19]);
+},{}]},{},[20]);
