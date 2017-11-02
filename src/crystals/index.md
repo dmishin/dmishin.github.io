@@ -6,6 +6,7 @@ title: Crystal Growing Collection
 ## Sulfates
 ![Potassium sulfate](@root/crystals/images/potassium-sulfate/k2so4-2.jpg?w=64&original=no)
 ![Copper Sulfate](@root/crystals/images/copper-sulfate/white.jpg?w=64&original=no)
+![Sodium ammonium sulfate](@root/crystals/images/sodium-ammonium-sulfate/dsc03717.jpg?w=64&original=no)
 ![Triglycine Sulfate](@root/crystals/images/triglycine-sulfate/all-green-bg-1.jpg?w=64&original=no)
 ![Hexakis(carbamide) Zinc Sulfate](@root/crystals/images/urea-zinc-sulfate/dsc01599.jpg?w=64&original=no)
 
@@ -13,6 +14,7 @@ Salts of sulfuric acid {H2SO4}. Sulfates are generally a good material for growi
 
 * [Potassium sulfate](@root/crystals/potassium-sulfate//), {K2SO4}
 * [Copper(II) sulfate](@root/crystals/copper-sulfate//), {CuSO4*5H2O}
+* [Sodium ammonium sulfate](@root/crystals/sodium-ammonium-sulfate//), {NH4NaSO4*2H2O}
 
 Sulfuric acid also forms salts or adducts with some organic compounds and complex ions.
 
@@ -65,10 +67,12 @@ Salts of nitric acids {HNO3}. Most of nitrates are extremely soluble in water an
 ### Alumooxalates
 * [Potassium tris(oxalato) aluminate](@root/crystals/potassium-trioxalato-aluminate//) {K3[Al(C2O4)3]}
 ### Ferrioxalates
-Ferrioxalates have beautiful green color, unusual for iron (III) compounds. THey are slightly light sensitive.
+
+Ferrioxalates have beautiful green color, unusual for iron (III) compounds. They are slightly light sensitive and must be stored in dark place.
 
 * [Sodium tris(oxalato) ferrate(III)](@root/crystals/sodium-trioxalatoferrate//) {Na3[Fe(C2O4)3]} - unstable but beautiful green crystals
 * [Potassium tris(oxalato) ferrate(III)](@root/crystals/potassium-trioxalato-ferrate//) {K3[Fe(C2O4)3]} - green crystals, more stable to dehydration than sodium salt.
+* [Lithium tris(oxalato) ferrate(III)](@root/crystals/lithium-ferrioxalate//){Li3[Fe(C2O4)3]} - lithium salt of the same green complex, flat crystals.
 * [Sodium potassium tris(oxalato) ferrate(III)](@root/crystals/sodium-potassium-trioxalatoferrate//) {K5Na[Fe(C2O4)3]2} - anhydrous crystals of deep green color, lesser known relativeof the above two salts. Very recommended for growing!
 
 ## Organic
