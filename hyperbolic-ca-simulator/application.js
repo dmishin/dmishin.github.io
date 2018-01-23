@@ -4952,6 +4952,11 @@ Application = (function() {
     }
   };
 
+  Application.prototype.setShowLiveBorders = function(isDrawing) {
+    this.observer.isDrawingLiveBorders = isDrawing;
+    return redraw();
+  };
+
   Application.prototype.setDrawingHomePtr = function(isDrawing) {
     this.observer.isDrawingHomePtr = isDrawing;
     redraw();
@@ -4991,6 +4996,7 @@ Application = (function() {
       console.log("restore " + isDrawing);
     } else {
       this.setDrawingHomePtr(E('flag-origin-mark').checked);
+      this.setShowLiveBorders(E('flag-live-borders').checked);
     }
     this.observer.onFinish = function() {
       return redraw();
@@ -5473,11 +5479,7 @@ drawEverything = function(w, h, context) {
   s = Math.min(w, h) / 2;
   s1 = s - application.getMargin();
   context.translate(s, s);
-  context.scale(s1, s1);
-  context.fillStyle = "black";
-  context.lineWidth = 1.0 / s;
-  context.strokeStyle = "rgb(128,128,128)";
-  application.observer.draw(application.cells, context);
+  application.observer.draw(application.cells, context, s1);
   context.restore();
   return true;
 };
@@ -5911,6 +5913,10 @@ E('image-size').addEventListener('change', function(e) {
 
 E('flag-origin-mark').addEventListener('change', function(e) {
   return application.setDrawingHomePtr(E('flag-origin-mark').checked);
+});
+
+E('flag-live-borders').addEventListener('change', function(e) {
+  return application.setShowLiveBorders(E('flag-live-borders').checked);
 });
 
 E('btn-mode-edit').addEventListener('click', function(e) {
@@ -7274,7 +7280,10 @@ exports.FieldObserver = FieldObserver = (function() {
       return results;
     })();
     this.isDrawingHomePtr = true;
+    this.isDrawingLiveBorders = true;
     this.colorHomePtr = 'rgba(255,100,100,0.7)';
+    this.colorEmptyBorder = 'rgb(128,128,128)';
+    this.colorLiveBorder = 'rgb(192,192,192)';
     if (center !== unity) {
       this.rebuildAt(center);
     } else {
@@ -7368,8 +7377,10 @@ exports.FieldObserver = FieldObserver = (function() {
     return true;
   };
 
-  FieldObserver.prototype.draw = function(cells, context) {
+  FieldObserver.prototype.draw = function(cells, context, scale) {
     var cell, cellIndex, cellIndices, cellTfm, i, j, k, len, len1, mtx, ref1, ref2, state, state2cellIndexList, stateCells, strState;
+    context.scale(scale, scale);
+    context.lineWidth = 1.0 / scale;
     state2cellIndexList = {};
     ref1 = this.cells;
     for (i = j = 0, len = ref1.length; j < len; i = ++j) {
@@ -7394,10 +7405,15 @@ exports.FieldObserver = FieldObserver = (function() {
         makeCellShapePoincare(this.tiling, mtx, context);
       }
       if (state === 0) {
+        context.strokeStyle = this.colorEmptyBorder;
         context.stroke();
       } else {
         context.fillStyle = this.getColorForState(state);
         context.fill();
+        if (this.isDrawingLiveBorders) {
+          context.strokeStyle = this.colorLiveBorder;
+          context.stroke();
+        }
       }
     }
     if (this.isDrawingHomePtr) {
