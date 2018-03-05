@@ -4,6 +4,7 @@ title: Crystal Growing Collection
 [![Crystals](@root/crystals/images/glucose-sodium-chloride/glucose-nacl-5.jpg?original=no "Glucose NaCl cocrystal")](@root/crystals/glucose-sodium-chloride//)
 
 ## Sulfates
+![Lithium sulfate](@root/crystals/images/lithium-sulfate/dsc04311.jpg?w=64&original=no)
 ![Potassium sulfate](@root/crystals/images/potassium-sulfate/k2so4-2.jpg?w=64&original=no)
 ![Copper Sulfate](@root/crystals/images/copper-sulfate/white.jpg?w=64&original=no)
 ![Sodium ammonium sulfate](@root/crystals/images/sodium-ammonium-sulfate/dsc03717.jpg?w=64&original=no)
@@ -12,7 +13,9 @@ title: Crystal Growing Collection
 
 Salts of sulfuric acid {H2SO4}. Sulfates are generally a good material for growing crystals, because of their stability and solubility.
 
+* [Lithium sulfate](@root/crystals/lithium-sulfate//), {Li2SO4}
 * [Potassium sulfate](@root/crystals/potassium-sulfate//), {K2SO4}
+* [Lithium potassium sulfate](@root/crystals/lithium-potassium-sulfate//), {KLiSO4}
 * [Copper(II) sulfate](@root/crystals/copper-sulfate//), {CuSO4*5H2O}
 * [Sodium ammonium sulfate](@root/crystals/sodium-ammonium-sulfate//), {NH4NaSO4*2H2O}
 
@@ -20,6 +23,7 @@ Sulfuric acid also forms salts or adducts with some organic compounds and comple
 
 * [Triglycine sulfate](@root/crystals/triglycine-sulfate//) {3NH2CH2COOH*H2SO4}
 * [Carbamato zinc sulfate](@root/crystals/urea-zinc-sulfate//) {[Zn(CON2H4)6]SO4*?H2O}
+
 ### Double sulfates: Tutton's salts
 There are many sulfates that have 2 different metals in it, in stoichiometric proportion. They form several families of similar compounds. Tutton's salts are compounds of general formula: {M^I2M^(II)(SO4)2*6H2O}, where {M^I} and {M^(II)} stand for univalent and bivalent anions. In mineralogy, they are called schoenites.
 
@@ -41,6 +45,7 @@ Alums are the family of similar double sulfates of general formula: {M^IM^(III)(
 * [Potassium Aluminum sulfate](@root/crystals/potassium-alum//) {KAl(SO4)2*12H2O}, usually called just "alum" or potassium alum. The most representative member of this family.
 * [Ammonium Aluminum sulfate](@root/crystals/ammonium-alum//) {NH4Al(SO4)2*12H2O}, less common compound that is visually indistinguishable from the potassium salt.
 * [Ammonium Iron(III) sulfate](@root/crystals/ferric-alum//) {NH4Fe(SO4)2*12H2O}, or ferric alum.
+
 
 ## Phosphates
 Salts of phosphoric acid {H3PO4}.
