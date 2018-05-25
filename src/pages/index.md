@@ -22,7 +22,6 @@ Blog posts:
 Single Rotation is a simple reversible cellular automaton, that operates on a field with Margolus neighborhood. Random initial conditions in this rule produce lots of different spaceships, some of them are in this catalog.
 See [blog post](#) for details.
 
-
 ## [Single Rotation cellular automaton with smooth interpolation](@root/singlerot-smooth/singlerot-smooth.html)
 [![](@root/singlerot-smooth/images/singlerot-smooth.png?w=480&original=no)](@root/singlerot-smooth/singlerot-smooth.html)
     
@@ -30,7 +29,6 @@ A simulator of the [Single Rotation](http://dmishin.blogspot.com/2013/11/the-sin
 
 ## [Reversible CA Collider](@root/reversible-ca-collider//)
 A tool to automatically catalogize collisions of simple patterns in reversible cellular automata.
-
 
 ## [3D version of the Single Rotation simulator with smoothing](@root/singlerot-smooth/3d/singlerot-3d.html)
 [![3D version of the Single Rotation simulator](@root/singlerot-smooth/images/singlerot-3d.png)](@root/singlerot-smooth/3d/singlerot-3d.html)
@@ -40,7 +38,14 @@ A tool to automatically catalogize collisions of simple patterns in reversible c
 * Sources: [github.com/dmishin/singlerot-smooth](https://github.com/dmishin/singlerot-smooth), in the "3d" folder.
 * [Blog post](http://dmishin.blogspot.com/2015/01/3d-single-rotation.html)
 * [Demonstration video](http://youtu.be/XX4igr8ufeA)
-  
+
+## [Reversible Cellular Automata applied to image](@root/image-revca/index.html)
+What if block reversible cellular automaton rule is applied to a raster image? The effect might be curious.
+This simulator lets you to watch the evolution of the image under reversible rule. The rule is:
+
+- If a 2x2 block of pixeld contains 1 pixel of highly different color, then this block is rotated CV.
+
+
 ## [Simulator of cellular automata with 2 dimensions of time](@root/t2dca/2dca.html)
 [![](@root/t2dca/images/screenshot-150-60.png?w=480&original=no)](@root/t2dca/2dca.html)
 
