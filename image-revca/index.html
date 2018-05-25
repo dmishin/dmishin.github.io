@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Reversible cellular automata on raster images</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="image-revca.css">
+  </head>
+<body>
+
+  <!-- toolbar -->
+  <div id="content">
+  <div>
+    <button id="btn-backward">Back</button>
+    <button id="btn-stop">Stop</button>
+    <button id="btn-forward">Forward</button>
+    Stop at: <input id="fld-stoplist" title="Whitespace separated list of integers." value="0">
+    Step:<input id="fld-simstep" title="Simulation step." value="32">
+    Custom file: <input id="fld-customfile" type="file">
+  </div>
+  <div>
+    Generation: <span class="numfield" id="generation"></span>
+  </div>
+
+  <hr/>
+  <!-- main -->
+  <div id="canvas-container">
+    <canvas width="1" height="1" id="canv"></canvas>
+  </div>
+  </div>
+  
+  <div id="sidebar">
+    Sample images
+    <ul id="samples"></ul>
+  </div>
+<script type="text/javascript" src="image-revca.js"/></script> 
+</body>
+</html>
