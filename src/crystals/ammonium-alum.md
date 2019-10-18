@@ -4,7 +4,9 @@ tags: ammonium, aluminum, sulfate, alum
 ---
 Formula: {NH4Al(SO4)2*12H2O}
 ![Ammonium Alum](@root/crystals/images/ammonium-alum/dsc01929.jpg)
+
 The biggest specimen in my collection. Mass is 45g, growth time is 4 months.
+
 <span class="cut">Details ...</span>
 ## Properties
 * **Crystal system**: isometric (cubic)

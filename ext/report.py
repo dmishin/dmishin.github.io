@@ -5,7 +5,7 @@
 # License: Public Domain
 # --------------------------------------------------------------------------
 
-from ark import hooks, site
+from malt import hooks, site
 
 
 # Register a callback on the 'exit' event hook.

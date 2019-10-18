@@ -36,7 +36,7 @@ Testing:
 >>> label
 'More...'
 """
-from ark import hooks, site
+from malt import hooks, site
 from bs4 import BeautifulSoup, Tag, NavigableString
 
 #Default label when not specified

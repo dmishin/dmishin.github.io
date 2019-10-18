@@ -1,4 +1,4 @@
-from ark import hooks, site
+from malt import hooks, site
 from bs4 import Tag
 from PIL import Image
 import os.path

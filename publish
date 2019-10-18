@@ -8,7 +8,7 @@ echo =======================
 
 #Do not need to clear since 
 #ark clear
-ark build
+malt build
 
 ODIR=./out
 

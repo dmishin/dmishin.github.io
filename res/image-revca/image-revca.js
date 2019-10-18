@@ -93,10 +93,10 @@
 
 	//the idea behind this formula: color distance from a pixel to the rest of pixels is D times bigger than distance between them.
 	//i.e. the pixel color is outstanding.
-	if (!((Math.min(d12,d13,d14) > Math.max(d23,d24,d34) * D) ||
+	if ( (Math.min(d12,d13,d14) > Math.max(d23,d24,d34) * D) ||
 	     (Math.min(d12,d23,d24) > Math.max(d13,d14,d34) * D) ||
 	     (Math.min(d13,d23,d34) > Math.max(d14,d24,d12) * D) ||
-	      (Math.min(d14,d24,d34) > Math.max(d12,d23,d13) * D) )){
+	     (Math.min(d14,d24,d34) > Math.max(d12,d23,d13) * D) ){
 	    
 	    //In this case: rotate block
 	    if(forward){

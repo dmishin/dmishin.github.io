@@ -1,4 +1,4 @@
-from ark import hooks, site
+from malt import hooks, site
 
 #MATHJAKS_SOURCE = "@root/scripts/MathJax.js?config=TeX-MML-AM_CHTML"
 MATHJAKS_SOURCE = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"
@@ -13,8 +13,8 @@ def inject_mathjaks(soup, page):
     if page_needs_mathjaks(page):
         script = soup.new_tag("script",
                               src = MATHJAKS_SOURCE,
-                              type="text/javascript",
-                              async=None)
+                              type="text/javascript")
+        scrips.attrs['async']=None
         try:
             soup.head.append(script)
         except Exception as err:

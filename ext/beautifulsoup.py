@@ -1,4 +1,4 @@
-from ark import hooks, site
+from malt import hooks, site
 from bs4 import BeautifulSoup, Tag
 # Intermediate-level extension, allowing pre-processing HTML tree of the written pages
 # Requires BeautifulSoup library:
