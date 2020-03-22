@@ -3,7 +3,9 @@ title: Sodium tris(oxalato) ferrate (III)
 tags: sodium,oxalate,complex,iron,ferrioxalate
 ---
 Formula: {Na3[Fe(C2O4)3]*3H2O} Other names are: sodium oxalatoferrate and sodium ferrioxalate.
+
 ![Sodium (tris)oxalato ferrate](@root/crystals/images/sodium-trioxalatoferrate/dsc02794.jpg)
+
 Product of dissolving rust in oxalic acid ({H2C2O4}) in presence of sodium oxalate. Surprisingly for an iron (III) compound, has bright green color. A well-known example of coordination complex.
 <span class="cut">Details ...</span>
 ## Properties
@@ -37,4 +39,3 @@ It is not especially dangerous, though significant amounts of oxalates can be po
 
 ## References
 * Wikipedia: [sodium ferrioxalate](https://en.wikipedia.org/wiki/Sodium_ferrioxalate)
-* K and Na salts and more theory on [chem.pieceofscience.com](http://chem.pieceofscience.com/?p=416)

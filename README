@@ -2,3 +2,6 @@ Requirements:
 
 beautifulsoup4
 mdx_simplechem (my)
+
+
+Build using malt site generator: https://github.com/dmulholl/malt

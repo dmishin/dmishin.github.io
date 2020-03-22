@@ -11,7 +11,7 @@ title: Crystal Growing Collection
 ![Triglycine Sulfate](@root/crystals/images/triglycine-sulfate/all-green-bg-1.jpg?w=64&original=no)
 ![Hexakis(carbamide) Zinc Sulfate](@root/crystals/images/urea-zinc-sulfate/dsc01599.jpg?w=64&original=no)
 
-Salts of sulfuric acid {H2SO4}. Sulfates are generally a good material for growing crystals, because of their stability and solubility.
+Sulfates are salts of the sulfuric acid {H2SO4}. Many of them are a good material for growing crystals, because of their stability and solubility.
 
 * [Lithium sulfate](@root/crystals/lithium-sulfate//), {Li2SO4}
 * [Potassium sulfate](@root/crystals/potassium-sulfate//), {K2SO4}
@@ -22,7 +22,7 @@ Salts of sulfuric acid {H2SO4}. Sulfates are generally a good material for growi
 Sulfuric acid also forms salts or adducts with some organic compounds and complex ions.
 
 * [Triglycine sulfate](@root/crystals/triglycine-sulfate//) {3NH2CH2COOH*H2SO4}
-* [Carbamato zinc sulfate](@root/crystals/urea-zinc-sulfate//) {[Zn(CON2H4)6]SO4*?H2O}
+* [Hexakis(urea) zinc sulfate](@root/crystals/urea-zinc-sulfate//) {[Zn(CON2H4)6]SO4*?H2O}
 
 ### Double sulfates: Tutton's salts
 There are many sulfates that have 2 different metals in it, in stoichiometric proportion. They form several families of similar compounds. Tutton's salts are compounds of general formula: {M^I2M^(II)(SO4)2*6H2O}, where {M^I} and {M^(II)} stand for univalent and bivalent anions. In mineralogy, they are called schoenites.
@@ -80,20 +80,32 @@ Ferrioxalates have beautiful green color, unusual for iron (III) compounds. They
 * [Lithium tris(oxalato) ferrate(III)](@root/crystals/lithium-ferrioxalate//){Li3[Fe(C2O4)3]} - lithium salt of the same green complex, flat crystals.
 * [Sodium potassium tris(oxalato) ferrate(III)](@root/crystals/sodium-potassium-trioxalatoferrate//) {K5Na[Fe(C2O4)3]2} - anhydrous crystals of deep green color, lesser known relativeof the above two salts. Very recommended for growing!
 
+## Sulfamates (amidosulfonates)
+Sulfamic (or amidosulfonic) acid is a moderately strong inorganic acid {HSO3NH2}. Its primary household use is a descaler agent. 
+
+* [Sulfamic acid](@root/crystals/sulfamic-acid//), {H3NSO3} - forms shiny rectangular tablets
+* [Potassium sulfamate](@root/crystals/potassium-sulfamate//), {KSO3NH2}, potassium salt for the above acid, crystallizing in a similar shape
+* [Potassium bis(sulfamato) chlorocuprate](@root/crystals/potassium-sulfamato-chloro-cuprate//), {K2[Cu(SO3NH2)2Cl2]} - a very interesting sulfamate complex, shiny dark violet sticks
+* [Potassium bis(sulfamato) bromeocuprate](@root/crystals/potassium-sulfamato-bromo-cuprate//), {K2[Cu(SO3NH2)2Br2]} - bromine analog of the above complex, black tablets with green tinge
+
+
 ## Organic
+* [Urea citrate](@root/crystals/urea-citrate//) {CO(NH2)2*C3H4(OH)(COOH)3} cocrystal of urea and citric acid.
+* [Saccharin](@root/crystals/saccharin//) Free acid of saccharin, insoluble in water.
+* [Sodium saccharin](@root/crystals/sodium-saccharin//) Sodium salt of saccharin, once popular sugar substitute.
+### Carbohydrates and related compounds
 * [Erythritol](@root/crystals/erythritol//) {C4H10O5} another sugar alcohol, lighter cousin of a xylitol.
 * [Xylitol](@root/crystals/xylitol//) {C5H12O5} sugar alcohol, used as sugar substitute.
 * [Mannitol](@root/crystals/mannitol//){C6H14O6} another sugar alcohol.
-* [Glucose sodium chloride](@root/crystals/glucose-sodium-chloride//) {2C6H12O6*NaCl*H2O} cocrystal of glucose and table
+* [Glucose sodium chloride](@root/crystals/glucose-sodium-chloride//) {2C6H12O6*NaCl*H2O} cocrystal of glucose and table salt {NaCl}
 * [Glucose sodium bromide](@root/crystals/glucose-sodium-bromide//) {2C6H12O6*NaBr*H2O} heavier sibling of the above compound, cocrystal of glucose and {NaBr}
-* [Urea citrate](@root/crystals/urea-citrate//) {CO(NH2)2*C3H4(OH)(COOH)3} cocrystal of urea and citric acid.
-* [Glutamic acid hydrochloride](@root/crystals/glutamic-acid-hydrochloride//) {C3H5(NH2)(COOH)2*HCl}
-* [Saccharin](@root/crystals/saccharin//) Free acid of saccharin, insoluble in water.
-* [Sodium saccharin](@root/crystals/sodium-saccharin//) Sodium salt of saccharin, once popular sugar substitute.
 
-## Other
+### Aminoacid salts
+* [Glutamic acid hydrochloride](@root/crystals/glutamic-acid-hydrochloride//) {C3H5(NH2)(COOH)2*HCl}
+* [Glycyne oxalate 2:1](@root/crystals/glycine-oxalate//) {(NH3CH2COOH)2C2O4} - glycine salt of oxalic acid
+
+
+## Various inorganic
 * [Sodium tetraborate](@root/crystals/borax//) {Na2B4O7*10H2O}, known as borax
 * [Sodium Potassium tartrate](@root/crystals/rochelle-salt//) {KNaC4H4O6*4H2O}, Rochelle salt
 * [Sodium citrate](@root/crystals/sodium-citrate//) {Na3C3H4(OH)(COO)3*?H2O}
-* [Sulfamic acid](@root/crystals/sulfamic-acid//), {H3NSO3}, used as descaler reagent
-* [Potassium sulfamate](@root/crystals/potassium-sulfamate//), {KSO3NH2}, potassium salt for the above acid

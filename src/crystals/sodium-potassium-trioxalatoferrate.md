@@ -3,6 +3,7 @@ title: Sodium potassium tris(oxalato) ferrate
 tags: sodium,potassium,iron,oxalate,ferrioxalate,double salt
 ---
 Formula: {K5Na[Fe(C2O4)3]2}
+
 ![Sodium potassium tris-oxalato ferrate](@root/crystals/images/sodium-potassium-trioxalatoferrate/dsc03087.jpg)
 
 One of the most interesting crystals: have deep green color, beautiful highly symmetric shape and stable on air. Unfortunately, I was not able to prepare aluminium analog: {Na} and {K} alumooxalates just crystallized separtely.
