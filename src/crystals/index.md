@@ -86,7 +86,7 @@ Sulfamic (or amidosulfonic) acid is a moderately strong inorganic acid {HSO3NH2}
 * [Sulfamic acid](@root/crystals/sulfamic-acid//), {H3NSO3} - forms shiny rectangular tablets
 * [Potassium sulfamate](@root/crystals/potassium-sulfamate//), {KSO3NH2}, potassium salt for the above acid, crystallizing in a similar shape
 * [Potassium bis(sulfamato) chlorocuprate](@root/crystals/potassium-sulfamato-chloro-cuprate//), {K2[Cu(SO3NH2)2Cl2]} - a very interesting sulfamate complex, shiny dark violet sticks
-* [Potassium bis(sulfamato) bromeocuprate](@root/crystals/potassium-sulfamato-bromo-cuprate//), {K2[Cu(SO3NH2)2Br2]} - bromine analog of the above complex, black tablets with green tinge
+* [Potassium bis(sulfamato) bromocuprate](@root/crystals/potassium-sulfamato-bromo-cuprate//), {K2[Cu(SO3NH2)2Br2]} - bromine analog of the above complex, black tablets with green tinge
 
 
 ## Organic
@@ -109,3 +109,4 @@ Sulfamic (or amidosulfonic) acid is a moderately strong inorganic acid {HSO3NH2}
 * [Sodium tetraborate](@root/crystals/borax//) {Na2B4O7*10H2O}, known as borax
 * [Sodium Potassium tartrate](@root/crystals/rochelle-salt//) {KNaC4H4O6*4H2O}, Rochelle salt
 * [Sodium citrate](@root/crystals/sodium-citrate//) {Na3C3H4(OH)(COO)3*?H2O}
+* [Sodium boro-formate](@root/crystals/sodium-boroformate//) {NaH2BO3*2HCOOH*2H2O} - scarcely described compound, formed by sodium borate and formic acid.
