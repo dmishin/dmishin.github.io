@@ -70,10 +70,13 @@ Salts of nitric acids {HNO3}. Most of nitrates are extremely soluble in water an
 
 ## Oxalate complexes
 ### Alumooxalates
+Alumooxalates are salts of the complex anion {[Al(C2O4)3]^(3+)}. They are colorless crystalline solids.
+
 * [Potassium tris(oxalato) aluminate](@root/crystals/potassium-trioxalato-aluminate//) {K3[Al(C2O4)3]}
+* [Sodium tris(oxalato) aluminate](@root/crystals/sodium-trioxalato-aluminate//) {Na3[Al(C2O4)3]}
 ### Ferrioxalates
 
-Ferrioxalates have beautiful green color, unusual for iron (III) compounds. They are slightly light sensitive and must be stored in dark place.
+Ferrioxalates are salts of the complex anion {[Fe(C2O4)3]^(3+)}, they have beautiful green color, unusual for iron (III) compounds. They are slightly light sensitive and must be stored in dark place.
 
 * [Sodium tris(oxalato) ferrate(III)](@root/crystals/sodium-trioxalatoferrate//) {Na3[Fe(C2O4)3]} - unstable but beautiful green crystals
 * [Potassium tris(oxalato) ferrate(III)](@root/crystals/potassium-trioxalato-ferrate//) {K3[Fe(C2O4)3]} - green crystals, more stable to dehydration than sodium salt.
@@ -81,9 +84,9 @@ Ferrioxalates have beautiful green color, unusual for iron (III) compounds. They
 * [Sodium potassium tris(oxalato) ferrate(III)](@root/crystals/sodium-potassium-trioxalatoferrate//) {K5Na[Fe(C2O4)3]2} - anhydrous crystals of deep green color, lesser known relativeof the above two salts. Very recommended for growing!
 
 ## Sulfamates (amidosulfonates)
-Sulfamic (or amidosulfonic) acid is a moderately strong inorganic acid {HSO3NH2}. Its primary household use is a descaler agent. 
+Sulfamic (also known as amidosulfonic) acid is a moderately strong inorganic acid {HSO3NH2}. Its primary household use is a descaler agent. Unlike sulfuric acid, it is solid. Almost all sulfamates have extremely high solubility.
 
-* [Sulfamic acid](@root/crystals/sulfamic-acid//), {H3NSO3} - forms shiny rectangular tablets
+* [Sulfamic acid](@root/crystals/sulfamic-acid//), {H3NSO3} - the acid itself forms shiny rectangular tablets
 * [Potassium sulfamate](@root/crystals/potassium-sulfamate//), {KSO3NH2}, potassium salt for the above acid, crystallizing in a similar shape
 * [Potassium bis(sulfamato) chlorocuprate](@root/crystals/potassium-sulfamato-chloro-cuprate//), {K2[Cu(SO3NH2)2Cl2]} - a very interesting sulfamate complex, shiny dark violet sticks
 * [Potassium bis(sulfamato) bromocuprate](@root/crystals/potassium-sulfamato-bromo-cuprate//), {K2[Cu(SO3NH2)2Br2]} - bromine analog of the above complex, black tablets with green tinge
