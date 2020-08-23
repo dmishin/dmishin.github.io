@@ -3,6 +3,8 @@ title: Crystal Growing Collection
 ---
 [![Crystals](@root/crystals/images/glucose-sodium-chloride/glucose-nacl-5.jpg?original=no "Glucose NaCl cocrystal")](@root/crystals/glucose-sodium-chloride//)
 
+[TOC]
+
 ## Sulfates
 ![Lithium sulfate](@root/crystals/images/lithium-sulfate/dsc04311.jpg?w=64&original=no)
 ![Potassium sulfate](@root/crystals/images/potassium-sulfate/k2so4-2.jpg?w=64&original=no)
@@ -67,6 +69,7 @@ Salts of nitric acids {HNO3}. Most of nitrates are extremely soluble in water an
 * [Sodium chloride](@root/crystals/sodium-chloride//) {NaCl}, table salt (very hard to grow)
 * [Potassium chloride](@root/crystals/potassium-chloride//) {KCl}, much better growing potassium sibling of table salt.
 * [Ammonium chloroferrate](@root/crystals/ammonium-chloroferrate//) {(NH4)2[FeCl5(H2O)]}, mixed chloride or ammonium and iron (III).
+* [Ammonium tetrachlorocuprate](@root/crystals/ammonium-tetrachlorocuprate//) {(NH4)2[CuCl4]}.
 
 ## Oxalate complexes
 ### Alumooxalates
@@ -90,6 +93,7 @@ Sulfamic (also known as amidosulfonic) acid is a moderately strong inorganic aci
 * [Potassium sulfamate](@root/crystals/potassium-sulfamate//), {KSO3NH2}, potassium salt for the above acid, crystallizing in a similar shape
 * [Potassium bis(sulfamato) chlorocuprate](@root/crystals/potassium-sulfamato-chloro-cuprate//), {K2[Cu(SO3NH2)2Cl2]} - a very interesting sulfamate complex, shiny dark violet sticks
 * [Potassium bis(sulfamato) bromocuprate](@root/crystals/potassium-sulfamato-bromo-cuprate//), {K2[Cu(SO3NH2)2Br2]} - bromine analog of the above complex, black tablets with green tinge
+* [Ammonium bis(sulfamato) chlorocuprate](@root/crystals/ammonium-sulfamato-chlorocuprate//), {(NH4)2[Cu(SO3NH2)2Cl2]} - ammonium analog, dark blue tablets
 
 
 ## Organic
@@ -109,7 +113,7 @@ Sulfamic (also known as amidosulfonic) acid is a moderately strong inorganic aci
 
 
 ## Various inorganic
-* [Sodium tetraborate](@root/crystals/borax//) {Na2B4O7*10H2O}, known as borax
 * [Sodium Potassium tartrate](@root/crystals/rochelle-salt//) {KNaC4H4O6*4H2O}, Rochelle salt
 * [Sodium citrate](@root/crystals/sodium-citrate//) {Na3C3H4(OH)(COO)3*?H2O}
+* [Sodium tetraborate](@root/crystals/borax//) {Na2B4O7*10H2O}, known as borax
 * [Sodium boro-formate](@root/crystals/sodium-boroformate//) {NaH2BO3*2HCOOH*2H2O} - scarcely described compound, formed by sodium borate and formic acid.

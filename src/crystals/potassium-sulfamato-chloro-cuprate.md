@@ -8,7 +8,7 @@ Formula: {K2[Cu(SO3NH2)2Cl2]}
 
 An unusual coordination complex of copper, producing  lustrous dark violet crystals.
 
-It has bromine analog: [Potassium bis(sulfamato) bromocuprate](@root/crystals/potassium-sulfamato-bromo-cuprate//)
+It has bromine analog: [potassium bis(sulfamato) bromocuprate](@root/crystals/potassium-sulfamato-bromo-cuprate//). Also, potassium can be replaced with ammonium: [ammonium bis(sulfamato) chlorocuprate](@root/crystals/ammonium-sulfamato-shlorocuprate//)
 
 <span class="cut">Details ...</span>
 ## Properties
