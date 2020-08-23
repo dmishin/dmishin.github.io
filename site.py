@@ -53,5 +53,5 @@ crystals = {                # id corresponding to the [type] directory
 }
 
 markdown = {
-    'extensions': ['simplechem'],
+    'extensions': ['simplechem','toc'],
 }
