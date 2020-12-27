@@ -14242,13 +14242,27 @@ Application = (function() {
     }
 
     loadPreset(preset) {
+      var cells;
       if (preset.matrix != null) {
         //@setLatticeMatrix parseMatrix preset.matrix
         $("#fld-matrix").val(preset.matrix).trigger('change');
       }
       if (preset.neighbors != null) {
         //@setNeighborVectors parseNeighborSamples preset.neighbors
-        return $("#fld-sample-neighbor").val(preset.neighbors).trigger('change');
+        $("#fld-sample-neighbor").val(preset.neighbors).trigger('change');
+      }
+      if (preset.pattern != null) {
+        cells = parseCellList(preset.pattern);
+        this.world.putPattern(makeCoord(0, 0), cells);
+      }
+      if (preset.rule != null) {
+        this.setRule(new BinaryTotalisticRule(preset.rule));
+        $("#fld-rule").val("" + this.rule);
+      }
+      if (preset.customrule) {
+        console.log(preset.customrule);
+        this.setRule(new CustomRule(preset.customrule));
+        return $("#fld-custom-rule-code").val(preset.customrule);
       }
     }
 
@@ -14276,16 +14290,16 @@ Application = (function() {
     }
 
     loadFromUrlParams(params) {
-      var angle, cells, center, err, i, len, mtx, neighbors, s, sx, sy, x, y;
+      var angle, cells, center, err, mtx, neighbors, sx, sy;
       if (params.has('matrix')) {
         try {
           mtx = params.get('matrix');
           this.setLatticeMatrix(parseMatrix(mtx));
           $("#fld-matrix").val(mtx);
+          $.notify(`Lattice matrix is set to${JSON.stringify(mtx)}`, "info");
         } catch (error) {
           err = error;
           alert(`Bad matrix in url: ${mtx}, ${err}`);
-          return;
         }
       }
       if (params.has('neighbors')) {
@@ -14294,10 +14308,10 @@ Application = (function() {
           this.world.setNeighborVectors(parseNeighborSamples(neighbors));
           this.view.updateWorld();
           $("#fld-sample-neighbor").val(neighbors);
+          $.notify(`Sample neighbors are set to${neighbors}`, "info");
         } catch (error) {
           err = error;
-          alert(`Bad neighbor samepls in url: ${neighbors}, ${err}`);
-          return;
+          alert(`Bad neighbor samples in url: ${neighbors}, ${err}`);
         }
       }
       if (params.has('center')) {
@@ -14317,18 +14331,19 @@ Application = (function() {
       this.view.setLocation(center, angle);
       if (params.has('cells')) {
         cells = parseCellListBig(params.get('cells'));
-        for (i = 0, len = cells.length; i < len; i++) {
-          [x, y, s] = cells[i];
-          this.world.setCell(makeCoord(x, y), s);
-        }
+        this.world.clear();
+        this.world.putPattern(makeCoord(0, 0), cells);
+        this.view.selectedCell = null;
       }
       if (params.has('rule')) {
         this.setRule(new BinaryTotalisticRule(params.get('rule')));
         $("#fld-rule").val("" + this.rule);
+        $.notify(`Rule is set to${this.rule}`, "info");
       }
       if (params.has('customrule')) {
         this.setRule(new CustomRule(params.get('customrule')));
         $("#fld-custom-rule-code").val(params.get('customrule'));
+        $.notify("Rule is set to custom rule", "info");
       }
       this.needRepaint = true;
       return this.needRepaintCtl = true;
@@ -14645,8 +14660,10 @@ $(document).ready(function() {
     }
   });
   $("#btn-help-shortcuts").on("click", function() {
-    console.log("toggle help");
     return $("#popup-help-shortcuts").toggle();
+  });
+  $("#btn-examples").on("click", function() {
+    return $("#popup-examples").toggle();
   });
   $("#btn-zoom-in").on("click", function() {
     return app.zoomIn();
@@ -14710,10 +14727,9 @@ $(document).ready(function() {
     return $("#popup-custom-rule").toggle();
   });
   $("div.popup").on('click', function(e) {
-    return $(this).toggle();
-  });
-  $("div.popup").children().on('click', function() {
-    return false;
+    if (e.target === this) {
+      return $(this).toggle();
+    }
   });
   $("#btn-save-url").on('click', function() {
     $("#fld-save-url").val(window.location.href.split('?')[0] + "?" + app.saveToUrlParams());
@@ -14849,6 +14865,14 @@ $(document).ready(function() {
     }
   }
   //ignore
+  $("a.reference").on('click', function(e) {
+    var url;
+    console.log(e.target.href);
+    url = new URL(e.target.href);
+    app.loadFromUrlParams(new URLSearchParams(url.search));
+    $("div.popup").hide();
+    return false;
+  });
   $(window).resize(function() {
     return app.updateCanvasSize();
   });
@@ -17327,7 +17351,7 @@ exports.View = View = class View {
       for (k = 0, len1 = ref1.length; k < len1; k++) {
         nxy = ref1[k];
         [ndx, ndy] = M.mulv(T, nxy);
-        this.drawCellShape(context, selx + dx + ndx, sely + dy + ndy, 1);
+        this.drawCellShape(context, selx + dx + ndx, sely + dy + ndy, 1.2);
         context.stroke();
       }
     }
@@ -17643,6 +17667,14 @@ exports.World = World = class World {
       this.cells.remove(coord);
     } else {
       this.cells.put(coord, state);
+    }
+  }
+
+  putPattern(coord, celllist) {
+    var j, len, xys;
+    for (j = 0, len = celllist.length; j < len; j++) {
+      xys = celllist[j];
+      this.setCell(coord.translate(xys), xys[2]);
     }
   }
 

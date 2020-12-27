@@ -3148,6 +3148,14 @@ exports.World = World = class World {
     }
   }
 
+  putPattern(coord, celllist) {
+    var j, len, xys;
+    for (j = 0, len = celllist.length; j < len; j++) {
+      xys = celllist[j];
+      this.setCell(coord.translate(xys), xys[2]);
+    }
+  }
+
   //convenience toggle method.
   toggle(coord, state = 1) {
     var old;
