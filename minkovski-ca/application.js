@@ -13898,6 +13898,7 @@ Application = (function() {
 
     repaintView() {
       if (this.view !== null) {
+        this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
         return this.view.drawGrid(this.canvas, this.context);
       }
     }
@@ -17437,8 +17438,6 @@ exports.View = View = class View {
       }
       return results;
     })();
-    context.clearRect(0, 0, canvas.width, canvas.height);
-    //get points and draw them
     invViewBig = B.adjoint(this.viewMatrixBig);
     context.save();
     context.translate(width / 2, height / 2);
