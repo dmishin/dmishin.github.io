@@ -14350,6 +14350,26 @@ Application = (function() {
       return this.needRepaintCtl = true;
     }
 
+    connectionsGraph() {
+      var connections, n2s;
+      connections = [];
+      n2s = function(coord) {
+        return `N${coord.x}_${coord.y}`;
+      };
+      this.world.connections.iter(function(kv) {
+        var i, len, neighbor, ref;
+        ref = kv.v.neighbors;
+        for (i = 0, len = ref.length; i < len; i++) {
+          neighbor = ref[i];
+          if (neighbor.coord.hash > kv.k.hash) {
+            continue;
+          }
+          connections.push([n2s(kv.k), n2s(neighbor.coord)]);
+        }
+      });
+      return connections;
+    }
+
   };
 
   Application.prototype.requestUpdateConnections = debounce(500, false, function() {
@@ -14588,6 +14608,7 @@ CodeSamples = {
 $(document).ready(function() {
   var app, kbDispatcher, toolButtons;
   app = new Application($("#canvas").get(0));
+  window.App = app;
   app.updateCanvasSize();
   $("#world-clear").click(function() {
     return app.doClear();
