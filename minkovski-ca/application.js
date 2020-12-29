@@ -14403,6 +14403,7 @@ StateSelector = class StateSelector {
     if (n < 2) {
       throw new Error("Number os states can't be < 2");
     }
+    this.activeState = 1;
     this.nstates = n;
     this._updateSelector();
     if (this.nstates === 2) {
