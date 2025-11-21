@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Graph Application</title>
+    
+  <script type="module" crossorigin src="./assets/main-5466dfc6.js"></script>
+  <link rel="stylesheet" href="./assets/style-c7fdc296.css">
+</head>
+<body>
+    <div class="main-content">
+            <aside class="controls-panel">
+                <div class="control-group">
+                    <h2>Collatz mod P <a href="help.html" class="help-link" title="Help">?</a></h2>
+                    <div class="rule-display">
+                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                            <mrow>
+                                <mi>f</mi>
+                                <mrow>
+                                    <mo>(</mo>
+                                    <mi>x</mi>
+                                    <mo>)</mo>
+                                </mrow>
+                                <mo>=</mo>
+                                <mrow>
+                                    <mo>{</mo>
+                                    <mtable columnalign="left" columnspacing="1em">
+                                        <mtr>
+                                            <mtd>
+                                                <mfrac>
+                                                    <mi>x</mi>
+                                                    <mn>2</mn>
+                                                </mfrac>
+                                            </mtd>
+                                            <mtd>
+                                                <mspace width="1em"/>
+                                                <mtext>if </mtext>
+                                                <mi>x</mi>
+                                                <mo>≡</mo>
+                                                <mn>0</mn>
+                                                <mspace width="0.3em"/>
+                                                <mo>mod</mo>
+                                                <mspace width="0.3em"/>
+                                                <mn>2</mn>
+                                            </mtd>
+                                        </mtr>
+                                        <mtr id="odd-rule-math">
+                                            <mtd>
+                                                <mi>N</mi>
+                                                <mi>x</mi>
+                                                <mo>+</mo>
+                                                <mi>M</mi>
+                                            </mtd>
+                                            <mtd>
+                                                <mspace width="1em"/>
+                                                <mtext>if </mtext>
+                                                <mi>x</mi>
+                                                <mo>≡</mo>
+                                                <mn>1</mn>
+                                                <mspace width="0.3em"/>
+                                                <mo>mod</mo>
+                                                <mspace width="0.3em"/>
+                                                <mn>2</mn>
+                                            </mtd>
+                                        </mtr>
+                                    </mtable>
+                                </mrow>
+                            </mrow>
+                        </math>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="modulo">Modulo:</label>
+                        <input type="number" id="modulo" value="6" min="1" step="1">
+                        <span class="validation-error" id="modulo-error"></span>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="n-value">N:</label>
+                        <input type="number" id="n-value" value="3" step="2">
+                        <span class="validation-error" id="n-error"></span>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="m-value">M:</label>
+                        <input type="number" id="m-value" value="1" step="2">
+                        <span class="validation-error" id="m-error"></span>
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="shortcut">
+                        <label for="shortcut">Shortcut</label>
+                    </div>
+                </div>
+                
+                <div class="control-group">
+                    <h3>Display</h3>
+                    <div class="display-controls">
+                        <div class="labels-group">
+                            <span>Labels:</span>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="show-node-labels" checked>
+                                <label for="show-node-labels">Nodes</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="show-edge-labels" checked>
+                                <label for="show-edge-labels">Edges</label>
+                            </div>
+                        </div>
+                        <div class="scale-controls">
+                            <span>Scale:</span>
+                            <button id="scale-down" class="layout-btn">−</button>
+                            <button id="scale-up" class="layout-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="control-group">
+                    <h3>Layout</h3>
+                    <div class="layout-buttons">
+                        <button id="layout-dagre" class="layout-btn">Dagre (Tree)</button>
+                        <button id="layout-circle" class="layout-btn">Circle</button>
+                        <button id="layout-grid" class="layout-btn">Grid</button>
+                        <button id="layout-concentric" class="layout-btn">Concentric</button>
+                        <button id="layout-cose" class="layout-btn">Force-Directed</button>
+                        <button id="layout-breadthfirst" class="layout-btn">Breadth-First</button>
+                        <button id="layout-random" class="layout-btn">Random</button>
+                    </div>
+                </div>
+                
+                <div class="control-group">
+                    <h3>Tools</h3>
+                    <button id="export-link">Export Link</button>
+                    <button id="export-svg">Export PNG</button>
+                    <button id="show-3d">Show 3D</button>
+                </div>
+                
+                <div class="control-group">
+                    <h3>Cycles</h3>
+                    <button id="search-cycles">Search</button>
+                    <div id="cycles-list"></div>
+                </div>
+                
+                <div class="control-group">
+                    <h3>Toys</h3>
+                    <button id="double-modulo">P→2P</button>
+                    <button id="halve-modulo">2P→P</button>
+                    <button id="make-symmetric">Symmetrize</button>
+                    <button id="show-cycle">Show Cycle</button>
+                </div>
+            </aside>
+            
+            <main class="graph-container">
+                <div id="cy"></div>
+            </main>
+        </div>
+    
+    
+</body>
+</html>

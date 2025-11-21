@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help - Collatz mod P</title>
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            min-height: 100vh;
+            overflow-y: auto;
+        }
+        .help-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            min-height: calc(100vh - 4rem);
+        }
+        .help-container h1 {
+            color: #667eea;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .help-container h2 {
+            color: #333;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0.5rem;
+        }
+        .help-container p, .help-container li {
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+        }
+        .help-container ul {
+            margin-left: 1.5rem;
+        }
+        .help-container ul ul {
+            margin-left: 1rem;
+            margin-top: 0.25rem;
+        }
+        .help-container ul ul ul {
+            margin-left: 1rem;
+            margin-top: 0.25rem;
+        }
+        .help-container a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        .help-container a:hover {
+            text-decoration: underline;
+        }
+        .back-link {
+            color: #667eea;
+            text-decoration: none;
+            margin-bottom: 1rem;
+            display: inline-block;
+            font-weight: 500;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+  <link rel="stylesheet" href="./assets/style-c7fdc296.css">
+</head>
+<body>
+    <div class="help-container">
+        <a href="index.html" class="back-link">← Back to Application</a>
+        
+        <h1>Collatz mod P - Help</h1>
+
+        <p>This application visualizes <a href="https://en.wikipedia.org/wiki/Collatz_conjecture" target="_blank">Collatz-like processes</a> modulo P as interactive graphs. It explores generalized sequences where odd numbers follow the rule <strong>Nx + M</strong> instead of the standard <strong>3x + 1</strong>.</p>
+
+        <h2>Mathematical Background</h2>
+        <p>The <a href="https://en.wikipedia.org/wiki/Collatz_conjecture" target="_blank">Collatz conjecture</a> involves iterating the function:</p>
+        <ul>
+            <li>If x is even: x → x/2</li>
+            <li>If x is odd: x → 3x + 1</li>
+        </ul>
+        <p>This application generalizes this to <strong>Nx + M</strong> for odd numbers and visualizes the resulting <a href="https://en.wikipedia.org/wiki/Directed_graph" target="_blank">directed graph</a> modulo P.</p>
+        
+        <p>The graph represents the dynamics of this generalized Collatz function on <a href="https://en.wikipedia.org/wiki/Modular_arithmetic" target="_blank">residue classes</a> modulo P. Each node represents a residue class [i] = {i + kP | k ∈ ℤ}, and edges represent the function transitions between these classes.</p>
+
+        <h2>Parameters</h2>
+        <ul>
+            <li><strong>Modulo (P):</strong> The modular arithmetic base. All calculations are done modulo P.</li>
+            <li><strong>N:</strong> Multiplier for odd numbers (must be odd to ensure the function is well-defined)</li>
+            <li><strong>M:</strong> Additive constant for odd numbers (must be odd to ensure odd numbers map to even numbers)</li>
+            <li><strong>Shortcut:</strong> When enabled, applies <strong>(Nx + M)/2</strong> instead of <strong>Nx + M</strong> for odd numbers. This simulates the "shortcut" optimization used in Collatz analysis, where since Nx + M is always even (when x is odd and N,M are odd), we can immediately divide by 2. This effectively combines two iteration steps into one.</li>
+        </ul>
+
+        <h2>Cycles</h2>
+        <ul>
+            <li><strong>Search:</strong> Find cycles in the current Collatz process</li>
+            <li><strong>Click cycle:</strong> Highlight the cycle path on the graph</li>
+        </ul>
+
+        <h2>Graph Interpretation</h2>
+        <ul>
+            <li><strong>Nodes:</strong> Represent <a href="https://en.wikipedia.org/wiki/Equivalence_class" target="_blank">residue classes</a> modulo P, labeled 0 to P-1. Each node [i] represents all integers congruent to i modulo P.</li>
+            <li><strong>Edges:</strong> Represent function transitions between residue classes according to the generalized Collatz rules.</li>
+            <li><strong>Solid edges:</strong> Transitions from odd residue classes via Nx + M (or (Nx + M)/2 if shortcut is enabled)</li>
+            <li><strong>Dashed edges:</strong> Transitions from even residue classes via x/2</li>
+            <li><strong>Node colors indicate parity:</strong>
+                <ul>
+                    <li><strong>When P is odd:</strong> All nodes are grey (parity is not well-defined since both even and odd numbers can belong to the same residue class)</li>
+                    <li><strong>When P is even:</strong>
+                        <ul>
+                            <li><strong>White nodes:</strong> Even residue classes (contain only even numbers)</li>
+                            <li><strong>Black nodes:</strong> Odd residue classes (contain only odd numbers)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>Special Cases</h2>
+        <p>When P is a power of 2, the graph becomes a <a href="https://en.wikipedia.org/wiki/De_Bruijn_graph" target="_blank">De Bruijn graph</a>, and the symmetrize function applies a special transformation based on binary representations.</p>
+
+        <h2>Toys</h2>
+        <ul>
+            <li><strong>P→2P:</strong> Double the modulo while preserving layout</li>
+            <li><strong>2P→P:</strong> Halve the modulo (P must be even)</li>
+            <li><strong>Symmetrize:</strong> Apply central symmetry (requires P to be a power of 2)</li>
+            <li><strong>Show Cycle:</strong> Manually input and highlight a specific cycle</li>
+        </ul>
+
+        <p><a href="index.html">← Return to Application</a></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D View - Collatz mod P</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #1a1a1a;
+            color: white;
+            overflow: hidden;
+            height: 100vh;
+        }
+        
+        .controls {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            border-radius: 8px;
+            min-width: 200px;
+        }
+        
+        .controls h3 {
+            margin-bottom: 10px;
+            color: #667eea;
+        }
+        
+        .param {
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .param strong {
+            color: #fff;
+        }
+        
+        .back-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            width: 100%;
+            font-size: 0.9rem;
+        }
+        
+        .back-btn:hover {
+            background: #5a6fd8;
+        }
+        
+        .info {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            max-width: 300px;
+        }
+        
+        #3d-graph {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <h3>3D Collatz Graph</h3>
+        <div class="param"><strong>Modulo:</strong> <span id="modulo-display">6</span></div>
+        <div class="param"><strong>N:</strong> <span id="n-display">3</span></div>
+        <div class="param"><strong>M:</strong> <span id="m-display">1</span></div>
+        <div class="param"><strong>Shortcut:</strong> <span id="shortcut-display">No</span></div>
+        <button class="back-btn" onclick="window.close()">Close Window</button>
+    </div>
+    
+    <div class="info">
+        <strong>Navigation:</strong><br>
+        • Click and drag to rotate<br>
+        • Scroll to zoom<br>
+        • Click nodes to highlight<br>
+        • Right-click to reset camera
+    </div>
+    
+    <div id="3d-graph"></div>
+    
+    <script src="https://unpkg.com/3d-force-graph@1"></script>
+    <script>
+        class Collatz3D {
+            constructor() {
+                this.modulo = 6;
+                this.nValue = 3;
+                this.mValue = 1;
+                this.shortcut = false;
+                this.graph = null;
+                this.init();
+            }
+            
+            // Mathematical modulo that always returns positive result
+            mod(a, b) {
+                return ((a % b) + b) % b;
+            }
+            
+            init() {
+                this.loadFromUrl();
+                this.updateDisplay();
+                this.buildAndRender3DGraph();
+            }
+            
+            loadFromUrl() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const encodedData = urlParams.get('data');
+                
+                if (encodedData) {
+                    try {
+                        const data = JSON.parse(atob(encodedData));
+                        this.modulo = data.modulo || 6;
+                        this.nValue = data.nValue || 3;
+                        this.mValue = data.mValue || 1;
+                        this.shortcut = data.shortcut || false;
+                    } catch (e) {
+                        console.error('Failed to load 3D graph data:', e);
+                    }
+                }
+            }
+            
+            updateDisplay() {
+                document.getElementById('modulo-display').textContent = this.modulo;
+                document.getElementById('n-display').textContent = this.nValue;
+                document.getElementById('m-display').textContent = this.mValue;
+                document.getElementById('shortcut-display').textContent = this.shortcut ? 'Yes' : 'No';
+            }
+            
+            buildGraphData() {
+                const nodes = [];
+                const links = [];
+                const P = this.modulo;
+                const N = this.nValue;
+                const M = this.mValue;
+                
+                // Create nodes
+                for (let i = 0; i < P; i++) {
+                    let nodeColor;
+                    if (P % 2 === 1) {
+                        nodeColor = '#888888'; // Grey for odd P
+                    } else {
+                        nodeColor = (i % 2 === 0) ? '#ffffff' : '#333333'; // White/black for even P
+                    }
+                    
+                    nodes.push({
+                        id: i,
+                        label: i.toString(),
+                        color: nodeColor,
+                        size: Math.max(4, 20 / Math.sqrt(P)) // Scale node size based on modulo
+                    });
+                }
+                
+                // Create edges
+                const existingEdges = new Set();
+                
+                for (let i = 0; i < 2 * P; i++) {
+                    let j, label, color;
+                    
+                    if (i % 2 === 0) {
+                        // Even i: j = i/2
+                        j = this.mod(Math.floor(i / 2), P);
+                        label = 'x/2';
+                        color = '#00ff88'; // Green for division by 2
+                    } else {
+                        // Odd i: depends on shortcut
+                        if (this.shortcut) {
+                            j = this.mod(Math.floor((N * i + M) / 2), P);
+                            label = `(${N}x+${M})/2`;
+                        } else {
+                            j = this.mod(N * i + M, P);
+                            label = `${N}x+${M}`;
+                        }
+                        color = '#ff6b6b'; // Red for Nx+M transitions
+                    }
+                    
+                    const sourceNode = this.mod(i, P);
+                    const targetNode = j;
+                    const edgeKey = `${sourceNode}-${targetNode}-${label}`;
+                    
+                    if (!existingEdges.has(edgeKey)) {
+                        existingEdges.add(edgeKey);
+                        
+                        links.push({
+                            source: sourceNode,
+                            target: targetNode,
+                            label: label,
+                            color: color,
+                            width: i % 2 === 0 ? 2 : 3 // Thicker for Nx+M transitions
+                        });
+                    }
+                }
+                
+                return { nodes, links };
+            }
+            
+            buildAndRender3DGraph() {
+                const data = this.buildGraphData();
+                
+                this.graph = ForceGraph3D()
+                    (document.getElementById('3d-graph'))
+                    .graphData(data)
+                    .nodeLabel('label')
+                    .nodeColor('color')
+                    .nodeVal('size')
+                    .linkLabel('label')
+                    .linkColor('color')
+                    .linkWidth('width')
+                    .linkDirectionalArrowLength(3.5)
+                    .linkDirectionalArrowRelPos(1)
+                    .linkCurvature(0.1)
+                    .backgroundColor('#1a1a1a')
+                    .onNodeClick(node => {
+                        // Highlight clicked node
+                        this.highlightNode(node);
+                    })
+                    .onNodeRightClick(node => {
+                        // Reset camera
+                        this.graph.cameraPosition({ x: 0, y: 0, z: 300 });
+                    })
+                    .d3Force('charge', d3.forceCollide().radius(20))
+                    .d3Force('center', d3.forceCenter());
+                
+                // Set initial camera position
+                setTimeout(() => {
+                    const distance = Math.max(200, this.modulo * 20);
+                    this.graph.cameraPosition({ x: 0, y: 0, z: distance });
+                }, 100);
+            }
+            
+            highlightNode(node) {
+                // Reset all nodes to default colors
+                const data = this.buildGraphData();
+                this.graph.graphData(data);
+                
+                // Highlight the selected node
+                const highlightedData = {
+                    nodes: data.nodes.map(n => ({
+                        ...n,
+                        color: n.id === node.id ? '#ffff00' : n.color,
+                        size: n.id === node.id ? n.size * 1.5 : n.size
+                    })),
+                    links: data.links.map(l => ({
+                        ...l,
+                        color: (l.source === node.id || l.target === node.id) ? '#ffff00' : l.color,
+                        width: (l.source === node.id || l.target === node.id) ? l.width * 2 : l.width
+                    }))
+                };
+                
+                this.graph.graphData(highlightedData);
+            }
+        }
+        
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new Collatz3D();
+        });
+    </script>
+</body>
+</html>
