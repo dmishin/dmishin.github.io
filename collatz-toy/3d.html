@@ -106,6 +106,7 @@
                 this.nValue = 3;
                 this.mValue = 1;
                 this.shortcut = false;
+                this.excludeMultiplesOf3 = false;
                 this.graph = null;
                 this.init();
             }
@@ -132,6 +133,7 @@
                         this.nValue = data.nValue || 3;
                         this.mValue = data.mValue || 1;
                         this.shortcut = data.shortcut || false;
+                        this.excludeMultiplesOf3 = data.excludeMultiplesOf3 || false;
                     } catch (e) {
                         console.error('Failed to load 3D graph data:', e);
                     }
@@ -154,6 +156,11 @@
                 
                 // Create nodes
                 for (let i = 0; i < P; i++) {
+                    // Skip nodes divisible by 3 if the option is enabled AND P is divisible by 3
+                    if (this.excludeMultiplesOf3 && P % 3 === 0 && i % 3 === 0) {
+                        continue;
+                    }
+                    
                     let nodeColor;
                     if (P % 2 === 1) {
                         nodeColor = '#888888'; // Grey for odd P
@@ -194,6 +201,14 @@
                     
                     const sourceNode = this.mod(i, P);
                     const targetNode = j;
+                    
+                    // Skip edges if either source or target node is excluded
+                    if (this.excludeMultiplesOf3 && P % 3 === 0) {
+                        if (sourceNode % 3 === 0 || targetNode % 3 === 0) {
+                            continue;
+                        }
+                    }
+                    
                     const edgeKey = `${sourceNode}-${targetNode}-${label}`;
                     
                     if (!existingEdges.has(edgeKey)) {

@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Graph Application</title>
     
-  <script type="module" crossorigin src="./assets/main-5466dfc6.js"></script>
-  <link rel="stylesheet" href="./assets/style-c7fdc296.css">
+  <script type="module" crossorigin src="./assets/main-92988a7d.js"></script>
+  <link rel="stylesheet" href="./assets/style-582db374.css">
 </head>
 <body>
     <div class="main-content">
@@ -92,6 +92,11 @@
                         <input type="checkbox" id="shortcut">
                         <label for="shortcut">Shortcut</label>
                     </div>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="exclude-multiples-of-3" disabled>
+                        <label for="exclude-multiples-of-3">Exclude multiples of 3</label>
+                    </div>
                 </div>
                 
                 <div class="control-group">
@@ -108,10 +113,15 @@
                                 <label for="show-edge-labels">Edges</label>
                             </div>
                         </div>
-                        <div class="scale-controls">
-                            <span>Scale:</span>
+                        <div class="transform-controls">
                             <button id="scale-down" class="layout-btn">−</button>
                             <button id="scale-up" class="layout-btn">+</button>
+                            <button id="rotate-ccw" class="layout-btn">⟲</button>
+                            <button id="rotate-cw" class="layout-btn">⟳</button>
+                        </div>
+                        <div class="flip-controls">
+                            <button id="flip-horizontal" class="layout-btn">⟷</button>
+                            <button id="flip-vertical" class="layout-btn">⇅</button>
                         </div>
                     </div>
                 </div>
@@ -125,6 +135,7 @@
                         <button id="layout-concentric" class="layout-btn">Concentric</button>
                         <button id="layout-cose" class="layout-btn">Force-Directed</button>
                         <button id="layout-breadthfirst" class="layout-btn">Breadth-First</button>
+                        <button id="layout-spectral" class="layout-btn">Spectral</button>
                         <button id="layout-random" class="layout-btn">Random</button>
                     </div>
                 </div>
