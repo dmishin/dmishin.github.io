@@ -592,23 +592,63 @@ async function download(kind) {
   }
 }
 
-function closeMenu() {
-  $("download-menu").hidden = true;
-  $("download").setAttribute("aria-expanded", "false");
+// Menus: a button with aria-haspopup, then its .menu, inside a .menu-wrap.
+function closeMenu(except = null) {
+  for (const button of document.querySelectorAll("[aria-haspopup=menu]")) {
+    if (button === except) continue;
+    button.nextElementSibling.hidden = true;
+    button.setAttribute("aria-expanded", "false");
+  }
 }
-$("download").onclick = (e) => {
-  e.stopPropagation();
-  const menu = $("download-menu");
-  menu.hidden = !menu.hidden;
-  $("download").setAttribute("aria-expanded", String(!menu.hidden));
+function toggleMenu(button, onOpen) {
+  button.onclick = (e) => {
+    e.stopPropagation();
+    closeMenu(button);
+    const menu = button.nextElementSibling;
+    menu.hidden = !menu.hidden;
+    button.setAttribute("aria-expanded", String(!menu.hidden));
+    if (!menu.hidden && onOpen) onOpen(menu);
+  };
+}
+toggleMenu($("download"), (menu) => {
   menu.querySelector('[data-download="docx"]').disabled = !state.lastDocx;
-};
+});
+toggleMenu($("help"));
 for (const item of document.querySelectorAll("[data-download]")) {
   item.onclick = () => download(item.dataset.download).catch((err) => toast(err.message));
 }
 document.addEventListener("click", (e) => {
-  if (!e.target.closest(".menu-wrap")) closeMenu();
+  if (!e.target.closest(".menu-wrap") || e.target.closest(".menu a")) closeMenu();
 });
+
+// The help menu: the wordgenx documentation, shown by help.html in a new tab.
+function buildHelpMenu(docs) {
+  const menu = $("help-menu");
+  const link = (doc, hint) => {
+    const a = document.createElement("a");
+    a.href = "help.html?doc=" + encodeURIComponent(doc.path);
+    a.target = "wgx-help";
+    a.setAttribute("role", "menuitem");
+    const title = document.createElement(hint ? "b" : "span");
+    title.textContent = doc.title;
+    a.append(title);
+    if (hint) {
+      const small = document.createElement("span");
+      small.className = "hint";
+      small.textContent = hint;
+      a.append(small);
+    }
+    return a;
+  };
+  const hints = { quickstart: "Quickstart: the language in one page", reference: "Every command and option" };
+  for (const doc of docs.filter((d) => d.kind !== "guide")) menu.append(link(doc, hints[doc.kind]));
+  menu.append(document.createElement("hr"));
+  const label = document.createElement("div");
+  label.className = "menu-label";
+  label.textContent = "Topic guides";
+  menu.append(label);
+  for (const doc of docs.filter((d) => d.kind === "guide")) menu.append(link(doc));
+}
 document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeMenu(); });
 
 // ---------------------------------------------------------------- layout
@@ -672,6 +712,7 @@ async function boot() {
     fetch("generated/examples.zip").then((r) => r.arrayBuffer()),
   ]);
   state.manifest = manifest;
+  buildHelpMenu(manifest.docs || []);
   state.examplesZip = await JSZip.loadAsync(zipData);
 
   const select = $("example");

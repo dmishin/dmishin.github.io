@@ -53,5 +53,72 @@
       "title": "Corporate template"
     }
   ],
+  "docs": [
+    {
+      "path": "guide/README.md",
+      "kind": "quickstart",
+      "title": "wordgenx in one page"
+    },
+    {
+      "path": "reference.md",
+      "kind": "reference",
+      "title": "Command reference"
+    },
+    {
+      "path": "guide/syntax.md",
+      "kind": "guide",
+      "title": "Syntax"
+    },
+    {
+      "path": "guide/styles.md",
+      "kind": "guide",
+      "title": "Styles, templates and themes"
+    },
+    {
+      "path": "guide/tables.md",
+      "kind": "guide",
+      "title": "Tables"
+    },
+    {
+      "path": "guide/images.md",
+      "kind": "guide",
+      "title": "Pictures, figures and text boxes"
+    },
+    {
+      "path": "guide/references.md",
+      "kind": "guide",
+      "title": "References, captions, contents and citations"
+    },
+    {
+      "path": "guide/sections.md",
+      "kind": "guide",
+      "title": "Sections, headers, footers and fields"
+    },
+    {
+      "path": "guide/math-and-code.md",
+      "kind": "guide",
+      "title": "Math and code"
+    },
+    {
+      "path": "guide/macros.md",
+      "kind": "guide",
+      "title": "Macros and the standard library"
+    },
+    {
+      "path": "guide/forms.md",
+      "kind": "guide",
+      "title": "Forms and review"
+    },
+    {
+      "path": "guide/import.md",
+      "kind": "guide",
+      "title": "Importing Word documents, and checking builds"
+    },
+    {
+      "path": "guide/tex.md",
+      "kind": "guide",
+      "title": "wordgenx for TeX users"
+    }
+  ],
   "wex": "51af665"
 }
