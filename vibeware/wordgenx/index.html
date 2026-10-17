@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>wordgenx Playground</title>
+  <meta name="description" content="Write wordgenx markup on the left, see the Word document on the right. Runs entirely in your browser with Pyodide.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232b579a'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='19' font-weight='700' fill='white' text-anchor='middle'%3EW%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.20/codemirror.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.20/addon/dialog/dialog.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo" aria-hidden="true">W</span>
+      <span class="name">wordgenx</span>
+      <span class="sub">playground</span>
+    </div>
+
+    <label class="field">
+      <span class="visually-hidden">Example</span>
+      <select id="example" title="Open an example"></select>
+    </label>
+
+    <div class="actions">
+      <button id="open" class="btn" title="Open .wgx, .txt or .docx files (or drop them on the page)">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4m0 0-4.5 4.5M12 4l4.5 4.5M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg>
+        <span>Open</span>
+      </button>
+      <input id="file-input" type="file" multiple hidden
+        accept=".wgx,.wgxs,.txt,.docx,.bib,.json,.csl,.png,.jpg,.jpeg,.gif,.svg,.emf,.dotx">
+      <button id="format" class="btn" title="Rewrite the file in the canonical layout (wordgenx fmt)">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 10h10M4 14h16M4 18h10"/></svg>
+        <span>Format</span>
+      </button>
+      <div class="menu-wrap">
+        <button id="download" class="btn primary" aria-haspopup="menu" aria-expanded="false" disabled>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v12m0 0 4.5-4.5M12 16l-4.5-4.5M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg>
+          <span>Download</span>
+          <svg class="caret" viewBox="0 0 24 24" aria-hidden="true"><path d="m7 10 5 5 5-5"/></svg>
+        </button>
+        <div id="download-menu" class="menu" role="menu" hidden>
+          <button role="menuitem" data-download="docx">Word document <small>.docx</small></button>
+          <button role="menuitem" data-download="file">This source file <small id="dl-file-name">.wgx</small></button>
+          <button role="menuitem" data-download="zip">Whole project <small>.zip</small></button>
+        </div>
+      </div>
+    </div>
+
+    <div id="status" class="status" role="status" aria-live="polite">
+      <span class="dot"></span><span class="text">Starting…</span>
+    </div>
+  </header>
+
+  <main class="panes" id="panes">
+    <section class="pane source" aria-label="Source">
+      <div class="tabs" id="tabs" role="tablist"></div>
+      <div class="editor" id="editor"></div>
+      <div class="problems" id="problems" data-open="false">
+        <button class="problems-head" id="problems-toggle" aria-expanded="false">
+          <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+          <span>Problems</span>
+          <span class="count" id="problems-count">0</span>
+          <span class="problems-summary" id="problems-summary"></span>
+        </button>
+        <div class="problems-list" id="problems-list"></div>
+      </div>
+    </section>
+
+    <div class="splitter" id="splitter" role="separator" aria-orientation="vertical" tabindex="0" title="Drag to resize"></div>
+
+    <section class="pane preview" aria-label="Word preview">
+      <div class="preview-bar">
+        <span class="preview-title" id="preview-title">Preview</span>
+        <span class="stale" id="stale" hidden>Showing the last successful build</span>
+        <label class="field small">
+          <span class="visually-hidden">Zoom</span>
+          <select id="zoom" title="Zoom">
+            <option value="fit">Fit width</option>
+            <option value="0.5">50%</option>
+            <option value="0.75">75%</option>
+            <option value="1">100%</option>
+            <option value="1.25">125%</option>
+            <option value="1.5">150%</option>
+          </select>
+        </label>
+      </div>
+      <div class="preview-scroll" id="preview-scroll">
+        <div class="preview-doc" id="preview-doc"></div>
+        <div class="loading" id="loading">
+          <div class="spinner" aria-hidden="true"></div>
+          <div class="loading-text" id="loading-text">Starting Python in your browser…</div>
+          <div class="loading-note">The first visit downloads Pyodide (about 15&nbsp;MB); later visits come from the cache.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="drop-overlay" id="drop-overlay" hidden>
+    <div>Drop <b>.wgx</b>, <b>.txt</b> or <b>.docx</b> files to open them</div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.20/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.20/addon/edit/matchbrackets.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.20/addon/comment/comment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.20/addon/dialog/dialog.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.20/addon/search/searchcursor.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.20/addon/search/search.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docx-preview@0.4.1/dist/docx-preview.min.js"></script>
+  <script src="wgx-mode.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

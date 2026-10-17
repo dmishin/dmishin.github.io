@@ -1,0 +1,57 @@
+{
+  "wheels": [
+    "wheels/citeproc_py-0.11.1-py3-none-any.whl",
+    "wheels/wordgenx-0.0.1-py3-none-any.whl"
+  ],
+  "examples": [
+    {
+      "path": "examples/hello.wgx",
+      "title": "Hello, wordgenx"
+    },
+    {
+      "path": "examples/syntax-tour.wgx",
+      "title": "Syntax tour"
+    },
+    {
+      "path": "examples/tables.wgx",
+      "title": "Tables and images"
+    },
+    {
+      "path": "examples/math.wgx",
+      "title": "Math"
+    },
+    {
+      "path": "examples/index.wgx",
+      "title": "Index"
+    },
+    {
+      "path": "examples/citations/citations.wgx",
+      "title": "Citations"
+    },
+    {
+      "path": "examples/design-spec/design-spec.wgx",
+      "title": "Design specification"
+    },
+    {
+      "path": "examples/forms/onboarding.wgx",
+      "title": "Fillable form"
+    },
+    {
+      "path": "examples/magazine/magazine.wgx",
+      "title": "Magazine layout"
+    },
+    {
+      "path": "examples/media/media.wgx",
+      "title": "SVG and embedded documents"
+    },
+    {
+      "path": "examples/thesis/thesis.wgx",
+      "title": "Thesis (multi-file)"
+    },
+    {
+      "path": "examples/templates/corporate.wgx",
+      "title": "Corporate template"
+    }
+  ],
+  "wex": "51af665"
+}
