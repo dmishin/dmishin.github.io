@@ -1,0 +1,11 @@
+body { max-width: 46rem; margin: 2rem auto; padding: 0 1rem; font: 17px/1.6 system-ui, sans-serif; color: #222; }
+header { margin-bottom: 2rem; font-weight: bold; }
+a { color: #0645ad; }
+.meta { color: #777; font-size: .9em; }
+.tag { margin-right: .3em; }
+.list li { margin-bottom: 1em; }
+.summary { margin-top: .3em; }
+.chem { white-space: nowrap; }
+.chem-arrow { margin: 0 .2em; }
+img { max-width: 100%; height: auto; }
+pre { background: #f5f5f5; padding: .8em; overflow-x: auto; }

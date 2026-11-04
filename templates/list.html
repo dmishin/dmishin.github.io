@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block main %}
+<h1>{{ page.title }}</h1>
+{{ content }}
+<ul class="list">
+{% for p in pages %}
+  <li>
+    <a href="{{ p.url }}">{{ p.title }}</a> <span class="meta">{{ p.date | datefmt }}</span>
+    {% if p.summary %}
+    <div class="summary">{{ p.summary }} <a href="{{ p.url }}">Read more…</a></div>
+    {% endif %}
+  </li>
+{% endfor %}
+</ul>
+{% endblock %}

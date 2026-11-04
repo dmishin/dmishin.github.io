@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Tag: {{ tag }}{% endblock %}
+{% block main %}
+<h1>Tag: {{ tag }}</h1>
+<ul class="list">
+{% for p in pages %}
+  <li><a href="{{ p.url }}">{{ p.title }}</a> <span class="meta">{{ p.date | datefmt }}</span></li>
+{% endfor %}
+</ul>
+<p><a href="{{ tags_url }}">All tags</a></p>
+{% endblock %}

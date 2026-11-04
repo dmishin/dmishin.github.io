@@ -1,0 +1,9 @@
+title: My home page
+base_path: ""            # e.g. "/~dim" if not served from the root
+site_url: ""             # e.g. "https://example.com"
+content_dir: content     # .md / .html pages
+static_dir: static       # copied as-is, merged into output
+templates_dir: templates
+output_dir: output
+default_sort: -date      # used by lists and tag pages; "-" = descending
+image_quality: 85
