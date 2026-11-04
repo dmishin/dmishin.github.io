@@ -178,7 +178,7 @@ def load_page(src, rel):
     page = Page(src, rel, meta, text)
     meta.setdefault("type", "page")
     if "title" not in meta:
-        m = (re.search(r"^#\s+(.+?)\s*#*\s*$", text, re.M) if src.suffix == ".md"
+        m = (re.search(r"^#(?!#)\s*(.+?)\s*#*\s*$", text, re.M) if src.suffix == ".md"
              else re.search(r"<h1[^>]*>(.*?)</h1>", text, re.S | re.I))
         meta["title"] = m.group(1).strip() if m else page.name
     meta["date"] = to_datetime(meta.get("date")) or datetime.fromtimestamp(src.stat().st_mtime)

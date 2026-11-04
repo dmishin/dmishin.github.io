@@ -1,6 +1,11 @@
-title: My home page
+title: DmiShin home
+description: All the stuff I put online, in one place finally
 base_path: ""            # e.g. "/~dim" if not served from the root
-site_url: ""             # e.g. "https://example.com"
+site_url: "https://dmishin.github.io"
+menu:                    # [label, path] pairs, rendered in base.html
+  - [Projects, index.html]
+  - [Crystals, crystals/index.html]
+  - [About me, about.html]
 content_dir: content     # .md / .html pages
 static_dir: static       # copied as-is, merged into output
 templates_dir: templates

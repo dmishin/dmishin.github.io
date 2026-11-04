@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+  <meta charset="utf-8"> 
+  <head>
+    <title>Single Rotation cellular automaton with smooth interpolation</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+  </head>
+  <body>
+    <div id="main-screen">
+    <div id="controls1">
+      Speed: <select id="sim-speed">
+	<option value="3">3</option>
+	<option value="10">10</option>
+	<option value="30" selected="selected">30</option>
+	<option value="100">100</option>
+	<option value="300">300</option>
+	<option value="1000">1000</option>
+	<option value="3000">3000</option>
+      </select> gen/s.
+      Filter period: <select id="smoothing">
+	<option value="1">--</option>
+	<option value="4" selected="selected">4</option>
+	<option value="12">12</option>
+	<option value="24">24</option>
+	<option value="48">48</option>
+	<option value="60">60</option>
+	<option value="120">120</option>
+      </select>.
+      Trails: <select id="trails">
+	<option value="1">no</option>
+	<option value="0.15" selected="selected">short</option>
+	<option value="0.05">medium</option>
+	<option value="0.01">long</option>
+	<option value="0">infinite</option>
+      </select>.
+    </div>
+
+    <div class="top-toolbar">
+	<button id="btn-play" class="transparent-image-button" title="Play/Pause">
+	  <img src="images/ic_play_arrow_24px.svg" style="width:3em;height:3em">
+	</button>
+	<button id="btn-pause" class="transparent-image-button" title="Play/Pause">
+	  <img src="images/ic_pause_24px.svg" style="width:3em;height:3em">
+	</button>
+	
+	<button id="btn-clear" class="transparent-image-button" title="Clear field">
+	  <img src="images/ic_clear_24px.svg" style="width:3em;height:3em">
+	</button>
+	<button id="btn-random" class="transparent-image-button" title="Random pattern">
+	  <img src="images/ic_refresh_24px.svg" style="width:3em;height:3em">
+	</button>
+      </div>
+      <div class="top-right-toolbar">
+	<a href="help.html" target="_blank" class="transparent-image-link" title="What's this?">
+	  <img src="images/ic_help_24px.svg" style="width:3em;height:3em">
+	</a>
+      </div>
+      
+      <canvas id="sim-canvas" width="800" height="600"></canvas>
+    </div>
+
+    
+    
+    <h2>Scene library</h3>
+    <div>
+      <ul id="library" class="library"></ul>  
+    </div>
+
+    <h2>Custom scene</h3>
+    <div id="scene-editor">
+      <div>
+	<textarea id="fld-text" spellcheck="false"></textarea>
+      </div>
+      <div>
+	<button id="btn-load-fdl">Load</button>
+      </div>
+
+      <h3>Scene description language</h3>
+      <p>
+	Scene is described by a sequence of statements, separated by newlines or ";". Statement names are case-sensitive.
+	Four statements are supported:
+	<dl>
+	  <dt><span class="command">at</span> <span class="arg1">X<span> <span class="arg2">Y</span></dt>
+	  <dd>Sets current origin to the cell with coordinates <span class="arg1">X</span>, <span class="arg2">Y</span>. Used by the following <span class="command">rle</span> commands.</dd>
+	  <dt><span class="command">--</span> <span class="arg1">TEXT</span></dt>
+	  <dd>Defines description text. Several lines may be defined. Text can not contain semicolons (;).</dd>
+	  
+	  <dt><span class="arg1">PATTERN_RLE</span></dt>
+	  <dd>Puts given RLE code at the current coorinates. Rle code is a standard format, used by many cellular automata simulators.
+	    <ul><li><span class="command">b</span> encodes empty cell,</li>
+	      <li><span class="command">o</span> - alive cell,</li>
+	      <li><span class="command">$</span> - new line,</li>
+	      <li>numbers encode repeat count of the following character.</li>
+	    </ul>
+	  </dd>
+	  
+	  <dt><span class="command">colors</span> <span class="arg1">COLOR-LIST</span></dt>
+	  <dd>Sets current color palette. When adding patterns, new cell colors are taken from this pattern.
+	    <span class="arg1">COLOR-LIST</span> can be either a ":"-separated list of any CSS colors, or the text "default". In the latter case, pattern is returned to the default. Example: <span class="command">colors</span> <span class="arg1">red:#00ff00:rgb(0,0,255)</span>.
+	  </dd>
+	</dl>
+	Effect of the <span class="command">at</span> and <span class="command">colors</span> statements lasts until they are redefined. Additional spaces and empty lines are ignored.
+      </p>
+    </div>
+
+    
+    <script type="text/javascript" src="default_library.js"></script> 
+    <script type="text/javascript" src="flight.js"></script> 
+    <!--<script type="text/javascript" src="flight.min.js"></script>-->
+    
+    <script type="text/javascript">
+      window.runCanvasSimulation();
+    </script>
+  </body>
+</html>

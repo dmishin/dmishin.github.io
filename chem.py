@@ -1,21 +1,20 @@
-"""Chemical formula preprocessor.
+"""Chemical formula preprocessor (simplechem syntax).
 
-Replaces  \\ce{...}  in page source with plain HTML (<sub>/<sup>), before
-Markdown runs. Code blocks, inline code and math ($...$, $$...$$, \\(...\\),
-\\[...\\]) are left untouched, so \\ce inside math still goes to MathJax/mhchem.
+Replaces  \\ce{...}  in page source with plain HTML before Markdown runs.
+Code blocks, inline code and math ($...$, $$...$$, \\(...\\), \\[...\\]) are left
+untouched, so \\ce inside math still goes to MathJax/mhchem.
 
-Syntax (space separated tokens):
-    \\ce{2H2 + O2 -> 2H2O}        coefficients, subscripts, arrows
-    \\ce{Ca(OH)2}  \\ce{CuSO4.5H2O} groups, hydrates ('.' or '*' -> '·')
-    \\ce{Na+}  \\ce{Cl-}  \\ce{e-}   a trailing + or - is a charge
-    \\ce{Fe^3+}  \\ce{SO4^{2-}}     other charges need ^  (Fe3+ would be Fe₃⁺)
-    \\ce{X_{n}}                    explicit subscript
-Arrows: ->  <-  <->  <=>  =
+Syntax (same as markdown-simplechem):
+    \\ce{2KOH + H2SO4 -> K2SO4 + 2H2O}   numbers right after a name, bracket or
+                                         superscript become subscripts; others
+                                         (coefficients) stay as they are
+    \\ce{CuSO4*5H2O}  \\ce{Na2CO3*?H2O}   '*' is a middle dot, '?' counts as a number
+    \\ce{K^+  O^(2-)  Fe^{3+}  M^I2}      superscript: ^(text), ^{text} or ^char
+    \\ce{X_{n}}                          explicit subscript
+    ->  →     <-  ←     <->  ⇄     <>  <=>  ⇌     hnu  hν
 """
 import html
 import re
-
-ARROWS = {"->": "→", "<-": "←", "<->": "↔", "<=>": "⇌", "=": "="}
 
 _PROTECTED = re.compile(r"""
     (?P<fence>(?ms:^(?P<f>```|~~~).*?^(?P=f)[ \t]*$))
@@ -27,6 +26,23 @@ _PROTECTED = re.compile(r"""
   | \\ce\{(?P<ce>(?:[^{}]|\{[^{}]*\})*)\}
 """, re.X)
 
+NUM, NAME, SUPER, SUB, BRACE, CHAR = range(6)
+
+_TOKENS = [(re.compile(rx), group, kind) for rx, group, kind in [
+    (r"[0-9.][0-9./]*", 0, NUM),
+    (r"\?", 0, NUM),
+    (r"[a-zA-Z]+", 0, NAME),
+    (r"\^\((.+?)\)", 1, SUPER),
+    (r"\^\{(.*?)\}", 1, SUPER),
+    (r"\^(\S)", 1, SUPER),
+    (r"_\{(.*?)\}", 1, SUB),
+    (r"[\[\]()]", 0, BRACE),
+    (r"<=>|<->|<>|->|<-", 0, CHAR),
+    (r".", 0, CHAR),
+]]
+
+SPECIAL = {"->": "→", "<-": "←", "<->": "⇄", "<>": "⇌", "<=>": "⇌", "*": "·", "hnu": "hν"}
+
 
 def preprocess(text):
     """Replace every \\ce{...} outside code and math with HTML."""
@@ -37,61 +53,34 @@ def preprocess(text):
     return _PROTECTED.sub(repl, text)
 
 
+def tokenize(text):
+    pos = 0
+    while pos < len(text):
+        for rx, group, kind in _TOKENS:
+            m = rx.match(text, pos)
+            if m:
+                yield m.group(group), kind
+                pos = m.end()
+                break
+
+
 def render(formula):
     """Render one formula (contents of \\ce{...}) to an HTML span."""
-    parts = []
-    for tok in formula.split():
-        if tok in ARROWS:
-            parts.append(f'<span class="chem-arrow">{ARROWS[tok]}</span>')
-        elif tok == "+":
-            parts.append("+")
-        else:
-            parts.append(_species(tok))
-    return '<span class="chem">' + " ".join(parts) + "</span>"
-
-
-def _sub(s):
-    return f"<sub>{html.escape(s)}</sub>"
-
-
-def _sup(s):
-    return f"<sup>{html.escape(s).replace('-', '−')}</sup>"
-
-
-def _species(tok):
     out = []
-    i, n = 0, len(tok)
-    m = re.match(r"\d+(?:/\d+)?(?=[A-Za-z(\[])", tok)   # stoichiometric coefficient
-    if m:
-        out.append(m.group())
-        i = m.end()
-    while i < n:
-        c = tok[i]
-        prev = tok[i - 1] if i else ""
-        if c in "^_":
-            m = re.match(r"[\^_](?:\{([^}]*)\}|(\d*[+-]|\d+))", tok[i:])
-            if m:
-                val = m.group(1) if m.group(1) is not None else m.group(2)
-                out.append(_sup(val) if c == "^" else _sub(val))
-                i += m.end()
-                continue
-        if c.isdigit() and (prev.isalpha() or prev in ")]"):
-            j = i
-            while j < n and tok[j].isdigit():
-                j += 1
-            out.append(_sub(tok[i:j]))
-            i = j
-            continue
-        if c in "+-" and i == n - 1 and i > 0:
-            out.append(_sup(c))
-        elif c in ".*" and i + 1 < n and (tok[i + 1].isdigit() or tok[i + 1].isupper()):
-            out.append("·")
+    prev = None
+    for tok, kind in tokenize(formula):
+        text = html.escape(SPECIAL.get(tok, tok))
+        if kind == SUPER:
+            out.append(f"<sup>{text}</sup>")
+        elif kind == SUB or (kind == NUM and prev in (NAME, BRACE, SUPER)):
+            out.append(f"<sub>{text}</sub>")
         else:
-            out.append(html.escape(c))
-        i += 1
-    return "".join(out)
+            out.append(text)
+        prev = kind
+    return '<span class="chem">' + "".join(out) + "</span>"
 
 
 if __name__ == "__main__":
     import sys
+    sys.stdout.reconfigure(encoding="utf-8")
     print(preprocess(" ".join(sys.argv[1:]) or r"\ce{2H2 + O2 -> 2H2O}"))
