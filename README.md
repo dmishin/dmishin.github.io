@@ -77,7 +77,9 @@ keeps its aspect ratio, is never upscaled, and is rotated according to EXIF. It 
 
 ## Tags
 
-For every folder where pages have `tags`, `tags.html` and `tag_<slug>.html` are generated in that folder.
+For every folder where pages have `tags`, a `tags/` subfolder is generated in it: `tags/index.html`
+(template `tags.html`) and `tags/<slug>.html` for each tag (template `tag.html`). Link a tag from a page
+as `[ferrioxalates](tags/ferrioxalate.html)`.
 
 ## Hooks
 

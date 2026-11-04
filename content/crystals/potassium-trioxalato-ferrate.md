@@ -5,7 +5,7 @@ date: 2020-03-22
 ---
 Formula: \ce{K3[Fe(C2O4)3]*3H2O}
 
-Potassium salt of a complex acid, formed by Fe(III) and oxalate ions. As all [ferrioxalates](tag_ferrioxalate.html), has bright green color and is slightly light sensitve.
+Potassium salt of a complex acid, formed by Fe(III) and oxalate ions. As all [ferrioxalates](tags/ferrioxalate.html), has bright green color and is slightly light sensitve.
 
 [![Potassium tris-oxalato ferrate](/crystals/images/potassium-trioxalato-ferrate/dsc02946.jpg?size=640:)](/crystals/images/potassium-trioxalato-ferrate/dsc02946.jpg)
 

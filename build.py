@@ -19,6 +19,7 @@ import importlib.util
 import posixpath
 import re
 import shutil
+import subprocess
 import sys
 import threading
 import time as _time
@@ -330,6 +331,14 @@ def render_pages(env, site, outputs):
         render_to(env, site, template, page.out, ctx, outputs, page.rel)
 
 
+def tag_path(folder, tag=None):
+    """Output path of a folder's tag index (tag=None) or of one tag page: <folder>/tags/<slug>.html"""
+    if tag is None:
+        return posixpath.join(folder, "tags", "index.html")
+    slug = slugify(tag)
+    return posixpath.join(folder, "tags", ("tag-index" if slug == "index" else slug) + ".html")
+
+
 def collect_tags(site):
     for folder, pages in site.by_dir.items():
         tags = {}
@@ -341,17 +350,17 @@ def collect_tags(site):
         site.tags[folder] = {t: sort_pages(ps, site.config["default_sort"])
                              for t, ps in sorted(tags.items(), key=lambda kv: kv[0].lower())}
         for p in pages:
-            p.tag_links = [(t, site.url(posixpath.join(folder, f"tag_{slugify(t)}.html"))) for t in p.tags]
+            p.tag_links = [(t, site.url(tag_path(folder, t))) for t in p.tags]
 
 
 def render_tags(env, site, outputs):
     for folder, tags in site.tags.items():
-        links = [(t, site.url(posixpath.join(folder, f"tag_{slugify(t)}.html")), ps) for t, ps in tags.items()]
-        index_url = site.url(posixpath.join(folder, "tags.html"))
-        render_to(env, site, "tags.html", posixpath.join(folder, "tags.html"),
+        links = [(t, site.url(tag_path(folder, t)), ps) for t, ps in tags.items()]
+        index_url = site.url(tag_path(folder))
+        render_to(env, site, "tags.html", tag_path(folder),
                   {"folder": folder, "tags": links, "tags_url": index_url}, outputs, f"tags of /{folder}")
         for tag, url, pages in links:
-            render_to(env, site, "tag.html", posixpath.join(folder, f"tag_{slugify(tag)}.html"),
+            render_to(env, site, "tag.html", tag_path(folder, tag),
                       {"folder": folder, "tag": tag, "pages": pages, "tags_url": index_url},
                       outputs, f"tag {tag!r} of /{folder}")
 
@@ -427,14 +436,21 @@ def build(root, drafts=False):
 
 
 def snapshot(root, cfg):
-    files = [root / "site.yaml", root / "hooks.py"]
+    here = Path(__file__).resolve().parent
+    files = [root / "site.yaml", root / "hooks.py", *here.glob("*.py")]
     for key in ("content_dir", "static_dir", "templates_dir"):
         files += (root / cfg[key]).rglob("*")
     return {str(p): p.stat().st_mtime for p in files if p.is_file()}
 
 
+def rebuild(root, drafts):
+    """Build in a fresh process, so edits to build.py / chem.py take effect."""
+    cmd = [sys.executable, str(Path(__file__).resolve()), "build", "--root", str(root)]
+    subprocess.run(cmd + (["--drafts"] if drafts else []))
+
+
 def serve(root, port, drafts):
-    build(root, drafts)
+    rebuild(root, drafts)
     cfg = load_config(root)
     handler = functools.partial(http.server.SimpleHTTPRequestHandler, directory=str(root / cfg["output_dir"]))
     httpd = http.server.ThreadingHTTPServer(("127.0.0.1", port), handler)
@@ -447,10 +463,7 @@ def serve(root, port, drafts):
             now = snapshot(root, cfg)
             if now != last:
                 last = now
-                try:
-                    build(root, drafts)
-                except Exception as e:
-                    print(f"ERROR: {e}", file=sys.stderr)
+                rebuild(root, drafts)
     except KeyboardInterrupt:
         httpd.shutdown()
 

@@ -5,7 +5,7 @@ date: 2020-03-22
 ---
 Formula: \ce{Li3[Fe(C2O4)]*5H2O}
 
-Lithium salt of a complex acid, formed by Fe(III) and oxalate ions. As all [ferrioxalates](tag_ferrioxalate.html), has bright green color and is slightly light sensitve.
+Lithium salt of a complex acid, formed by Fe(III) and oxalate ions. As all [ferrioxalates](tags/ferrioxalate.html), has bright green color and is slightly light sensitve.
 
 [![Lithium ferrioxalate](/crystals/images/lithium-ferrioxalate/dsc03765.jpg?size=640:)](/crystals/images/lithium-ferrioxalate/dsc03765.jpg)
 
