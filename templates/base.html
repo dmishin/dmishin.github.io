@@ -15,12 +15,19 @@ MathJax = {
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
 <body>
-<header>
-  <a href="{{ site.base_path }}/index.html">{{ site.title }}</a>
-  <nav>{% for label, path in site.menu or [] %}<a href="{{ site.base_path }}/{{ path }}">{{ label }}</a> {% endfor %}</nav>
+<header class="site">
+  <a class="brand" href="{{ site.base_path }}/index.html">{{ site.title }}</a>
+  <nav>
+  {% for label, path in site.menu or [] %}
+    <a href="{{ site.base_path }}/{{ path }}"{% if page and page.url == site.base_path ~ '/' ~ path %} aria-current="page"{% endif %}>{{ label }}</a>
+  {% endfor %}
+  </nav>
 </header>
 <main>
 {% block main %}{% endblock %}
 </main>
+<footer class="site">
+  <a href="{{ site.base_path }}/index.html">{{ site.title }}</a>{% if site.description %} · {{ site.description }}{% endif %}
+</footer>
 </body>
 </html>

@@ -200,12 +200,27 @@ def make_markdown():
 MD_LINK = re.compile(r'''(href=["'])(?![a-z][a-z0-9+.-]*:|//)([^"'#?]*?)\.md([#?][^"']*)?(["'])''', re.I)
 
 
+FIGURE = re.compile(r"<p>((?:\s*(?:<a\b[^>]*>\s*)?<img\b[^>]*>(?:\s*</a>)?)+)\s*</p>")
+IMG_TITLE = re.compile(r'<img\b[^>]*\btitle="([^"]*)"')
+
+
+def figure(m):
+    """A paragraph holding only images (optionally linked) becomes a <figure>;
+    a single image's title becomes the caption."""
+    imgs, caption = m[1].strip(), ""
+    titles = IMG_TITLE.findall(imgs)
+    if imgs.count("<img") == 1 and titles:
+        caption = f"\n<figcaption>{titles[0]}</figcaption>"
+    return f"<figure>\n{imgs}{caption}\n</figure>"
+
+
 def render_body(page, md):
     """Fill page.html and page.summary from page.text."""
     def convert(t):
         t = chem.preprocess(t)
         t = md.reset().convert(t) if page.src.suffix == ".md" else t
-        return MD_LINK.sub(lambda m: f"{m[1]}{m[2]}.html{m[3] or ''}{m[4]}", t)
+        t = MD_LINK.sub(lambda m: f"{m[1]}{m[2]}.html{m[3] or ''}{m[4]}", t)
+        return FIGURE.sub(figure, t)
 
     text = page.text
     if MORE in text:
