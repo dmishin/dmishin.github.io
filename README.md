@@ -10,6 +10,16 @@ python build.py clean      # delete output/
 python build.py --drafts   # include draft: true pages
 ```
 
+## Publishing
+
+This is the `source` branch of dmishin.github.io. Every push to it runs
+`.github/workflows/pages.yml` on GitHub: it installs `requirements.txt`, runs `python build.py`
+and deploys `output/` to GitHub Pages (Settings → Pages → Source: "GitHub Actions").
+A build with errors fails the run, and the live site stays as it was.
+To redeploy without changes: Actions → "Build and deploy site" → Run workflow.
+
+The old `master` branch holds the previous, pre-built site and is no longer used.
+
 ## Layout
 
 ```
