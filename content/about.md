@@ -1,0 +1,22 @@
+---
+title: About me
+date: 2019-10-19
+---
+I write code (mostly in Python and C++), admire mathematics, sometimes teach students and make amateur-level chemistry experiments.
+
+Over the time, list various things I put into the Internet under my real name grew, so it is probably the time to make a single place for it: this site.
+
+# Other places
+
+* [My blog](https://dmishin.blogspot.com) updated with constant irregularity.
+* [Sources on Github](https://github.com/dmishin), for all projects that do at least something.
+* [Reddit](https://www.reddit.com/user/dmishin) - so far I am most active there. See also [/r/crystalgrowing](https://www.reddit.com/r/crystalgrowing/) - a subreddit about growing crystals.
+* [Imgur galleries](http://dmishin.imgur.com/) mostly of crystal images. All my images are free to use without notification.
+* [vk.com](https://vk.com/id197008399)
+* [twitter](https://twitter.com/shin_dmitry) - still not sure what to use it for
+
+# Licences and copyrights
+
+All my images on this site, blog and Imgur galleries above are published under the [CC0](https://wiki.creativecommons.org/wiki/CC0) license. Simply speaking, they are free domain.
+Software is under [MIT license](https://opensource.org/licenses/MIT), which is not much different.
+

@@ -1,0 +1,31 @@
+body{
+    background: #eee solid 
+}
+#content{
+    position: absolute;
+    top: 0;
+    right: 10em;
+    left: 0;
+}
+#canvas-container{
+    text-align: center;
+}
+
+#sidebar{
+    position: absolute;
+    width: 10em;
+    right: 0;
+    top: 0;
+
+    text-align: center;
+}
+#samples{
+    border: 0;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+#samples li{
+    display: block;
+    
+}

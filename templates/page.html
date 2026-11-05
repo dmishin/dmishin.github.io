@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block main %}
+<article>
+  <header class="title">
+    <h1>{{ page.title }}</h1>
+    {% if page.date %}<p class="date">{{ page.date | datefmt("%B %Y") }}</p>{% endif %}
+  </header>
+  {% if page.tag_links %}
+  <p class="keywords"><span>Keywords:</span>
+    {% for tag, url in page.tag_links %}<a href="{{ url }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</p>
+  {% endif %}
+  {{ content }}
+</article>
+{% endblock %}

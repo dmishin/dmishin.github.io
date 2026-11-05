@@ -1,4 +1,3 @@
-.ark*
-out
-out/*
-*__pycache__
+output/
+__pycache__/
+static/crystals/images/

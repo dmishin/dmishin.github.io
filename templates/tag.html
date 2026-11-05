@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Tag: {{ tag }}{% endblock %}
+{% block main %}
+<article>
+  <header class="title"><h1>{{ tag }}</h1><p class="date">Pages tagged “{{ tag }}”</p></header>
+  <ol class="entries">
+  {% for p in pages %}
+    <li><a class="entry-title" href="{{ p.url }}">{{ p.title }}</a> <span class="date">{{ p.date | datefmt }}</span></li>
+  {% endfor %}
+  </ol>
+  <p class="back"><a href="{{ tags_url }}">← All tags</a></p>
+</article>
+{% endblock %}
